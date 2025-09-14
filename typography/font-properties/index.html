@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Typography · Font properties</title>
+    <link rel="icon" href="../../assets/favicon/favicon.ico" />
+    <link rel="stylesheet" href="../../assets/css/stylesheet.css" />
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/lesson.css" />
+    <script src="../../assets/js/highlight/highlight.js"></script>
+    <script src="../../assets/js/highlight/languages/apache.js"></script>
+    <script src="../../assets/js/highlight/languages/bash.js"></script>
+    <script src="../../assets/js/highlight/languages/css.js"></script>
+    <script src="../../assets/js/highlight/languages/javascript.js"></script>
+    <script src="../../assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div></div>
+    </header>
+
+    <main class="lesson-layout">
+      <aside class="sidebar">
+        <nav>
+          <h3>Tools & Resources</h3>
+          <ul>
+            <li>
+              <a href="../../tools-resources/setup-guide/">Setup Guide</a>
+            </li>
+            <li>
+              <a href="../../tools-resources/file-organisation/"
+                >File organisation</a
+              >
+            </li>
+            <li>
+              <a href="../../tools-resources/external-resources/"
+                >External resources</a
+              >
+            </li>
+          </ul>
+          <h3>HTML Basics</h3>
+          <ul>
+            <li>
+              <a href="../../html-basics/file-structure/">File structure</a>
+            </li>
+            <li>
+              <a href="../../html-basics/semantic-html/">Semantic HTML</a>
+            </li>
+            <li>
+              <a href="../../html-basics/common-tags/">Common tags</a>
+            </li>
+          </ul>
+          <h3>CSS Basics</h3>
+          <ul>
+            <li>
+              <a href="../../css-basics/rules-selectors/">Rules & Selectors</a>
+            </li>
+            <li><a href="../../css-basics/box-model/">Box Model</a></li>
+            <li>
+              <a href="../../css-basics/specificity/">Specificity</a>
+            </li>
+            <li><a href="../../css-basics/positions/">Positions</a></li>
+            <li>
+              <a href="../../css-basics/colours-units/">Colours & Units</a>
+            </li>
+          </ul>
+          <h3>Typography</h3>
+          <ul>
+            <li>
+              <a href="../../typography/importing-fonts/">Importing fonts</a>
+            </li>
+            <li>
+              <a href="../../typography/relevant-tags/">Relevant tags</a>
+            </li>
+            <li class="active">
+              <a href="../../typography/font-properties/">Font properties</a>
+            </li>
+            <li>
+              <a href="../../typography/custom-properties/"
+                >Custom properties</a
+              >
+            </li>
+          </ul>
+          <h3>Display</h3>
+          <ul>
+            <li>
+              <a href="../../display/display-property/">Display property</a>
+            </li>
+            <li><a href="../../display/flexbox/">Flexbox</a></li>
+            <li><a href="../../display/grid/">Grid</a></li>
+          </ul>
+          <h3>Responsive design</h3>
+          <ul>
+            <li>
+              <a href="../../responsive-design/breakpoints/">Breakpoints</a>
+            </li>
+            <li>
+              <a href="../../responsive-design/printable-other/"
+                >Printable web & other</a
+              >
+            </li>
+            <li>
+              <a href="../../responsive-design/responsive-images/"
+                >Responsive images</a
+              >
+            </li>
+          </ul>
+          <h3>Motion & Transform</h3>
+          <ul>
+            <li><a href="../../motion-transitions/transform/">Transform</a></li>
+            <li>
+              <a href="../../motion-transitions/transitions/">Transitions</a>
+            </li>
+            <li><a href="../../motion-transitions/animation/">Animation</a></li>
+          </ul>
+          <h3>Performance & Best practices</h3>
+          <ul>
+            <li>
+              <a href="../../performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+            <li>
+              <a href="../../performance-best-practices/accessibility/"
+                >Accessibility considerations</a
+              >
+            </li>
+            <li>
+              <a
+                href="../../performance-best-practices/performance-optimisation/"
+                >Performance optimisation</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="lesson">
+        <h1>Font properties</h1>
+        <div class="block-wrapper">
+          <h2>Essential properties</h2>
+          <h3>Font-family</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"
+              target="_blank"
+              ><code class="language-css">font-family</code></a
+            >
+            property is used to specify the font family. You can specify one or
+            more fallback fonts to use if the first font is not available. The
+            fallback fonts are specified in the same order as the fonts in the
+            font-family list.
+          </p>
+          <pre><code class="language-css">font-family: "Custom Font", Arial, sans-serif;</code></pre>
+          <details class="tip-block">
+            <summary>Advanced: accessing system fonts</summary>
+            <p>
+              You can set the font-family property to the one used by the user's
+              system by using the
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#System_Fonts"
+                target="_blank"
+                ><code class="language-css">system-ui</code></a
+              >
+              keyword. You can find a list of all the keywords
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#System_Fonts"
+                target="_blank"
+                >here</a
+              >.
+            </p>
+          </details>
+          <h3>Colour</h3>
+          <p>
+            As its name suggests, the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/color"
+              target="_blank"
+              ><code class="language-css">color</code></a
+            >
+            property is used to set the text color. It accepts any valid CSS
+            color value, such as
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Named_colors"
+              target="_blank"
+              ><code class="language-css">red</code></a
+            >,
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Hex_colors"
+              target="_blank"
+              ><code class="language-css">#ff0000</code></a
+            >, or
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#RGB_colors"
+              target="_blank"
+              ><code class="language-css">rgba(255, 0, 0, 0.5)</code></a
+            >.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html">&lt;p class="keyword"&gt;Color keyword&lt;/p&gt;
+&lt;p class="hex"&gt;Hexadecimal #2563eb&lt;/p&gt;
+&lt;p class="rgb"&gt;RGB rgb(34, 197, 94)&lt;/p&gt;
+&lt;p class="rgba"&gt;RGBA rgba(168, 85, 247, 0.8)&lt;/p&gt;
+&lt;p class="hsl"&gt;HSL hsl(45, 93%, 58%)&lt;/p&gt;
+&lt;p class="oklch"&gt;OKLCH oklch(0.6 0.2 200)&lt;/p&gt;
+&lt;p class="hwb"&gt;HWB hwb(200deg 20% 20%)&lt;/p&gt;
+&lt;p class="lab"&gt;LAB lab(50% -20 30)&lt;/p&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.keyword {color: deeppink;}
+.hex {color: #2563eb;}
+.rgb {color: rgb(34, 197, 94);}
+.rgba {color: rgba(168, 85, 247, 0.8);}
+.hsl {color: hsl(45, 93%, 58%);}
+.oklch {color: oklch(0.6 0.2 200);}
+.hwb {color: hwb(200deg 20% 20%);}
+.lab {color: lab(50% -20 30);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="color">
+              <p class="user-agent keyword">Color keyword</p>
+              <p class="user-agent hex">Hexadecimal #2563eb</p>
+              <p class="user-agent rgb">RGB rgb(34, 197, 94)</p>
+              <p class="user-agent rgba">RGBA rgba(168, 85, 247, 0.8)</p>
+              <p class="user-agent hsl">HSL hsl(45, 93%, 58%)</p>
+              <p class="user-agent oklch">OKLCH oklch(0.6 0.2 200)</p>
+              <p class="user-agent hwb">HWB hwb(200deg 20% 20%)</p>
+              <p class="user-agent lab">LAB lab(50% -20 30)</p>
+              <style>
+                #color {
+                  background-color: #f8f9fa;
+                  padding: 1rem;
+                  border-radius: 4px;
+                }
+
+                #color p {
+                  margin: 0 0 1rem;
+                }
+
+                #color p:last-of-type {
+                  margin-bottom: 0;
+                }
+
+                #color .keyword {
+                  color: deeppink;
+                }
+
+                #color .hex {
+                  color: #2563eb;
+                }
+
+                #color .rgb {
+                  color: rgb(34, 197, 94);
+                }
+
+                #color .rgba {
+                  color: rgba(168, 85, 247, 0.8);
+                }
+
+                #color .hsl {
+                  color: hsl(45, 93%, 58%);
+                }
+
+                #color .oklch {
+                  color: oklch(0.6 0.2 200);
+                }
+
+                #color .hwb {
+                  color: hwb(200deg 20% 20%);
+                }
+
+                #color .lab {
+                  color: lab(50% -20 30);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Font-size</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size"
+              target="_blank"
+              ><code class="language-css">font-size</code></a
+            >
+            property is used to specify the font size. The font size is
+            specified in pixels by default, but you can use relative units such
+            as
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#em"
+              target="_blank"
+              ><code class="language-css">em</code></a
+            >
+            or
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#rem"
+              target="_blank"
+              ><code class="language-css">rem</code></a
+            >
+            to specify font sizes relative to the font size of the root element.
+          </p>
+          <h3>Line-height</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height"
+              target="_blank"
+              ><code class="language-css">line-height</code></a
+            >
+            property is used to specify the leading. The line-height property
+            has an effect on the height of the text element. To ensure
+            consistency, use decimal values for line-height.
+          </p>
+          <p>
+            Unlike in Adobe, the line height doesn't go from baseline to
+            baseline. It instead goes starts above the text and ends below,
+            centering the line around the cap height.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">p {
+  line-height: 1.5;
+  font-size: 2em;
+}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="line-height-example">
+              <p>Hamburger</p>
+              <style>
+                #line-height-example p {
+                  position: relative;
+                  text-indent: 0;
+                  margin: 0;
+                  padding: 0 1ch;
+                  font-size: 2rem;
+                  line-height: 1.5;
+                  background-color: lavender;
+                }
+
+                #line-height-example p::before {
+                  content: "";
+                  position: absolute;
+                  display: block;
+                  height: 0.73em;
+                  width: 100%;
+                  left: 0;
+                  top: 0.39em;
+                  border-top: solid 1px deeppink;
+                  border-bottom: solid 1px deeppink;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Font weight and style</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight"
+              target="_blank"
+              ><code class="language-css">font-weight</code></a
+            >
+            property accepts both keywords (<a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Values"
+              target="_blank"
+              ><code class="language-css">bold | bolder | lighter</code></a
+            >) and numeric values (<a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#Numeric_values"
+              target="_blank"
+              ><code class="language-css">100-900</code></a
+            >). The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style"
+              target="_blank"
+              ><code class="language-css">font-style</code></a
+            >
+            property accepts the keywords
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style#Values"
+              target="_blank"
+              ><code class="language-css">normal | italic | oblique</code></a
+            >.
+          </p>
+          <p>
+            If the specified font doesn't include the declared font weight or
+            style, the browser will try to recreate the weight by outlining the
+            font or the style by slanting the characters.
+          </p>
+          <h3>Alignment</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align"
+              target="_blank"
+              ><code class="language-css">text-align</code></a
+            >
+            property sets the alignment of text. The possible values are
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align#Values"
+              target="_blank"
+              ><code class="language-css"
+                >left | right | center | justify</code
+              ></a
+            >.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;p class="left"&gt;
+  This text is left aligned: …
+&lt;/p&gt;
+&lt;p class="right"&gt;
+  This text is right aligned: …
+&lt;/p&gt;
+&lt;p class="center"&gt;
+  This text is center aligned: …
+&lt;/p&gt;
+&lt;p class="justify"&gt;
+  This text is justified: …
+&lt;/p&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">.left {text-align: left;}
+.right {text-align: right;}
+.center {text-align: center;}
+.justify {text-align: justify;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="text-align">
+              <p class="user-agent left">
+                This text is left aligned: Irure eu cupidatat eu non sunt tempor
+                cupidatat et fugiat.
+              </p>
+              <p class="user-agent right">
+                This text is right aligned: Irure eu cupidatat eu non sunt
+                tempor cupidatat et fugiat.
+              </p>
+              <p class="user-agent center">
+                This text is center aligned: Irure eu cupidatat eu non sunt
+                tempor cupidatat et fugiat.
+              </p>
+              <p class="user-agent justify">
+                This text is justified: Irure eu cupidatat eu non sunt tempor
+                cupidatat et fugiat. The last line is left aligned by default.
+              </p>
+              <style>
+                #text-align {
+                  width: 40ch;
+                }
+
+                #text-align p {
+                  margin: 0 0 1rem;
+                }
+
+                #text-align p:last-of-type {
+                  margin-bottom: 0;
+                }
+
+                #text-align .left {
+                  text-align: left;
+                }
+
+                #text-align .right {
+                  text-align: right;
+                }
+
+                #text-align .center {
+                  text-align: center;
+                }
+
+                #text-align .justify {
+                  text-align: justify;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Letter and word spacing</h3>
+          <p>
+            Adapt the spacing between letters and words using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing"
+              target="_blank"
+              ><code class="language-css">letter-spacing</code></a
+            >
+            and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing"
+              target="_blank"
+              ><code class="language-css">word-spacing</code></a
+            >
+            properties.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;p class="letter-spacing"&gt;
+  This text has letter spacing:…
+&lt;/p&gt;
+&lt;p class="word-spacing"&gt;
+  This text has word spacing: …
+&lt;/p&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">.letter-spacing {letter-spacing: 0.5em;}
+.word-spacing {word-spacing: 0.5em;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="letter-spacing">
+              <p class="user-agent letter-spacing">
+                This text has letter spacing: Irure eu cupidatat eu non sunt
+                tempor cupidatat et fugiat.
+              </p>
+              <p class="user-agent word-spacing">
+                This text has word spacing: Irure eu cupidatat eu non sunt
+                tempor cupidatat et fugiat.
+              </p>
+              <style>
+                #letter-spacing {
+                  width: 40ch;
+                }
+
+                #letter-spacing p {
+                  margin: 0 0 1rem;
+                }
+
+                #letter-spacing p:last-of-type {
+                  margin-bottom: 0;
+                }
+
+                #letter-spacing .letter-spacing {
+                  letter-spacing: 0.5em;
+                }
+
+                #letter-spacing .word-spacing {
+                  word-spacing: 0.5em;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <h2>Further styling</h2>
+          <h3>Text indentation</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-indent"
+              target="_blank"
+              ><code class="language-css">text-indent</code></a
+            >
+            property sets the indentation of the first line of the text. The
+            value can be both negative or positive.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;p class="indent-in"&gt;Aliquip laborum …&lt;/p&gt;
+&lt;p class="indent-out"&gt;Aliquip laborum …&lt;/p&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">p {padding-left: 3ch;}
+.indent-in {text-indent: 3ch;}
+.indent-out {text-indent: -3ch;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="text-indent">
+              <p class="user-agent indent-in">
+                Aliquip laborum aliquip pariatur duis. Reprehenderit sunt
+                proident duis. Deserunt laborum mollit consequat do veniam
+                fugiat nisi velit aliqua deserunt exercitation Lorem. Cupidatat
+                ea proident anim aliquip duis. Quis nulla laborum pariatur ea
+                labore sint anim aliqua elit.
+              </p>
+              <p class="user-agent indent-out">
+                Aliquip laborum aliquip pariatur duis. Reprehenderit sunt
+                proident duis. Deserunt laborum mollit consequat do veniam
+                fugiat nisi velit aliqua deserunt exercitation Lorem. Cupidatat
+                ea proident anim aliquip duis. Quis nulla laborum pariatur ea
+                labore sint anim aliqua elit.
+              </p>
+              <style>
+                #text-indent {
+                  width: 40ch;
+                }
+
+                #text-indent p {
+                  padding-left: 3ch;
+                  margin: 0 0 1rem;
+                }
+
+                #text-indent p:last-of-type {
+                  margin-bottom: 0;
+                }
+
+                #text-indent .indent-in {
+                  text-indent: 3ch;
+                }
+
+                #text-indent .indent-out {
+                  text-indent: -3ch;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Text transformation</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform"
+              target="_blank"
+              ><code class="language-css">text-transform</code></a
+            >
+            property changes the case of the text. The possible values are
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform#Values"
+              target="_blank"
+              ><code class="language-css"
+                >none | capitalize | uppercase | lowercase</code
+              ></a
+            >.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html">&lt;p class="capitalize"&gt;This text is capitalized&lt;/p&gt;
+&lt;p class="uppercase"&gt;This text is uppercase&lt;/p&gt;
+&lt;p class="lowercase"&gt;This text is lowercase&lt;/p&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">.capitalize {text-transform: capitalize;}
+.uppercase {text-transform: uppercase;}
+.lowercase {text-transform: lowercase;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="text-transform">
+              <p class="user-agent capitalize">This text is capitalized</p>
+              <p class="user-agent uppercase">This text is uppercase</p>
+              <p class="user-agent lowercase">This text is lowercase</p>
+              <style>
+                #text-transform p {
+                  margin: 0 0 1rem;
+                }
+
+                #text-transform p:last-of-type {
+                  margin-bottom: 0;
+                }
+
+                #text-transform .capitalize {
+                  text-transform: capitalize;
+                }
+
+                #text-transform .uppercase {
+                  text-transform: uppercase;
+                }
+
+                #text-transform .lowercase {
+                  text-transform: lowercase;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Text decoration</h3>
+          <p>
+            You can add lines running under, over, or through the text using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration"
+              target="_blank"
+              ><code class="language-css">text-decoration</code></a
+            >
+            property. For basic styling, you can use the shorthand property, but
+            for more control over the appearance, you can use the individual
+            properties:
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line"
+              target="_blank"
+              ><code class="language-css">text-decoration-line</code></a
+            >
+            for the line type,
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style"
+              target="_blank"
+              ><code class="language-css">text-decoration-style</code></a
+            >
+            for the line style,
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color"
+              target="_blank"
+              ><code class="language-css">text-decoration-color</code></a
+            >
+            for the line colour, and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness"
+              target="_blank"
+              ><code class="language-css">text-decoration-thickness</code></a
+            >
+            for the line width.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html">&lt;p class="underline wavy"&gt;
+  This text is underlined with a wavy line.
+&lt;/p&gt;
+&lt;p class="underline double"&gt;
+  This text is underlined with a double line.
+&lt;/p&gt;
+&lt;p class="overline solid"&gt;
+  This text is overlined with a normal line.
+&lt;/p&gt;
+&lt;p class="line-through dotted red"&gt;
+  This text is line-through with a red dotted line.
+&lt;/p&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.underline {text-decoration-line: underline;}
+.wavy {text-decoration-style: wavy;}
+.double {text-decoration-style: double;}
+.overline {text-decoration-style: solid;}
+.dotted {text-decoration-style: dotted;}
+.line-through {text-decoration-line: line-through;}
+.red {text-decoration-color: red;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="text-decoration">
+              <p class="user-agent underline wavy">
+                This text is underlined with a wavy line.
+              </p>
+              <p class="user-agent underline double">
+                This text is underlined with a double line.
+              </p>
+              <p class="user-agent overline solid">
+                This text is overlined with a normal line.
+              </p>
+              <p class="user-agent line-through dotted red">
+                This text is line-through with a red dotted line.
+              </p>
+              <style>
+                #text-decoration p {
+                  margin: 0 0 1rem;
+                }
+
+                #text-decoration p:last-of-type {
+                  margin-bottom: 0;
+                }
+
+                #text-decoration .underline {
+                  text-decoration-line: underline;
+                }
+
+                #text-decoration .wavy {
+                  text-decoration-style: wavy;
+                }
+
+                #text-decoration .double {
+                  text-decoration-style: double;
+                }
+
+                #text-decoration .overline {
+                  text-decoration: overline;
+                }
+
+                #text-decoration .solid {
+                  text-decoration-style: solid;
+                }
+
+                #text-decoration .dotted {
+                  text-decoration-style: dotted;
+                }
+
+                #text-decoration .line-through {
+                  text-decoration-line: line-through;
+                }
+
+                #text-decoration .red {
+                  text-decoration-color: red;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Text shadow</h3>
+          <p>
+            You can add one or more shadows to text by using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow"
+              target="_blank"
+              ><code>text-shadow</code></a
+            >
+            property. The position of the shadow is defined by the first two
+            values (x-offset and y-offset). The third and fourth values are
+            optional, they define the blur radius and the spread radius,
+            respectively. The color of the shadow is defined by the last value.
+            To add multiple shadows, separate each shadow statement with a
+            comma.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html">&lt;p class="sharp-shadow"&gt;Hamburger&lt;/p&gt;
+&lt;p class="glow-pink"&gt;Hamburger&lt;/p&gt;
+&lt;p class="multiple-shadow"&gt;Hamburger&lt;/p&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.sharp-shadow {text-shadow: -4px 4px lightgreen;}
+.glow-pink {text-shadow: 4px 4px 8px deeppink;}
+.multiple-shadow {text-shadow: 4px 4px deeppink, -4px 4px lightgreen;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="text-shadow">
+              <p class="user-agent sharp-shadow">Hamburger</p>
+              <p class="user-agent glow-pink">Hamburger</p>
+              <p class="user-agent multiple-shadow">Hamburger</p>
+              <style>
+                #text-shadow p {
+                  margin: 0 0 1rem;
+                  font-size: 4em;
+                }
+
+                #text-shadow p:last-of-type {
+                  margin-bottom: 0;
+                }
+
+                #text-shadow .sharp-shadow {
+                  text-shadow: -4px 4px lightgreen;
+                }
+
+                #text-shadow .glow-pink {
+                  text-shadow: 4px 4px 8px deeppink;
+                }
+
+                #text-shadow .multiple-shadow {
+                  text-shadow: 4px 4px 8px deeppink, -4px 4px lightgreen;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Text stroke</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-stroke"
+              target="_blank"
+              ><code>-webkit-text-stroke</code></a
+            >
+            property is used to outline text. The first value defines the width
+            of the stroke, the second value defines its color. The stroke grows
+            around the text, spreading both inside and outside the text.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;p class="outlined"&gt;Hamburger&lt;/p&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.outlined {-webkit-text-stroke: 2px deeppink;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="text-stroke">
+              <p class="user-agent outlined">Hamburger</p>
+              <style>
+                #text-stroke p {
+                  margin: 0 0 1rem;
+                  font-size: 4em;
+                }
+
+                #text-stroke p:last-of-type {
+                  margin-bottom: 0;
+                }
+
+                #text-stroke .outlined {
+                  -webkit-text-stroke: 2px deeppink;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <style>
+            @font-face {
+              font-family: "Pelikan Variable";
+              src: url("../../assets/fonts/ABCPelikanVariableVF-Trial.woff2")
+                  format("woff2"),
+                url("../../assets/fonts/ABCPelikanVariableVF-Trial.woff")
+                  format("woff");
+              font-weight: normal;
+              font-style: normal;
+              font-display: swap;
+            }
+          </style>
+          <h2>Variable fonts and open type features</h2>
+          <h3>Adjusting font axes</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings"
+              target="_blank"
+              ><code>font-variation-settings</code></a
+            >
+            property is used to adjust the font axes. The first value is the
+            axis name, the second value is the value to set. Axis names are
+            defined by the typeface designer, they can therefor be anything.
+            There are five standard axes defined by the OpenType specification:
+          </p>
+          <ul>
+            <li><code>wght</code> – Weight</li>
+            <li><code>wdth</code> – Width</li>
+            <li><code>slnt</code> – Slant</li>
+            <li><code>ital</code> – Italic</li>
+            <li><code>opsz</code> – Optical size</li>
+          </ul>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;h1 class="animate-weight"&gt;Hamburger&lt;/h1&gt;
+&lt;h1 class="animate-slant"&gt;Hamburger&lt;/h1&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">@font-face {
+  font-family: "Pelikan Variable";
+  src: url("../../assets/fonts/ABCPelikanVariableVF-Trial.woff2") format("woff2"),
+  url("../../assets/fonts/ABCPelikanVariableVF-Trial.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.animate-weight {animation: animate-weight 1s ease-in-out alternate infinite;}
+.animate-slant {animation: animate-slant 1s ease-in-out alternate infinite;}
+
+@keyframes animate-weight {
+  from {font-variation-settings: "wght" 200;}
+  to {font-variation-settings: "wght" 900;}
+}
+@keyframes animate-slant {
+  from {font-variation-settings: "slnt" 0;}
+  to {font-variation-settings: "slnt" -14;}
+}</code></pre>
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="variable-axes">
+              <h1 class="user-agent animate-weight">Hamburger</h1>
+              <h1 class="user-agent animate-slant">Hamburger</h1>
+              <style>
+                #variable-axes {
+                  width: 35ch;
+                }
+
+                #variable-axes h1 {
+                  font-size: 2rem;
+                  margin: 0 0 1rem;
+                  font-weight: normal;
+                  text-align: center;
+                  font-family: "Pelikan Variable";
+                }
+
+                #variable-axes h1:last-of-type {
+                  margin: 0;
+                }
+
+                #variable-axes .animate-weight {
+                  animation: animate-weight 1s ease-in-out alternate infinite;
+                }
+
+                #variable-axes .animate-slant {
+                  animation: animate-slant 1s ease-in-out alternate infinite;
+                }
+
+                @keyframes animate-weight {
+                  from {
+                    font-variation-settings: "wght" 200;
+                  }
+
+                  to {
+                    font-variation-settings: "wght" 900;
+                  }
+                }
+
+                @keyframes animate-slant {
+                  from {
+                    font-variation-settings: "slnt" 0;
+                  }
+
+                  to {
+                    font-variation-settings: "slnt" -14;
+                  }
+                }
+              </style>
+            </div>
+          </div>
+          <p>
+            The range of values for each axis changes depending on the typeface.
+            Typically, the <code>wght</code> axis ranges from 100 to 900, the
+            <code>wdth</code> axis ranges from 50 to 200, and the
+            <code>slnt</code> axis ranges from -90 to 90. The
+            <code>ital</code> axis is either 0 or 1, and the
+            <code>opsz</code> axis ranges from 6 to 144.
+          </p>
+          <h3>Open type features</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings"
+              target="_blank"
+              ><code>font-feature-settings</code></a
+            >
+            property is used to enable or disable OpenType features. The first
+            value is the feature name, the second value is the value to set.
+            Feature names are defined by the typeface designer, they can
+            therefore be anything. Just like for variable axes, you can enable
+            multiple OpenType features by separating them with a comma. There
+            are many standard features defined by the OpenType specification,
+            here are a few of them:
+          </p>
+          <ul>
+            <li><code>ssXX</code> – Stylistic set number XX</li>
+            <li><code>smcp</code> – Small caps</li>
+            <li><code>c2sc</code> – Small caps from capitals</li>
+            <li><code>zero</code> – Slashed zero</li>
+            <li><code>hist</code> – Historical forms</li>
+            <li><code>liga</code> – Standard ligatures</li>
+            <li><code>tnum</code> – Tabular figures</li>
+            <li><code>frac</code> – Fractions</li>
+            <li><code>swsh</code> – Swash</li>
+            <li><code>salt</code> – Stylistic alternates</li>
+          </ul>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;p&gt;0123456789&lt;/p&gt;
+&lt;p class="tabular-number"&gt;0123456789&lt;/p&gt;
+&lt;p class="zero-slashed"&gt;0123456789&lt;/p&gt;
+&lt;p class="oldstyle-figures"&gt;0123456789&lt;/p&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">p {font-feature-settings: initial;}
+.tabular-number {font-feature-settings: "tnum";}
+.zero-slashed {font-feature-settings: "zero";}
+.oldstyle-figures {font-feature-settings: "onum";}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="opentype-features">
+              <p class="user-agent">0123456789</p>
+              <p class="user-agent tabular-number">0123456789</p>
+              <p class="user-agent zero-slashed">0123456789</p>
+              <p class="user-agent oldstyle-figures">0123456789</p>
+              <style>
+                #opentype-features p {
+                  margin: 0 0 1rem;
+                  font-size: 2rem;
+                  font-feature-settings: initial;
+                }
+
+                #opentype-features p:last-of-type {
+                  margin-bottom: 0;
+                }
+
+                #opentype-features .tabular-number {
+                  font-feature-settings: "tnum";
+                }
+
+                #opentype-features .zero-slashed {
+                  font-feature-settings: "zero";
+                }
+
+                #opentype-features .oldstyle-figures {
+                  font-feature-settings: "onum";
+                }
+              </style>
+            </div>
+          </div>
+          <div class="further-reading">
+            <a href="https://fontgauntlet.com/" target="_blank"
+              >The Dynamic font gauntlet is a great tool to explore both
+              variable font axes and OpenType features</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

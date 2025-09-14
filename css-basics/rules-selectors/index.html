@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Basics · Rules & Selectors</title>
+    <link rel="icon" href="../../assets/favicon/favicon.ico" />
+    <link rel="stylesheet" href="../../assets/css/stylesheet.css" />
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/lesson.css" />
+    <script src="../../assets/js/highlight/highlight.js"></script>
+    <script src="../../assets/js/highlight/languages/apache.js"></script>
+    <script src="../../assets/js/highlight/languages/bash.js"></script>
+    <script src="../../assets/js/highlight/languages/css.js"></script>
+    <script src="../../assets/js/highlight/languages/javascript.js"></script>
+    <script src="../../assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div></div>
+    </header>
+
+    <main class="lesson-layout">
+      <aside class="sidebar">
+        <nav>
+          <h3>Tools & Resources</h3>
+          <ul>
+            <li>
+              <a href="../../tools-resources/setup-guide/">Setup Guide</a>
+            </li>
+            <li>
+              <a href="../../tools-resources/file-organisation/"
+                >File organisation</a
+              >
+            </li>
+            <li>
+              <a href="../../tools-resources/external-resources/"
+                >External resources</a
+              >
+            </li>
+          </ul>
+          <h3>HTML Basics</h3>
+          <ul>
+            <li>
+              <a href="../../html-basics/file-structure/">File structure</a>
+            </li>
+            <li>
+              <a href="../../html-basics/semantic-html/">Semantic HTML</a>
+            </li>
+            <li>
+              <a href="../../html-basics/common-tags/">Common tags</a>
+            </li>
+          </ul>
+          <h3>CSS Basics</h3>
+          <ul>
+            <li class="active">
+              <a href="../../css-basics/rules-selectors/">Rules & Selectors</a>
+            </li>
+            <li><a href="../../css-basics/box-model/">Box Model</a></li>
+            <li>
+              <a href="../../css-basics/specificity/">Specificity</a>
+            </li>
+            <li><a href="../../css-basics/positions/">Positions</a></li>
+            <li>
+              <a href="../../css-basics/colours-units/">Colours & Units</a>
+            </li>
+          </ul>
+          <h3>Typography</h3>
+          <ul>
+            <li>
+              <a href="../../typography/importing-fonts/">Importing fonts</a>
+            </li>
+            <li><a href="../../typography/relevant-tags/">Relevant tags</a></li>
+            <li>
+              <a href="../../typography/font-properties/">Font properties</a>
+            </li>
+            <li>
+              <a href="../../typography/custom-properties/"
+                >Custom properties</a
+              >
+            </li>
+          </ul>
+          <h3>Display</h3>
+          <ul>
+            <li>
+              <a href="../../display/display-property/">Display property</a>
+            </li>
+            <li><a href="../../display/flexbox/">Flexbox</a></li>
+            <li><a href="../../display/grid/">Grid</a></li>
+          </ul>
+          <h3>Responsive design</h3>
+          <ul>
+            <li>
+              <a href="../../responsive-design/breakpoints/">Breakpoints</a>
+            </li>
+            <li>
+              <a href="../../responsive-design/printable-other/"
+                >Printable web & other</a
+              >
+            </li>
+            <li>
+              <a href="../../responsive-design/responsive-images/"
+                >Responsive images</a
+              >
+            </li>
+          </ul>
+          <h3>Motion & Transform</h3>
+          <ul>
+            <li><a href="../../motion-transitions/transform/">Transform</a></li>
+            <li>
+              <a href="../../motion-transitions/transitions/">Transitions</a>
+            </li>
+            <li><a href="../../motion-transitions/animation/">Animation</a></li>
+          </ul>
+          <h3>Performance & Best practices</h3>
+          <ul>
+            <li>
+              <a href="../../performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+            <li>
+              <a href="../../performance-best-practices/accessibility/"
+                >Accessibility considerations</a
+              >
+            </li>
+            <li>
+              <a
+                href="../../performance-best-practices/performance-optimisation/"
+                >Performance optimisation</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="lesson">
+        <h1>Rules & Selectors</h1>
+        <div class="block-wrapper">
+          <h2>Structure of CSS rules</h2>
+          <p>
+            CSS informs the browser how to render the page. It consists of
+            rules, which are grouped into a stylesheet. Each rule consists of a
+            selector and a declaration block. The selector specifies which
+            elements the rule applies to, and the declaration block contains the
+            styling properties and their values.
+          </p>
+          <!-- <p>
+            The selector is written in the form of
+            <code class="language-css hljs" data-highlighted="yes"
+              ><span class="hljs-selector-tag">selector</span> {
+              <span class="hljs-attribute">property</span>:
+              <span class="hljs-number">value</span>; }</code
+            >
+          </p> -->
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">p {
+  background-color: lavender;
+  padding: 10px;
+}
+
+p a {
+  color: deeppink;
+  text-decoration: line-through;
+}
+
+p span {
+  text-transform: uppercase;
+}</code></pre>
+              <span>+</span>
+              <pre><code class="language-html wrap">&lt;span&gt;Some span&lt;/span&gt;
+&lt;p&gt;Paragraph with a &lt;a href="#"&gt;link&lt;/a&gt; and a &lt;span&gt;span&lt;/span&gt;.&lt;/p&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="css-rule-example">
+              <span class="user-agent">Some span</span>
+              <p class="user-agent">
+                Paragraph with a <a class="user-agent" href="#">link</a> and a
+                <span class="user-agent">span</span>.
+              </p>
+              <style>
+                #css-rule-example p {
+                  background-color: lavender;
+                  padding: 10px;
+                }
+
+                #css-rule-example p a {
+                  color: deeppink;
+                  text-decoration: line-through;
+                }
+
+                #css-rule-example p span {
+                  text-transform: uppercase;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <h2>Classes and IDs</h2>
+          <h3>Attributing and selecting classes</h3>
+          <p>
+            You can group and select elements beyond their tags by utilising the
+            <code class="language-html">class</code> attribute. You can
+            attribute multiple classes to an element by seperating them with a
+            space.
+          </p>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-html wrap">&lt;div class="project-wrapper background-gradient"&gt;
+  &lt;p class="no-margin"&gt;Project with a gradient.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="project-wrapper active"&gt;
+  &lt;p class="no-margin"&gt;Active project&lt;/p&gt;
+&lt;/div&gt;
+          </code></pre>
+          <!-- prettier-ignore-end -->
+          <p>
+            To select a class, preceed the class name with a period. To be more
+            specific, you can concatenate the tag name with one or more classes.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">
+div.project-wrapper {
+  border-radius: 8px;
+  padding: 16px;
+  background-color: lavender;
+}
+
+.background-gradient {
+  background-image: linear-gradient(to right, lavender, skyblue);
+}
+
+div.project-wrapper.active {
+  border: solid 1px deeppink;
+}
+
+.no-margin {
+  margin: 0;
+}
+              </code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="class-selector">
+              <div class="project-wrapper background-gradient">
+                <p class="user-agent no-margin">Project with a gradient.</p>
+              </div>
+              <div class="project-wrapper active">
+                <p class="user-agent no-margin">Active project</p>
+              </div>
+              <style>
+                #class-selector div.project-wrapper {
+                  border-radius: 8px;
+                  padding: 16px;
+                  background-color: lavender;
+                }
+
+                #class-selector .background-gradient {
+                  background-image: linear-gradient(
+                    to right,
+                    lavender,
+                    skyblue
+                  );
+                }
+
+                #class-selector div.project-wrapper.active {
+                  border: solid 1px deeppink;
+                }
+
+                #class-selector .no-margin {
+                  margin: 0;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Attributing and selecting IDs</h3>
+          <p>
+            IDs work similarly to classes, but they by definition are unique.
+            You cannot repeat an ID more than once per page! They are used to
+            select a single element.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;nav id="main-nav"&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt;
+  &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">#main-nav a {color: deeppink}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="id-selector">
+              <nav id="main-nav">
+                <a class="user-agent" href="#">Home</a>
+                <a class="user-agent" href="#">About</a>
+                <a class="user-agent" href="#">Contact</a>
+              </nav>
+              <style>
+                #main-nav a {
+                  color: deeppink;
+                }
+              </style>
+            </div>
+          </div>
+          <details class="tip-block">
+            <summary>Advanced: scroll targets</summary>
+            <p>
+              You can use IDs as scroll targets by setting the
+              <code class="language-html">href</code> attirbute to
+              <code class="language-html">#name-of-id</code>. This
+              <a href="#main-nav">link</a> will scroll to the the
+              <code class="language-html">#main-nav</code> element.
+            </p>
+          </details>
+        </div>
+        <div class="block-wrapper">
+          <h2>Usefull pseudo-classes</h2>
+          <p>
+            Pseudo-classes are used to select elements based on their state and
+            general context.
+          </p>
+          <h3>Hover</h3>
+          <p>
+            You can use the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover"
+              target="_blank"
+              ><code class="language-css">:hover</code></a
+            >
+            pseudo-class to select elements when the mouse is over them.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;div&gt;Hover me&lt;/div&gt;
+&lt;div&gt;Hover me&lt;/div&gt;
+&lt;div&gt;Hover me&lt;/div&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <div class="compare-block-code">
+                <!-- prettier-ignore-start -->
+                <pre><code class="language-css">div {
+  transition-property: background-color, transform;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+  background-color: lightgreen;
+  transform: scale(1);
+}
+
+div:hover {
+  background-color: deeppink;
+  transform: scale(0.95);
+}</code></pre>
+                <!-- prettier-ignore-end -->
+              </div>
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="selector-hover">
+              <div>Hover me</div>
+              <div>Hover me</div>
+              <div>Hover me</div>
+              <style>
+                #selector-hover div {
+                  padding: 8px;
+                  transition-property: background-color, transform;
+                  transition-duration: 100ms;
+                  transition-timing-function: ease-in-out;
+                  background-color: lightgreen;
+                  transform: scale(1);
+                }
+
+                #selector-hover div:hover {
+                  background-color: deeppink;
+                  transform: scale(0.95);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>First and last child</h3>
+          <p>
+            You can use the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child"
+              target="_blank"
+              ><code class="language-css">:first-child</code></a
+            >
+            and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child"
+              target="_blank"
+              ><code class="language-css">:last-child</code></a
+            >
+            pseudo-classes to select the first or last child of an element.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <div class="compare-block-code">
+                <!-- prettier-ignore-start -->
+                <pre><code class="language-css">li {
+  background-color: lightgreen;
+}
+
+li:first-child {
+  background-color: deeppink;
+}
+
+li:last-child {
+  background-color: orange;
+}</code></pre>
+                <!-- prettier-ignore-end -->
+              </div>
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="selector-first-last-child">
+              <ul class="user-agent">
+                <li class="user-agent">Item 1</li>
+                <li class="user-agent">Item 2</li>
+                <li class="user-agent">Item 3</li>
+              </ul>
+              <style>
+                #selector-first-last-child ul {
+                  padding: 0;
+                  margin: 0;
+                }
+
+                #selector-first-last-child li {
+                  list-style-position: inside;
+                  padding: 8px;
+                  background-color: lightgreen;
+                }
+
+                #selector-first-last-child li:first-child {
+                  background-color: deeppink;
+                }
+
+                #selector-first-last-child li:last-child {
+                  background-color: orange;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <h2 id="combinators-and-separators">
+            Common combinators and separators
+          </h2>
+          <h3>Select more than on element</h3>
+          <p>
+            You can select any HTML element by its tags name. To selector more
+            than one element, you can combine selctors with a comma.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">/* Selects all elements with the tag name p, a, or span 
+and sets the text color to deeppink */
+p, a, span {color: deeppink}</code></pre>
+              <span>+</span>
+              <pre><code class="language-html wrap">&lt;h3&gt;Not &lt;a href="#"&gt;selected&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Aliqua qui dolore do elit pariatur do ea et ipsum.&lt;/p&gt;
+&lt;a href="#"&gt;Lonesome link&lt;/a&gt;
+&lt;span&gt;Span 01&lt;/span&gt;
+&lt;span&gt;Span 02&lt;/span&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="css-selector-comma">
+              <h3 class="user-agent">
+                Not <a class="user-agent" href="#">selected</a>
+              </h3>
+              <p class="user-agent">
+                Aliqua qui dolore do elit pariatur do ea et ipsum.
+              </p>
+              <a class="user-agent" href="#">Lonesome link</a>
+              <span class="user-agent">Span 01</span>
+              <span class="user-agent">Span 02</span>
+              <style>
+                #css-selector-comma p,
+                #css-selector-comma a,
+                #css-selector-comma span {
+                  color: deeppink;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Select descendants</h3>
+          <p>
+            You can select the descendants of an element by seperating the tag
+            names with a space. The descendants of an element are all the
+            elements that are contained within it.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">/* Selects all elements with the tag name p that are
+descendants of an element with the tag name div */
+div p {color: deeppink}</code></pre>
+              <span>+</span>
+              <pre><code class="language-html wrap">&lt;p&gt;This paragraph is not selected.&lt;/p&gt;
+&lt;div&gt;
+  &lt;p&gt;This paragraph is selected.&lt;/p&gt;
+  &lt;article&gt;
+    &lt;p&gt;This paragraph is also selected.&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="css-selector-descendant">
+              <p class="user-agent">This paragraph is not selected.</p>
+              <div class="user-agent">
+                <p class="user-agent">This paragraph is selected.</p>
+                <article class="user-agent">
+                  <p class="user-agent">This paragraph is also selected.</p>
+                </article>
+              </div>
+              <style>
+                #css-selector-descendant div p {
+                  color: deeppink;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Select a child</h3>
+          <p>
+            Children are selected by using the
+            <code class="language-html">></code> symbol. A child is the direct
+            descendant of its parent.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;div id="reference"&gt;
+  &lt;div&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">div {
+  min-height: 16px;
+  padding: 16px;
+  background-color: lightgoldenrodyellow;
+}
+
+#reference {
+  border: solid 1px blue;
+}
+
+#reference > div {
+  background-color: deeppink;
+}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="child-selector">
+              <div id="reference">
+                <div>
+                  <div></div>
+                </div>
+              </div>
+              <style>
+                #child-selector div {
+                  min-height: 16px;
+                  padding: 16px;
+                  background-color: lightgoldenrodyellow;
+                }
+
+                #child-selector #reference {
+                  border: solid 1px blue;
+                }
+
+                #reference > div {
+                  background-color: deeppink;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

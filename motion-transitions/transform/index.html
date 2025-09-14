@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Motion & Transform · Transform</title>
+    <link rel="icon" href="../../assets/favicon/favicon.ico" />
+    <link rel="stylesheet" href="../../assets/css/stylesheet.css" />
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/lesson.css" />
+    <script src="../../assets/js/highlight/highlight.js"></script>
+    <script src="../../assets/js/highlight/languages/apache.js"></script>
+    <script src="../../assets/js/highlight/languages/bash.js"></script>
+    <script src="../../assets/js/highlight/languages/css.js"></script>
+    <script src="../../assets/js/highlight/languages/javascript.js"></script>
+    <script src="../../assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div></div>
+    </header>
+
+    <main class="lesson-layout">
+      <aside class="sidebar">
+        <nav>
+          <h3>Tools & Resources</h3>
+          <ul>
+            <li>
+              <a href="../../tools-resources/setup-guide/">Setup Guide</a>
+            </li>
+            <li>
+              <a href="../../tools-resources/file-organisation/"
+                >File organisation</a
+              >
+            </li>
+            <li>
+              <a href="../../tools-resources/external-resources/"
+                >External resources</a
+              >
+            </li>
+          </ul>
+          <h3>HTML Basics</h3>
+          <ul>
+            <li>
+              <a href="../../html-basics/file-structure/">File structure</a>
+            </li>
+            <li>
+              <a href="../../html-basics/semantic-html/">Semantic HTML</a>
+            </li>
+            <li>
+              <a href="../../html-basics/common-tags/">Common tags</a>
+            </li>
+          </ul>
+          <h3>CSS Basics</h3>
+          <ul>
+            <li>
+              <a href="../../css-basics/rules-selectors/">Rules & Selectors</a>
+            </li>
+            <li><a href="../../css-basics/box-model/">Box Model</a></li>
+            <li>
+              <a href="../../css-basics/specificity/">Specificity</a>
+            </li>
+            <li><a href="../../css-basics/positions/">Positions</a></li>
+            <li>
+              <a href="../../css-basics/colours-units/">Colours & Units</a>
+            </li>
+          </ul>
+          <h3>Typography</h3>
+          <ul>
+            <li>
+              <a href="../../typography/importing-fonts/">Importing fonts</a>
+            </li>
+            <li>
+              <a href="../../typography/relevant-tags/">Relevant tags</a>
+            </li>
+            <li>
+              <a href="../../typography/font-properties/">Font properties</a>
+            </li>
+            <li>
+              <a href="../../typography/custom-properties/"
+                >Custom properties</a
+              >
+            </li>
+          </ul>
+          <h3>Display</h3>
+          <ul>
+            <li>
+              <a href="../../display/display-property/">Display property</a>
+            </li>
+            <li><a href="../../display/flexbox/">Flexbox</a></li>
+            <li><a href="../../display/grid/">Grid</a></li>
+          </ul>
+          <h3>Responsive design</h3>
+          <ul>
+            <li>
+              <a href="../../responsive-design/breakpoints/">Breakpoints</a>
+            </li>
+            <li>
+              <a href="../../responsive-design/printable-other/"
+                >Printable web & other</a
+              >
+            </li>
+            <li>
+              <a href="../../responsive-design/responsive-images/"
+                >Responsive images</a
+              >
+            </li>
+          </ul>
+          <h3>Motion & Transform</h3>
+          <ul>
+            <li class="active">
+              <a href="../../motion-transitions/transform/">Transform</a>
+            </li>
+            <li>
+              <a href="../../motion-transitions/transitions/">Transitions</a>
+            </li>
+            <li><a href="../../motion-transitions/animation/">Animation</a></li>
+          </ul>
+          <h3>Performance & Best practices</h3>
+          <ul>
+            <li>
+              <a href="../../performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+            <li>
+              <a href="../../performance-best-practices/accessibility/"
+                >Accessibility considerations</a
+              >
+            </li>
+            <li>
+              <a
+                href="../../performance-best-practices/performance-optimisation/"
+                >Performance optimisation</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="lesson">
+        <h1>Transform</h1>
+        <div class="block-wrapper">
+          <h2>Use fo transforming elements</h2>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"
+              target="_blank"
+              ><code class="language-css">transform</code></a
+            >
+            property can be used to rotate, scale, translate, skew, or even
+            create custom transformations using matrix functions.
+          </p>
+        </div>
+        <div class="block-wrapper">
+          <h2>Translation</h2>
+          <p>
+            You can displace an element in one, two, or three dimensions using
+            the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform#Values"
+              target="_blank"
+              ><code class="language-css"
+                >transform: translate() | translateX() | translateY() |
+                translateZ() | translate3d()</code
+              ></a
+            >
+            rule. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate"
+              target="_blank"
+              ><code class="language-css">translate()</code></a
+            >
+            function takes two values, x-translation (horizontal) and
+            y-translation (veritcal). The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX"
+              target="_blank"
+              ><code class="language-css">translateX()</code></a
+            >,
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateY"
+              target="_blank"
+              ><code class="language-css">translateY()</code></a
+            >
+            and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateZ"
+              target="_blank"
+              ><code class="language-css">translateZ()</code></a
+            >
+            functions accepts one value for the axis concerned. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d"
+              target="_blank"
+              ><code class="language-css">translate3d()</code></a
+            >
+            function takes three values, x-translation, y-translation, and
+            z-translation. Note that for you to see the effect of translation on
+            the z-axis, the parent element must have a
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/perspective"
+              target="_blank"
+              ><code class="language-css">perspective</code></a
+            >
+            property.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.translate {transform: translate(-10px, -10px);}
+.translate-x {transform: translateX(10px);}
+.translate-y {transform: translateY(10px);}
+.translate3d {transform: translate3d(10px, 10px, 0);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="translate-example">
+              <div class="flex-container">
+                <p class="user-agent translate">translate(-10px, -10px)</p>
+                <p class="user-agent translate-x">translateX(10px)</p>
+                <p class="user-agent translate-y">translateY(10px)</p>
+                <p class="user-agent translate3d">translate3d(10px, 10px, 0)</p>
+              </div>
+              <style>
+                #translate-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #translate-example .flex-container {
+                  display: flex;
+                  flex-flow: column nowrap;
+                  gap: 16px;
+                  padding: 16px;
+                  background-color: lavender;
+                }
+
+                #translate-example .flex-container > * {
+                  background-color: #beb;
+                  position: relative;
+                  margin-block: 0;
+                }
+
+                #translate-example p::before {
+                  content: "";
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  position: absolute;
+                  border-radius: 0.25rem;
+                  border: dotted 1px darkgrey;
+                }
+
+                #translate-example .translate {
+                  transform: translate(-10px, -10px);
+                }
+
+                #translate-example .translate::before {
+                  transform: translate(10px, 10px);
+                }
+
+                #translate-example .translate-x {
+                  transform: translateX(10px);
+                }
+
+                #translate-example .translate-x::before {
+                  transform: translateX(-10px);
+                }
+
+                #translate-example .translate-y {
+                  transform: translateY(10px);
+                }
+
+                #translate-example .translate-y::before {
+                  transform: translateY(-10px);
+                }
+
+                #translate-example .translate3d {
+                  transform: translate3d(10px, 10px, 0);
+                }
+
+                #translate-example .translate3d::before {
+                  transform: translate3d(-10px, -10px, 0);
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <h2>Rotation</h2>
+          <p>
+            You can rotate an element around its origin using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform#Values"
+              target="_blank"
+              ><code class="language-css">transform: rotate()</code></a
+            >
+            rule. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate"
+              target="_blank"
+              ><code class="language-css">rotate()</code></a
+            >
+            function takes one value, the angle of rotation in degrees. The
+            angle is measured clockwise, starting from the positive x-axis. You
+            can also rotate elements in 3d space using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateX"
+              target="_blank"
+              ><code class="language-css">rotateX()</code></a
+            >,
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateY"
+              target="_blank"
+              ><code class="language-css">rotateY()</code></a
+            >, and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d"
+              target="_blank"
+              ><code class="language-css">rotate3d()</code></a
+            >
+            functions.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.box {transform: rotate(45deg);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="rotate-example">
+              <p class="user-agent box">45deg</p>
+              <style>
+                #rotate-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #rotate-example .box {
+                  width: 100%;
+                  height: 100px;
+                  background-color: lavender;
+                  position: relative;
+                  transform: rotate(45deg);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-block: 0;
+                }
+
+                #rotate-example .box::before {
+                  content: "";
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  position: absolute;
+                  border-radius: 0.25rem;
+                  border: dotted 1px darkgrey;
+                  transform: rotate(-45deg);
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <h2>Scaling</h2>
+          <p>
+            You can scale an element using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform#Values"
+              target="_blank"
+              ><code class="language-css">transform: scale()</code></a
+            >
+            rule. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale"
+              target="_blank"
+              ><code class="language-css">scale()</code></a
+            >
+            function takes one value, the scale factor. The scale factor is a
+            number greater than zero and less than or equal to one. The scale
+            factor is applied to the element's width and height.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.box {transform: scale(0.75);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="scale-example">
+              <p class="user-agent box">scale(.5)</p>
+              <style>
+                #scale-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #scale-example .box {
+                  width: 100%;
+                  height: 100px;
+                  background-color: lavender;
+                  position: relative;
+                  transform: scale(0.75);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-block: 0;
+                }
+
+                #scale-example .box::before {
+                  content: "";
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  position: absolute;
+                  border-radius: 0.25rem;
+                  border: dotted 1px darkgrey;
+                  transform: scale(1.3333);
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <h2>Skewing</h2>
+          <p>
+            You can skew an element using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform#Values"
+              target="_blank"
+              ><code class="language-css">transform: skew()</code></a
+            >
+            rule. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew"
+              target="_blank"
+              ><code class="language-css">skew()</code></a
+            >
+            function takes two values, the x-skew and y-skew. The x-skew is the
+            amount of skew in the horizontal direction, and the y-skew is the
+            amount of skew in the vertical direction.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.box {transform: skew(10deg, 10deg);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="skew-example">
+              <p class="user-agent box">skew(10deg, 10deg)</p>
+              <style>
+                #skew-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #skew-example .box {
+                  width: 100%;
+                  height: 100px;
+                  background-color: lavender;
+                  position: relative;
+                  transform: skew(10deg, 10deg);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-block: 0;
+                }
+
+                #skew-example .box::before {
+                  content: "";
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  position: absolute;
+                  border-radius: 0.25rem;
+                  border: dotted 1px darkgrey;
+                  transform: skew(-10deg, -10deg);
+                }
+              </style>
+            </div>
+          </div>
+          <div class="further-reading">
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"
+              target="_blank"
+              >Learn more about transform</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

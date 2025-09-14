@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Typography · Relevant tags</title>
+    <link rel="icon" href="../../assets/favicon/favicon.ico" />
+    <link rel="stylesheet" href="../../assets/css/stylesheet.css" />
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/lesson.css" />
+    <script src="../../assets/js/highlight/highlight.js"></script>
+    <script src="../../assets/js/highlight/languages/apache.js"></script>
+    <script src="../../assets/js/highlight/languages/bash.js"></script>
+    <script src="../../assets/js/highlight/languages/css.js"></script>
+    <script src="../../assets/js/highlight/languages/javascript.js"></script>
+    <script src="../../assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div></div>
+    </header>
+
+    <main class="lesson-layout">
+      <aside class="sidebar">
+        <nav>
+          <h3>Tools & Resources</h3>
+          <ul>
+            <li>
+              <a href="../../tools-resources/setup-guide/">Setup Guide</a>
+            </li>
+            <li>
+              <a href="../../tools-resources/file-organisation/"
+                >File organisation</a
+              >
+            </li>
+            <li>
+              <a href="../../tools-resources/external-resources/"
+                >External resources</a
+              >
+            </li>
+          </ul>
+          <h3>HTML Basics</h3>
+          <ul>
+            <li>
+              <a href="../../html-basics/file-structure/">File structure</a>
+            </li>
+            <li>
+              <a href="../../html-basics/semantic-html/">Semantic HTML</a>
+            </li>
+            <li>
+              <a href="../../html-basics/common-tags/">Common tags</a>
+            </li>
+          </ul>
+          <h3>CSS Basics</h3>
+          <ul>
+            <li>
+              <a href="../../css-basics/rules-selectors/">Rules & Selectors</a>
+            </li>
+            <li><a href="../../css-basics/box-model/">Box Model</a></li>
+            <li>
+              <a href="../../css-basics/specificity/">Specificity</a>
+            </li>
+            <li><a href="../../css-basics/positions/">Positions</a></li>
+            <li>
+              <a href="../../css-basics/colours-units/">Colours & Units</a>
+            </li>
+          </ul>
+          <h3>Typography</h3>
+          <ul>
+            <li>
+              <a href="../../typography/importing-fonts/">Importing fonts</a>
+            </li>
+            <li class="active">
+              <a href="../../typography/relevant-tags/">Relevant tags</a>
+            </li>
+            <li>
+              <a href="../../typography/font-properties/">Font properties</a>
+            </li>
+            <li>
+              <a href="../../typography/custom-properties/"
+                >Custom properties</a
+              >
+            </li>
+          </ul>
+          <h3>Display</h3>
+          <ul>
+            <li>
+              <a href="../../display/display-property/">Display property</a>
+            </li>
+            <li><a href="../../display/flexbox/">Flexbox</a></li>
+            <li><a href="../../display/grid/">Grid</a></li>
+          </ul>
+          <h3>Responsive design</h3>
+          <ul>
+            <li>
+              <a href="../../responsive-design/breakpoints/">Breakpoints</a>
+            </li>
+            <li>
+              <a href="../../responsive-design/printable-other/"
+                >Printable web & other</a
+              >
+            </li>
+            <li>
+              <a href="../../responsive-design/responsive-images/"
+                >Responsive images</a
+              >
+            </li>
+          </ul>
+          <h3>Motion & Transform</h3>
+          <ul>
+            <li><a href="../../motion-transitions/transform/">Transform</a></li>
+            <li>
+              <a href="../../motion-transitions/transitions/">Transitions</a>
+            </li>
+            <li><a href="../../motion-transitions/animation/">Animation</a></li>
+          </ul>
+          <h3>Performance & Best practices</h3>
+          <ul>
+            <li>
+              <a href="../../performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+            <li>
+              <a href="../../performance-best-practices/accessibility/"
+                >Accessibility considerations</a
+              >
+            </li>
+            <li>
+              <a
+                href="../../performance-best-practices/performance-optimisation/"
+                >Performance optimisation</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="lesson">
+        <h1>Relevant tags</h1>
+        <div class="block-wrapper">
+          <h2>Semantic hierarchy</h2>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements"
+                target="_blank"
+                ><code class="language-html">&lt;h1&gt;</code></a
+              >: Recommended for the main title of the page. Should only appear
+              once per page.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements"
+                target="_blank"
+                ><code class="language-html">&lt;h2&gt;</code></a
+              >: Use for other important titles on the page, such as project
+              name in a list, or a section title.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements"
+                target="_blank"
+                ><code class="language-html">&lt;h3&gt;</code></a
+              >
+              to
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements"
+                target="_blank"
+                ><code class="language-html">&lt;h6&gt;</code></a
+              >: Use for further subheadings. Do not skip a subheading level,
+              the hierarchy should be consistent.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p"
+                target="_blank"
+                ><code class="language-html">&lt;p&gt;</code></a
+              >: Use for running text.
+            </li>
+          </ul>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-html wrap">&lt;h1&gt;Page title&lt;/h1&gt;
+
+&lt;p&gt;Lorem ipsum…&lt;/p&gt;
+
+&lt;h2&gt;1 Heading&lt;/h2&gt;
+&lt;p&gt;Lorem ipsum…&lt;/p&gt;
+
+&lt;h2&gt;2 Heading&lt;/h2&gt;
+&lt;h3&gt;2.1 Subheading&lt;/h3&gt;
+&lt;p&gt;Lorem ipsum…&lt;/p&gt;
+…</code></pre>
+
+          <!-- prettier-ignore-end -->
+        </div>
+        <div class="block-wrapper">
+          <h2>Inline emphasis</h2>
+          <p>
+            To style text using HTML only, or simply to add semantic meaning to
+            your styling, you can use the following tags:
+          </p>
+          <ul>
+            <li>
+              <span><strong>Bold</strong></span>
+              <ul>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong"
+                    target="_blank"
+                    ><code class="language-html">&lt;strong&gt;</code></a
+                  >
+                  – Denotes strong importance of the text.
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b"
+                    target="_blank"
+                    ><code class="language-html">&lt;b&gt;</code></a
+                  >
+                  – Bold text, no clear semantic meaning.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span><em>Italic</em></span>
+              <ul>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em"
+                    target="_blank"
+                    ><code class="language-html">&lt;em&gt;</code></a
+                  >
+                  – Emphasize the text.
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i"
+                    target="_blank"
+                    ><code class="language-html">&lt;i&gt;</code></a
+                  >
+                  – Italic text, no clear semantic meaning.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span><u>Underline</u></span>
+              <ul>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u"
+                    target="_blank"
+                    ><code class="language-html">&lt;u&gt;</code></a
+                  >
+                  – Underline the text.
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins"
+                    target="_blank"
+                    ><code class="language-html">&lt;ins&gt;</code></a
+                  >
+                  – Inserted text, usually used to annotate text that has been
+                  added to a document.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span><del>Strikethrough</del></span>
+              <ul>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del"
+                    target="_blank"
+                    ><code class="language-html">&lt;del&gt;</code></a
+                  >
+                  – Deleted text, usually used to annotate text that has been
+                  deleted from a document.
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s"
+                    target="_blank"
+                    ><code class="language-html">&lt;s&gt;</code></a
+                  >
+                  – Strikethrough text, no clear semantic meaning.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span
+                ><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a"
+                  target="_blank"
+                  ><code class="language-html">&lt;a&gt;</code></a
+                >
+                – Anchor link: <a class="user-agent" href="#">anchor</a></span
+              >
+            </li>
+            <li>
+              <span>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small"
+                  target="_blank"
+                  ><code class="language-html">&lt;small&gt;</code></a
+                >
+                – Small text, no clear semantic meaning: <small>small</small>
+              </span>
+            </li>
+            <li>
+              <span>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup"
+                  target="_blank"
+                  ><code class="language-html">&lt;sup&gt;</code></a
+                >
+                – Superscript text: <sup>superscript</sup></span
+              >
+            </li>
+            <li>
+              <span
+                ><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub"
+                  target="_blank"
+                  ><code class="language-html">&lt;sub&gt;</code></a
+                >
+                – Subscript text: <sub>subscript</sub></span
+              >
+            </li>
+            <li>
+              <span>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark"
+                  target="_blank"
+                  ><code class="language-html">&lt;mark&gt;</code></a
+                >
+                – Highlighted text: <mark>highlighted</mark>
+              </span>
+            </li>
+          </ul>
+          <p>
+            To simply isolate a part of a sentence, you can use the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span"
+              target="_blank"
+              ><code class="language-html">&lt;span&gt;</code></a
+            >
+            tag. It is semantically neutral, and is very useful for inline
+            styling.
+          </p>
+        </div>
+        <div class="block-wrapper">
+          <h2>Spaces and micro-typography</h2>
+          <p>
+            HTML entities (also called character references) can be used to
+            insert any glyphs in an HTML document. They are a useful way to add
+            micro-typography to your website. Here are some examples:
+          </p>
+          <ul>
+            <li>
+              <code class="language-html">&amp;nbsp;</code> – Non-breaking space
+            </li>
+            <li><code class="language-html">&amp;ensp;</code> – En space</li>
+            <li><code class="language-html">&amp;emsp;</code> – Em space</li>
+            <li>
+              <code class="language-html">&amp;thinsp;</code> – Thin space
+            </li>
+            <li>
+              <code class="language-html">&amp;hairsp;</code> – Hair space
+            </li>
+            <li>
+              <code class="language-html">&amp;ZeroWidthSpace;</code> – Zero
+              width space
+            </li>
+            <li>
+              <code class="language-html">&amp;shy;</code> – Soft hyphen
+              (combine with
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens"
+                target="_blank"
+                ><code class="language-css">hyphens: manual;</code></a
+              >
+              CSS property)
+            </li>
+          </ul>
+          <div class="further-reading">
+            <a
+              href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references"
+              target="_blank"
+            >
+              See the all HTML entities
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

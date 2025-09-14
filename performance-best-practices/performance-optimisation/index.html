@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Performance & Best practices · Performance optimisation</title>
+    <link rel="icon" href="../../assets/favicon/favicon.ico" />
+    <link rel="stylesheet" href="../../assets/css/stylesheet.css" />
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/lesson.css" />
+    <script src="../../assets/js/highlight/highlight.js"></script>
+    <script src="../../assets/js/highlight/languages/apache.js"></script>
+    <script src="../../assets/js/highlight/languages/bash.js"></script>
+    <script src="../../assets/js/highlight/languages/css.js"></script>
+    <script src="../../assets/js/highlight/languages/javascript.js"></script>
+    <script src="../../assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div></div>
+    </header>
+
+    <main class="lesson-layout">
+      <aside class="sidebar">
+        <nav>
+          <h3>Tools & Resources</h3>
+          <ul>
+            <li>
+              <a href="../../tools-resources/setup-guide/">Setup Guide</a>
+            </li>
+            <li>
+              <a href="../../tools-resources/file-organisation/"
+                >File organisation</a
+              >
+            </li>
+            <li>
+              <a href="../../tools-resources/external-resources/"
+                >External resources</a
+              >
+            </li>
+          </ul>
+          <h3>HTML Basics</h3>
+          <ul>
+            <li>
+              <a href="../../html-basics/file-structure/">File structure</a>
+            </li>
+            <li>
+              <a href="../../html-basics/semantic-html/">Semantic HTML</a>
+            </li>
+            <li>
+              <a href="../../html-basics/common-tags/">Common tags</a>
+            </li>
+          </ul>
+          <h3>CSS Basics</h3>
+          <ul>
+            <li>
+              <a href="../../css-basics/rules-selectors/">Rules & Selectors</a>
+            </li>
+            <li><a href="../../css-basics/box-model/">Box Model</a></li>
+            <li>
+              <a href="../../css-basics/specificity/">Specificity</a>
+            </li>
+            <li><a href="../../css-basics/positions/">Positions</a></li>
+            <li>
+              <a href="../../css-basics/colours-units/">Colours & Units</a>
+            </li>
+          </ul>
+          <h3>Typography</h3>
+          <ul>
+            <li>
+              <a href="../../typography/importing-fonts/">Importing fonts</a>
+            </li>
+            <li>
+              <a href="../../typography/relevant-tags/">Relevant tags</a>
+            </li>
+            <li>
+              <a href="../../typography/font-properties/">Font properties</a>
+            </li>
+            <li>
+              <a href="../../typography/custom-properties/"
+                >Custom properties</a
+              >
+            </li>
+          </ul>
+          <h3>Display</h3>
+          <ul>
+            <li>
+              <a href="../../display/display-property/">Display property</a>
+            </li>
+            <li><a href="../../display/flexbox/">Flexbox</a></li>
+            <li><a href="../../display/grid/">Grid</a></li>
+          </ul>
+          <h3>Responsive design</h3>
+          <ul>
+            <li>
+              <a href="../../responsive-design/breakpoints/">Breakpoints</a>
+            </li>
+            <li>
+              <a href="../../responsive-design/printable-other/"
+                >Printable web & other</a
+              >
+            </li>
+            <li>
+              <a href="../../responsive-design/responsive-images/"
+                >Responsive images</a
+              >
+            </li>
+          </ul>
+          <h3>Motion & Transform</h3>
+          <ul>
+            <li><a href="../../motion-transitions/transform/">Transform</a></li>
+            <li>
+              <a href="../../motion-transitions/transitions/">Transitions</a>
+            </li>
+            <li>
+              <a href="../../motion-transitions/animation/">Animation</a>
+            </li>
+          </ul>
+          <h3>Performance & Best practices</h3>
+          <ul>
+            <li>
+              <a href="../../performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+            <li>
+              <a href="../../performance-best-practices/accessibility/"
+                >Accessibility considerations</a
+              >
+            </li>
+            <li class="active">
+              <a
+                href="../../performance-best-practices/performance-optimisation/"
+                >Performance optimisation</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="lesson">
+        <h1>Performance optimisation</h1>
+        <div class="block-wrapper">
+          <h2>Never ending story</h2>
+          <p>
+            Optimisation is a real Pandora's box, you can almost always scratch
+            off a few valuable milliseconds of your website's loading and
+            rendering time. Before you start writing your own GPU-based custom
+            HTML rendering engine, let's take a look at easily implemantable
+            optimisations.
+          </p>
+          <h3>Testing your website</h3>
+          <p>
+            While they only show one half of the story, the <a href="https://pagespeed.web.dev/" target="_blank">PageSpeed Insights</a> and
+            <a href="https://tools.pingdom.com/" target="_blank">Pingdom Website Speed Test</a> tools can help you identify performance issues in your website. They can also help you optimise your website for the best user experience.
+          </p>
+        </div>
+        <div class="block-wrapper">
+          <h2>Further optimisation</h2>
+          <h3>Image optimisation</h3>
+          <p>
+            You can control how the browser will load images using the
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#loading" target="_blank"><code class="language-html">loading</code></a> attribute. Images that
+            are not visible on load can be lazy loaded using
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#loading" target="_blank"><code class="language-html">loading="lazy"</code></a>. This will only
+            load the image when it is visible in the viewport. For images that
+            should load earlier, you can use
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#loading" target="_blank"><code class="language-html">loading="eager"</code></a>. This will
+            prioritise loading the image before the rest of the page.
+          </p>
+          <p>
+            You can also use the
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#decoding" target="_blank"><code class="language-html">decoding</code></a> attribute to specify
+            when the borwser should decode the image. The possible values are:
+          </p>
+          <ul>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#decoding" target="_blank"><code class="language-html">auto</code></a> – Changes based on the
+              browser.
+            </li>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#decoding" target="_blank"><code class="language-html">sync</code></a> – Decodes the image before
+              painting.
+            </li>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#decoding" target="_blank"><code class="language-html">async</code></a> – Decodes the image after
+              painting.
+            </li>
+          </ul>
+          <details class="tip-block">
+            <summary>Advanced: custom lazy loading</summary>
+            <p>
+              To further optimise the loading of images, you can first load a
+              low resolution image, and then load the full resolution image when
+              the user scrolls to the element. This can be done achieved using
+              the JavaScript Intersection Observer API and custom HTML attribute
+              to store the source of the high resolution image. You can also
+              find JS libraries to do this, such as
+              <a href="https://lazyload.js.org/" target="_blank">lazyload.js</a>
+              or
+              <a href="https://github.com/verlok/lazyload" target="_blank"
+                >verlok/lazyload</a
+              >.
+            </p>
+          </details>
+          <h3>Font optimisation</h3>
+          <p>
+            Just like images, fonts loading can be a resource hog. To optimise
+            the loading of fonts, you can limit the character set stored in the font file to the characters used on the page. This can be done using online tools, such as <a target=""_blank" href="https://transfonter.org/">Transfonter</a>
+              or
+            <a href="https://www.fontsquirrel.com/tools/webfont-generator" target="_blank">Font Squirrel</a>.
+          </p>
+          <p>
+            Additionally, you can preload the font files using the HTMl <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link" target="_blank"><code class="language-html">&lt;link&gt;</code></a> tag with both the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#as" target="_blank"><code class="language-html">as="font"</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#rel" target="_blank"><code class="language-html">rel="preload"</code></a> attributes. This will "warm up" the request to the font file, and will make the browser start loading the font file before the page is fully loaded.
+          </p>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-html">&lt;link rel="preload" href="fonts/custom-font.woff2" as="font" type="font/woff2" crossorigin&gt;
+&lt;link rel="preload" href="fonts/custom-font.woff" as="font" type="font/woff" crossorigin&gt;</code></pre>
+            <!-- prettier-ignore-end -->
+        </div>
+        <div class="block-wrapper">
+          <h2>Improving performance</h2>
+          <p>
+            CSS can be used in my different ways, some more computationally expensive than others. For example, certain CSS properties require a new layout recalculation. Such properties include <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width" target="_blank"><code class="language-css">width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/height" target="_blank"><code class="language-css">height</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin" target="_blank"><code class="language-css">margin</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank"><code class="language-css">padding</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border" target="_blank"><code class="language-css">border</code></a>. If your website heavily animates or transitions these properties, you can use the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/will-change" target="_blank"><code class="language-css">will-change</code></a> property to tell the browser that the property will change. 
+          </p>
+          <p>
+            You can also use the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform" target="_blank"><code class="language-css">transform</code></a> property to animate elements instead of moving them with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/top" target="_blank"><code class="language-css">top</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/left" target="_blank"><code class="language-css">left</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/right" target="_blank"><code class="language-css">right</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/bottom" target="_blank"><code class="language-css">bottom</code></a> properties. Translation is generally less expensive to compute than relative or absolute positioning.
+          </p>
+          <details class="tip-block">
+            <summary>Advanced: hardware acceleration</summary>
+            <p>
+              To further improve performance, you can use hardware acceleration. This can be done using the <code class="language-css">translate3d</code> property, which is a 3D version of the <code class="language-css">translate</code> property. This will allow the browser to use the GPU to render the element, which can improve performance.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

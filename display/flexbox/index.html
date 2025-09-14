@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Display · Flexbox</title>
+    <link rel="icon" href="../../assets/favicon/favicon.ico" />
+    <link rel="stylesheet" href="../../assets/css/stylesheet.css" />
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/lesson.css" />
+    <script src="../../assets/js/highlight/highlight.js"></script>
+    <script src="../../assets/js/highlight/languages/apache.js"></script>
+    <script src="../../assets/js/highlight/languages/bash.js"></script>
+    <script src="../../assets/js/highlight/languages/css.js"></script>
+    <script src="../../assets/js/highlight/languages/javascript.js"></script>
+    <script src="../../assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div></div>
+    </header>
+
+    <main class="lesson-layout">
+      <aside class="sidebar">
+        <nav>
+          <h3>Tools & Resources</h3>
+          <ul>
+            <li>
+              <a href="../../tools-resources/setup-guide/">Setup Guide</a>
+            </li>
+            <li>
+              <a href="../../tools-resources/file-organisation/"
+                >File organisation</a
+              >
+            </li>
+            <li>
+              <a href="../../tools-resources/external-resources/"
+                >External resources</a
+              >
+            </li>
+          </ul>
+          <h3>HTML Basics</h3>
+          <ul>
+            <li>
+              <a href="../../html-basics/file-structure/">File structure</a>
+            </li>
+            <li>
+              <a href="../../html-basics/semantic-html/">Semantic HTML</a>
+            </li>
+            <li>
+              <a href="../../html-basics/common-tags/">Common tags</a>
+            </li>
+          </ul>
+          <h3>CSS Basics</h3>
+          <ul>
+            <li>
+              <a href="../../css-basics/rules-selectors/">Rules & Selectors</a>
+            </li>
+            <li><a href="../../css-basics/box-model/">Box Model</a></li>
+            <li>
+              <a href="../../css-basics/specificity/">Specificity</a>
+            </li>
+            <li><a href="../../css-basics/positions/">Positions</a></li>
+            <li>
+              <a href="../../css-basics/colours-units/">Colours & Units</a>
+            </li>
+          </ul>
+          <h3>Typography</h3>
+          <ul>
+            <li>
+              <a href="../../typography/importing-fonts/">Importing fonts</a>
+            </li>
+            <li>
+              <a href="../../typography/relevant-tags/">Relevant tags</a>
+            </li>
+            <li>
+              <a href="../../typography/font-properties/">Font properties</a>
+            </li>
+            <li>
+              <a href="../../typography/custom-properties/"
+                >Custom properties</a
+              >
+            </li>
+          </ul>
+          <h3>Display</h3>
+          <ul>
+            <li>
+              <a href="../../display/display-property/">Display property</a>
+            </li>
+            <li class="active"><a href="../../display/flexbox/">Flexbox</a></li>
+            <li><a href="../../display/grid/">Grid</a></li>
+          </ul>
+          <h3>Responsive design</h3>
+          <ul>
+            <li>
+              <a href="../../responsive-design/breakpoints/">Breakpoints</a>
+            </li>
+            <li>
+              <a href="../../responsive-design/printable-other/"
+                >Printable web & other</a
+              >
+            </li>
+            <li>
+              <a href="../../responsive-design/responsive-images/"
+                >Responsive images</a
+              >
+            </li>
+          </ul>
+          <h3>Motion & Transform</h3>
+          <ul>
+            <li><a href="../../motion-transitions/transform/">Transform</a></li>
+            <li>
+              <a href="../../motion-transitions/transitions/">Transitions</a>
+            </li>
+            <li><a href="../../motion-transitions/animation/">Animation</a></li>
+          </ul>
+          <h3>Performance & Best practices</h3>
+          <ul>
+            <li>
+              <a href="../../performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+            <li>
+              <a href="../../performance-best-practices/accessibility/"
+                >Accessibility considerations</a
+              >
+            </li>
+            <li>
+              <a
+                href="../../performance-best-practices/performance-optimisation/"
+                >Performance optimisation</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="lesson">
+        <h1>Flexbox</h1>
+        <div class="block-wrapper">
+          <h2>Use of flexbox</h2>
+          <p>
+            Flexbox allows you to create flexible grid and layouts. It is
+            supported by all modern browsers, and is a great way to create
+            responsive designs.
+          </p>
+          <pre><code class="language-css">/* Syntax to use flexbox */
+.flex-container {
+  display: flex;
+  gap: 8px;
+  flex-direction: row | row-reverse | column | column-reverse;
+  flex-wrap: nowrap | wrap | wrap-reverse;
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+  align-items: flex-start | flex-end | center | baseline | stretch;
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}</code></pre>
+        </div>
+        <div class="block-wrapper">
+          <h2>Flexbox properties for the parent element</h2>
+          <h3>Flex direction</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction"
+              target="_blank"
+              ><code class="language-css">flex-direction</code></a
+            >
+            property specifies the direction of the flexible items. The possible
+            values are:
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction#Values"
+                target="_blank"
+                ><code class="language-css">row</code></a
+              >: The flex items are displayed in a row, from left to right.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction#Values"
+                target="_blank"
+                ><code class="language-css">row-reverse</code></a
+              >: The flex items are displayed in a row, from right to left.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction#Values"
+                target="_blank"
+                ><code class="language-css">column</code></a
+              >: The flex items are displayed in a column, from top to bottom.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction#Values"
+                target="_blank"
+                ><code class="language-css">column-reverse</code></a
+              >: The flex items are displayed in a column, from bottom to top.
+            </li>
+          </ul>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">.flex-container {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background-color: lavender;
+}
+
+.row {flex-direction: row;}
+.row-reverse {flex-direction: row-reverse;}
+.column {flex-direction: column;}
+.column-reverse {flex-direction: column-reverse;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="flex-direction-example">
+              <p class="user-agent">Direction: row</p>
+              <div class="flex-container row">
+                <div class="flex-item">First element</div>
+                <div class="flex-item">Second element</div>
+                <div class="flex-item">Third element</div>
+              </div>
+              <p class="user-agent">Direction: row-reverse</p>
+              <div class="flex-container row-reverse">
+                <div class="flex-item">First element</div>
+                <div class="flex-item">Second element</div>
+                <div class="flex-item">Third element</div>
+              </div>
+              <p class="user-agent">Direction: column</p>
+              <div class="flex-container column">
+                <div class="flex-item">First element</div>
+                <div class="flex-item">Second element</div>
+                <div class="flex-item">Third element</div>
+              </div>
+              <p class="user-agent">Direction: column-reverse</p>
+              <div class="flex-container column-reverse">
+                <div class="flex-item">First element</div>
+                <div class="flex-item">Second element</div>
+                <div class="flex-item">Third element</div>
+              </div>
+              <style>
+                #flex-direction-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #flex-direction-example .flex-container {
+                  display: flex;
+                  gap: 8px;
+                  padding: 8px;
+                  background-color: lavender;
+                }
+
+                #flex-direction-example .row {
+                  flex-direction: row;
+                }
+
+                #flex-direction-example .row-reverse {
+                  flex-direction: row-reverse;
+                }
+
+                #flex-direction-example .column {
+                  flex-direction: column;
+                }
+
+                #flex-direction-example .column-reverse {
+                  flex-direction: column-reverse;
+                }
+
+                #flex-direction-example .flex-item {
+                  padding: 8px;
+                  border-radius: 0.5rem;
+                  background-color: #beb;
+                }
+
+                #flex-direction-example p {
+                  margin-bottom: 0.5rem;
+                }
+
+                #flex-direction-example p:first-of-type {
+                  margin-top: 0;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Flex wrap</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap"
+              target="_blank"
+              ><code class="language-css">flex-wrap</code></a
+            >
+            property specifies whether the flexible items should all fit on one
+            line or can wrap onto multiple lines. The possible values are:
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap#Values"
+                target="_blank"
+                ><code class="language-css">nowrap</code></a
+              >: The flexible items should all be on one line.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap#Values"
+                target="_blank"
+                ><code class="language-css">wrap</code></a
+              >: The flexible items can wrap onto multiple lines.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap#Values"
+                target="_blank"
+                ><code class="language-css">wrap-reverse</code></a
+              >: The flexible items can wrap onto multiple lines, but they are
+              displayed in the opposite order.
+            </li>
+          </ul>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">.flex-container {
+  display: flex;
+  width: 230px;
+  background-color: lavender;
+}
+
+.wrap {flex-wrap: wrap;}
+.nowrap {flex-wrap: nowrap;}
+.wrap-reverse {flex-wrap: wrap-reverse;}
+
+.flex-item {
+  height: 50px;
+  width: 50px;
+  background-color: #beb;
+}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="flex-wrap-example">
+              <p class="user-agent">Flex wrap: wrap</p>
+              <div class="flex-container wrap">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Flex wrap: nowrap</p>
+              <div class="flex-container nowrap">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Flex wrap: wrap-reverse</p>
+              <div class="flex-container wrap-reverse">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <style>
+                #flex-wrap-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #flex-wrap-example .flex-container {
+                  display: flex;
+                  gap: 8px;
+                  padding: 8px;
+                  width: 230px;
+                  background-color: lavender;
+                }
+
+                #flex-wrap-example .wrap {
+                  flex-wrap: wrap;
+                }
+
+                #flex-wrap-example .nowrap {
+                  flex-wrap: nowrap;
+                }
+
+                #flex-wrap-example .wrap-reverse {
+                  flex-wrap: wrap-reverse;
+                }
+
+                #flex-wrap-example .flex-item {
+                  box-sizing: content-box;
+                  width: 50px;
+                  background-color: #beb;
+                  padding: 8px;
+                }
+
+                #flex-wrap-example p {
+                  margin-bottom: 0.5rem;
+                }
+
+                #flex-wrap-example p:first-of-type {
+                  margin-top: 0;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Justify content</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"
+              target="_blank"
+              ><code class="language-css">justify-content</code></a
+            >
+            property specifies how the flexible items are positioned along the
+            main axis. The possible values are:
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#Values"
+                target="_blank"
+                ><code class="language-css">flex-start</code></a
+              >: The flexible items are positioned at the start of the main
+              axis.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#Values"
+                target="_blank"
+                ><code class="language-css">flex-end</code></a
+              >: The flexible items are positioned at the end of the main axis.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#Values"
+                target="_blank"
+                ><code class="language-css">center</code></a
+              >: The flexible items are positioned at the center of the main
+              axis.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#Values"
+                target="_blank"
+                ><code class="language-css">space-between</code></a
+              >: The flexible items are evenly distributed in the main axis. The
+              first item is on the start line, the last item is on the end line,
+              and the spaces between them are equal.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content#Values"
+                target="_blank"
+                ><code class="language-css">space-around</code></a
+              >: The flexible items are evenly distributed in the main axis. The
+              spaces between them are equal.
+            </li>
+          </ul>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.flex-container {
+  display: flex;
+  width: 100%;
+  background-color: lavender;
+}
+
+.flex-start {justify-content: flex-start;}
+.flex-end {justify-content: flex-end;}
+.center {justify-content: center;}
+.space-between {justify-content: space-between;}
+.space-around {justify-content: space-around;}
+
+.flex-item {
+  height: 50px;
+  width: 50px;
+  background-color: #beb;
+}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="justify-content-example">
+              <p class="user-agent">Justify content: flex-start</p>
+              <div class="flex-container flex-start">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Justify content: flex-end</p>
+              <div class="flex-container flex-end">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Justify content: center</p>
+              <div class="flex-container center">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Justify content: space-between</p>
+              <div class="flex-container space-between">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Justify content: space-around</p>
+              <div class="flex-container space-around">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <style>
+                #justify-content-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #justify-content-example .flex-container {
+                  display: flex;
+                  gap: 8px;
+                  padding: 8px;
+                  width: 100%;
+                  background-color: lavender;
+                }
+
+                #justify-content-example .flex-start {
+                  justify-content: flex-start;
+                }
+
+                #justify-content-example .flex-end {
+                  justify-content: flex-end;
+                }
+
+                #justify-content-example .center {
+                  justify-content: center;
+                }
+
+                #justify-content-example .space-between {
+                  justify-content: space-between;
+                }
+
+                #justify-content-example .space-around {
+                  justify-content: space-around;
+                }
+
+                #justify-content-example .flex-item {
+                  box-sizing: content-box;
+                  background-color: #beb;
+                  padding: 8px;
+                }
+
+                #justify-content-example p {
+                  margin-bottom: 0.5rem;
+                }
+
+                #justify-content-example p:first-of-type {
+                  margin-top: 0;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Align items</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items"
+              target="_blank"
+              ><code class="language-css">align-items</code></a
+            >
+            property specifies how the flexible items are positioned along the
+            cross axis. The possible values are:
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items#Values"
+                target="_blank"
+                ><code class="language-css">flex-start</code></a
+              >: The flexible items are positioned at the start of the cross
+              axis.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items#Values"
+                target="_blank"
+                ><code class="language-css">flex-end</code></a
+              >: The flexible items are positioned at the end of the cross axis.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items#Values"
+                target="_blank"
+                ><code class="language-css">center</code></a
+              >: The flexible items are positioned at the center of the cross
+              axis.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items#Values"
+                target="_blank"
+                ><code class="language-css">baseline</code></a
+              >: The flexible items are positioned such that their baselines
+              align.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items#Values"
+                target="_blank"
+                ><code class="language-css">stretch</code></a
+              >: The flexible items are stretched such that the cross-axis
+              stretches to fit the container.
+            </li>
+          </ul>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">.flex-container {
+  display: flex;
+  width: 100%;
+  background-color: lavender;
+}
+
+.flex-start {align-items: flex-start;}
+.flex-end {align-items: flex-end;}
+.center {align-items: center;}
+.baseline {align-items: baseline;}
+.stretch {align-items: stretch;}
+
+.flex-item {
+  height: 50px;
+  width: 50px;
+  background-color: #beb;
+}
+
+/* Odd items have a height of 1rem */
+.flex-item:nth-child(2n-1) {height: 1rem;}
+
+/* Even items have a height of 3rem */
+.flex-item:nth-child(2n) {height: 3rem;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="align-items-example">
+              <p class="user-agent">Align items: flex-start</p>
+              <div class="flex-container flex-start">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Align items: flex-end</p>
+              <div class="flex-container flex-end">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Align items: center</p>
+              <div class="flex-container center">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Align items: baseline</p>
+              <div class="flex-container baseline">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Align items: stretch</p>
+              <div class="flex-container stretch">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <style>
+                #align-items-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #align-items-example .flex-container {
+                  display: flex;
+                  gap: 8px;
+                  padding: 8px;
+                  width: 100%;
+                  background-color: lavender;
+                }
+
+                #align-items-example .flex-start {
+                  align-items: flex-start;
+                }
+
+                #align-items-example .flex-end {
+                  align-items: flex-end;
+                }
+
+                #align-items-example .center {
+                  align-items: center;
+                }
+
+                #align-items-example .baseline {
+                  align-items: baseline;
+                }
+
+                #align-items-example .stretch {
+                  align-items: stretch;
+                }
+
+                #align-items-example .flex-item {
+                  box-sizing: content-box;
+                  background-color: #beb;
+                  padding: 8px;
+                  line-height: 1rem;
+                }
+
+                #align-items-example .flex-item:nth-child(2n-1) {
+                  height: 1rem;
+                }
+                #align-items-example .flex-item:nth-child(2n) {
+                  height: 3rem;
+                }
+
+                #align-items-example p {
+                  margin-bottom: 0.5rem;
+                }
+
+                #align-items-example p:first-of-type {
+                  margin-top: 0;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Align content</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content"
+              target="_blank"
+              ><code class="language-css">align-content</code></a
+            >
+            property specifies how the flexible items are positioned along the
+            cross axis. The possible values are:
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content#Values"
+                target="_blank"
+                ><code class="language-css">flex-start</code></a
+              >: The flexible items are positioned at the start of the cross
+              axis.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content#Values"
+                target="_blank"
+                ><code class="language-css">flex-end</code></a
+              >: The flexible items are positioned at the end of the cross axis.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content#Values"
+                target="_blank"
+                ><code class="language-css">center</code></a
+              >: The flexible items are positioned at the center of the cross
+              axis.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content#Values"
+                target="_blank"
+                ><code class="language-css">space-between</code></a
+              >: The flexible items are evenly distributed in the cross axis.
+              The first item is on the start line, the last item is on the end
+              line, and the spaces between them are equal.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content#Values"
+                target="_blank"
+                ><code class="language-css">space-around</code></a
+              >: The flexible items are evenly distributed in the cross axis.
+              The spaces between them are equal.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content#Values"
+                target="_blank"
+                ><code class="language-css">stretch</code></a
+              >: The flexible items are stretched such that the cross-axis
+              stretches to fit the container.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content#Values"
+                target="_blank"
+                ><code class="language-css">baseline</code></a
+              >: The flexible items are positioned such that their baselines
+              align.
+            </li>
+          </ul>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">.flex-container {
+  display: flex;
+  width: 230px;
+  background-color: lavender;
+}
+
+.flex-start {align-content: flex-start;}
+.flex-end {align-content: flex-end;}
+.center {align-content: center;}
+.space-between {align-content: space-between;}
+.space-around {align-content: space-around;}
+.stretch {align-content: stretch;}
+.baseline {align-content: baseline;}
+
+.flex-item {
+  height: 50px;
+  width: 50px;
+  background-color: #beb;
+}
+
+/* Odd items have a height of 1rem */
+.flex-item:nth-child(2n-1) {height: 1rem;}
+
+/* Even items have a height of 3rem */
+.flex-item:nth-child(2n) {height: 3rem;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="align-content-example">
+              <p class="user-agent">Align content: flex-start</p>
+              <div class="flex-container flex-start">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Align content: flex-end</p>
+              <div class="flex-container flex-end">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Align content: center</p>
+              <div class="flex-container center">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Align content: space-between</p>
+              <div class="flex-container space-between">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Align content: space-around</p>
+              <div class="flex-container space-around">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Align content: stretch</p>
+              <div class="flex-container stretch">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <p class="user-agent">Align content: baseline</p>
+              <div class="flex-container baseline">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+                <div class="flex-item">4</div>
+                <div class="flex-item">5</div>
+              </div>
+              <style>
+                #align-content-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #align-content-example .flex-container {
+                  display: flex;
+                  gap: 8px;
+                  padding: 8px;
+                  width: 230px;
+                  height: 128px;
+                  flex-wrap: wrap;
+                  background-color: lavender;
+                }
+
+                #align-content-example .flex-start {
+                  align-content: flex-start;
+                }
+
+                #align-content-example .flex-end {
+                  align-content: flex-end;
+                }
+
+                #align-content-example .center {
+                  align-content: center;
+                }
+
+                #align-content-example .space-between {
+                  align-content: space-between;
+                }
+
+                #align-content-example .space-around {
+                  align-content: space-around;
+                }
+
+                #align-content-example .stretch {
+                  align-content: stretch;
+                }
+
+                #align-content-example .baseline {
+                  align-content: baseline;
+                }
+
+                #align-content-example .flex-item {
+                  box-sizing: content-box;
+                  background-color: #beb;
+                  width: 50px;
+                  padding: 8px;
+                }
+
+                #align-content-example p {
+                  margin-bottom: 0.5rem;
+                }
+
+                #align-content-example p:first-of-type {
+                  margin-top: 0;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <h2>Flexbox properties for the children elements</h2>
+          <h3>Flex grow</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow"
+              target="_blank"
+              ><code class="language-css">flex-grow</code></a
+            >
+            property specifies how much the flexible items should grow relative
+            to the rest of the flexible items.
+          </p>
+          <p>
+            You can use
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow"
+              target="_blank"
+              ><code class="language-css">flex-grow</code></a
+            >
+            to create proportional layouts and grids. The width of each flexible
+            item is calculated as the fraction of the available space it should
+            occupy, relative to the other flexible items. For example:
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">.flex-container {
+  display: flex;
+  width: 464px;
+  background-color: lavender;
+}
+
+.flex-item {
+  background-color: #beb;
+  flex-grow: 1;
+}
+
+.flex-item:first-child {
+  flex-grow: 2;
+}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="flex-grow-example">
+              <div class="flex-container">
+                <div class="flex-item">Grow 2</div>
+                <div class="flex-item">Grow 1</div>
+                <div class="flex-item">Grow 1</div>
+              </div>
+              <style>
+                #flex-grow-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #flex-grow-example .flex-container {
+                  display: flex;
+                  gap: 8px;
+                  padding: 8px;
+                  width: 464px;
+                  max-width: 100%;
+                  background-color: lavender;
+                }
+
+                #flex-grow-example .flex-item {
+                  box-sizing: border-box;
+                  background-color: #beb;
+                  width: min-content;
+                  flex: 1;
+                }
+
+                #flex-grow-example .flex-item:first-child {
+                  flex: 2;
+                }
+              </style>
+            </div>
+          </div>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow"
+              target="_blank"
+              ><code class="language-css">flex-grow</code></a
+            >
+            property can be used to fill up the leftover space in a flexible
+            container.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">.flex-container {
+  display: flex;
+  width: 464px;
+  background-color: lavender;
+}
+
+.flex-item {
+  background-color: #beb;
+  flex-grow: 1;
+}
+
+.grow-1 {flex-grow: 1;}
+
+.fixed {width: 64px;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="flex-grow-mix-example">
+              <div class="flex-container">
+                <div class="flex-item grow-1">Flex-grow: 1</div>
+                <div class="flex-item fixed">64px</div>
+                <div class="flex-item fixed">64px</div>
+              </div>
+            </div>
+            <style>
+              #flex-grow-mix-example * {
+                border-radius: 0.25rem;
+              }
+
+              #flex-grow-mix-example .flex-container {
+                display: flex;
+                gap: 8px;
+                padding: 8px;
+                width: 464px;
+                max-width: 100%;
+                background-color: lavender;
+              }
+
+              #flex-grow-mix-example .flex-item {
+                box-sizing: border-box;
+                background-color: #beb;
+              }
+
+              #flex-grow-mix-example .grow-1 {
+                flex-grow: 1;
+              }
+
+              #flex-grow-mix-example .fixed {
+                width: 64px;
+              }
+            </style>
+          </div>
+          <h3>Self alignment</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-self"
+              target="_blank"
+              ><code class="language-css">align-self</code></a
+            >
+            property adjust the alignment on a per element basis. The possible
+            values are:
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-self#Values"
+                target="_blank"
+                ><code class="language-css">flex-start</code></a
+              >: The element is positioned at the start of the cross axis.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-self#Values"
+                target="_blank"
+                ><code class="language-css">flex-end</code></a
+              >: The element is positioned at the end of the cross axis.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-self#Values"
+                target="_blank"
+                ><code class="language-css">center</code></a
+              >: The element is positioned at the center of the cross axis.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-self#Values"
+                target="_blank"
+                ><code class="language-css">baseline</code></a
+              >: The element is positioned such that their baselines align.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-self#Values"
+                target="_blank"
+                ><code class="language-css">stretch</code></a
+              >: The element is stretched such that the cross-axis stretches to
+              fit the container.
+            </li>
+          </ul>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;div class="flex-container"&gt;
+  &lt;div class="flex-item flex-start"&gt;1&lt;/div&gt;
+  &lt;div class="flex-item flex-end"&gt;2&lt;/div&gt;
+  &lt;div class="flex-item center"&gt;3&lt;/div&gt;
+  &lt;div class="flex-item baseline"&gt;4&lt;/div&gt;
+  &lt;div class="flex-item stretch"&gt;5&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">.flex-container {
+  display: flex;
+  width: 464px;
+  height: 8rem;
+  background-color: lavender;
+}
+
+.flex-item {
+  background-color: #beb;
+  height: 1rem;
+  flex-grow: 1;
+}
+
+.flex-start {align-self: flex-start;}
+.flex-end {align-self: flex-end;}
+.center {align-self: center;}
+.baseline {align-self: baseline;}
+.stretch {align-self: stretch;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="align-self-example">
+              <div class="flex-container">
+                <div class="flex-item">1</div>
+                <div class="flex-item flex-start">2</div>
+                <div class="flex-item flex-end">3</div>
+                <div class="flex-item center">4</div>
+                <div class="flex-item baseline">5</div>
+                <div class="flex-item stretch">6</div>
+              </div>
+              <style>
+                #align-self-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #align-self-example .flex-container {
+                  display: flex;
+                  gap: 8px;
+                  padding: 8px;
+                  width: 464px;
+                  height: 8rem;
+                  max-width: 100%;
+                  background-color: lavender;
+                }
+
+                #align-self-example .flex-item {
+                  box-sizing: content-box;
+                  background-color: #beb;
+                  padding: 8px;
+                  line-height: 1rem;
+                  height: 1rem;
+                  flex-grow: 1;
+                }
+
+                #align-self-example .flex-start {
+                  align-self: flex-start;
+                }
+
+                #align-self-example .flex-end {
+                  align-self: flex-end;
+                }
+
+                #align-self-example .center {
+                  align-self: center;
+                }
+
+                #align-self-example .baseline {
+                  align-self: baseline;
+                }
+
+                #align-self-example .stretch {
+                  align-self: stretch;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

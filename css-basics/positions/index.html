@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Basics · Positions</title>
+    <link rel="icon" href="../../assets/favicon/favicon.ico" />
+    <link rel="stylesheet" href="../../assets/css/stylesheet.css" />
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/lesson.css" />
+    <script src="../../assets/js/highlight/highlight.js"></script>
+    <script src="../../assets/js/highlight/languages/apache.js"></script>
+    <script src="../../assets/js/highlight/languages/bash.js"></script>
+    <script src="../../assets/js/highlight/languages/css.js"></script>
+    <script src="../../assets/js/highlight/languages/javascript.js"></script>
+    <script src="../../assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div></div>
+    </header>
+
+    <main class="lesson-layout">
+      <aside class="sidebar">
+        <nav>
+          <h3>Tools & Resources</h3>
+          <ul>
+            <li>
+              <a href="../../tools-resources/setup-guide/">Setup Guide</a>
+            </li>
+            <li>
+              <a href="../../tools-resources/file-organisation/"
+                >File organisation</a
+              >
+            </li>
+            <li>
+              <a href="../../tools-resources/external-resources/"
+                >External resources</a
+              >
+            </li>
+          </ul>
+          <h3>HTML Basics</h3>
+          <ul>
+            <li>
+              <a href="../../html-basics/file-structure/">File structure</a>
+            </li>
+            <li>
+              <a href="../../html-basics/semantic-html/">Semantic HTML</a>
+            </li>
+            <li>
+              <a href="../../html-basics/common-tags/">Common tags</a>
+            </li>
+          </ul>
+          <h3>CSS Basics</h3>
+          <ul>
+            <li>
+              <a href="../../css-basics/rules-selectors/">Rules & Selectors</a>
+            </li>
+            <li><a href="../../css-basics/box-model/">Box Model</a></li>
+            <li>
+              <a href="../../css-basics/specificity/">Specificity</a>
+            </li>
+            <li class="active">
+              <a href="../../css-basics/positions/">Positions</a>
+            </li>
+            <li>
+              <a href="../../css-basics/colours-units/">Colours & Units</a>
+            </li>
+          </ul>
+          <h3>Typography</h3>
+          <ul>
+            <li>
+              <a href="../../typography/importing-fonts/">Importing fonts</a>
+            </li>
+            <li><a href="../../typography/relevant-tags/">Relevant tags</a></li>
+            <li>
+              <a href="../../typography/font-properties/">Font properties</a>
+            </li>
+            <li>
+              <a href="../../typography/custom-properties/"
+                >Custom properties</a
+              >
+            </li>
+          </ul>
+          <h3>Display</h3>
+          <ul>
+            <li>
+              <a href="../../display/display-property/">Display property</a>
+            </li>
+            <li><a href="../../display/flexbox/">Flexbox</a></li>
+            <li><a href="../../display/grid/">Grid</a></li>
+          </ul>
+          <h3>Responsive design</h3>
+          <ul>
+            <li>
+              <a href="../../responsive-design/breakpoints/">Breakpoints</a>
+            </li>
+            <li>
+              <a href="../../responsive-design/printable-other/"
+                >Printable web & other</a
+              >
+            </li>
+            <li>
+              <a href="../../responsive-design/responsive-images/"
+                >Responsive images</a
+              >
+            </li>
+          </ul>
+          <h3>Motion & Transform</h3>
+          <ul>
+            <li><a href="../../motion-transitions/transform/">Transform</a></li>
+            <li>
+              <a href="../../motion-transitions/transitions/">Transitions</a>
+            </li>
+            <li><a href="../../motion-transitions/animation/">Animation</a></li>
+          </ul>
+          <h3>Performance & Best practices</h3>
+          <ul>
+            <li>
+              <a href="../../performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+            <li>
+              <a href="../../performance-best-practices/accessibility/"
+                >Accessibility considerations</a
+              >
+            </li>
+            <li>
+              <a
+                href="../../performance-best-practices/performance-optimisation/"
+                >Performance optimisation</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="lesson">
+        <h1>Positions</h1>
+        <div class="block-wrapper">
+          <h2>How are elements positioned?</h2>
+          <p>
+            The position of an element determines where and how it is displayed
+            on the page. An element can have one of four positions:
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#Values"
+              target="_blank"
+              ><code class="language-css"
+                >position: static | relative | absolute | fixed;</code
+              ></a
+            >
+          </p>
+          <p>
+            By default, the position value of every element is set to
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#static"
+              target="_blank"
+              ><code class="language-css">static</code></a
+            >. This means that the element is positioned according to the normal
+            flow of the document (boxes withing boxes). All static elements are
+            treated as <strong>not positioned</strong>, meaning that the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/top"
+              target="_blank"
+              ><code class="language-css">top</code></a
+            >,
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/right"
+              target="_blank"
+              ><code class="language-css">right</code></a
+            >,
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/bottom"
+              target="_blank"
+              ><code class="language-css">bottom</code></a
+            >, and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/left"
+              target="_blank"
+              ><code class="language-css">left</code></a
+            >
+            properties will <strong>not</strong> affect their position.
+          </p>
+          <h3>Relative positioning</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#relative"
+              target="_blank"
+              ><code class="language-css">relative</code></a
+            >
+            position value causes an element to be positioned relative to its
+            normal position. The space once occupied by the element is still
+            taken into account when the element is positioned.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;p&gt;Reprehenderit &lt;span&gt;relative&lt;/span&gt; irure  quis. Voluptate nulla anim velit incididunt esse aliqua ullamco sint consectetur adipisicing excepteur laborum nulla.&lt;/p&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">span {
+  position: relative;
+  bottom: 18px;
+  right: -12px;
+  color: deeppink;
+}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="relative-positioning">
+              <p>
+                Reprehenderit
+                <span id="original-position"><span>relative</span></span> irure
+                quis. Voluptate nulla anim velit incididunt esse aliqua ullamco
+                sint consectetur adipisicing excepteur laborum nulla.
+              </p>
+              <style>
+                #relative-positioning {
+                  flex-grow: 4;
+                  min-width: 40rch;
+                }
+                #relative-positioning p {
+                  margin: 0;
+                  text-indent: 0;
+                }
+                #relative-positioning span {
+                  position: relative;
+                  bottom: 18px;
+                  right: -12px;
+                  color: deeppink;
+                }
+                #relative-positioning #original-position {
+                  position: static;
+                  border-radius: 4px;
+                  border: dotted 1px darkgrey;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Absolute positioning</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute"
+              target="_blank"
+              ><code class="language-css">absolute</code></a
+            >
+            position value causes an element to be positioned relative to the
+            nearest <strong>positioned</strong> ancestor. The space once
+            occupied by the element is collapsed (not taken into account).
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;div class="ancestor"&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Position static&lt;/li&gt;
+    &lt;li&gt;Position static&lt;/li&gt;
+    &lt;li&gt;Position static&lt;/li&gt;
+    &lt;li id="absolute-item"&gt;Position absolute&lt;/li&gt;
+    &lt;li&gt;Position static&lt;/li&gt;
+    &lt;li&gt;Position static&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">div.ancestor {
+  position: relative;
+  padding: 24px;
+}
+
+#absolute-item {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="absolute-positioning">
+              <div class="ancestor">
+                <ol class="user-agent parent">
+                  <li class="user-agent">Position static</li>
+                  <li class="user-agent">Position static</li>
+                  <li class="user-agent">Position static</li>
+                  <li class="user-agent" id="absolute-item">
+                    Position absolute
+                  </li>
+                  <li class="user-agent">Position static</li>
+                  <li class="user-agent">Position static</li>
+                </ol>
+              </div>
+              <style>
+                #absolute-positioning .ancestor {
+                  position: relative;
+                  padding: 24px;
+                  border-radius: 4px;
+                  border: dotted 1px deeppink;
+                  width: fit-content;
+                }
+
+                #absolute-positioning .parent {
+                  border-radius: 4px;
+                  border: dotted 1px darkgrey;
+                  padding: 12px;
+                  width: fit-content;
+                  list-style-position: inside;
+                  white-space: nowrap;
+                  margin: 0;
+                }
+
+                #absolute-positioning #absolute-item {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  color: deeppink;
+                }
+              </style>
+            </div>
+          </div>
+          <h3 id="fixed-positioning">Fixed positioning</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#fixed"
+              target="_blank"
+              ><code class="language-css">fixed</code></a
+            >
+            position value causes an element to be positioned relative to the
+            viewport. The space once occupied by the element is collapsed (not
+            taken into account).
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;ol&gt;
+  &lt;li&gt;Position static&lt;/li&gt;
+  &lt;li&gt;Position static&lt;/li&gt;
+  &lt;li&gt;Position static&lt;/li&gt;
+  &lt;li id="fixed-item"&gt;Position fixed&lt;/li&gt;
+  &lt;li&gt;Position static&lt;/li&gt;
+  &lt;li&gt;Position static&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">#fixed-item {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result">
+              <ol class="user-agent" id="fixed-positioning-list">
+                <li class="user-agent">Position static</li>
+                <li class="user-agent">Position static</li>
+                <li class="user-agent">Position static</li>
+                <li class="user-agent" id="fixed-item">
+                  <a href="#fixed-positioning">Position fixed</a>
+                </li>
+                <li class="user-agent">Position static</li>
+                <li class="user-agent">Position static</li>
+              </ol>
+              <style>
+                #fixed-positioning-list {
+                  padding: 0;
+                  margin: 0;
+                  list-style-position: inside;
+                }
+                #fixed-item {
+                  position: fixed;
+                  right: 16px;
+                  bottom: 16px;
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Sticky positioning</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#sticky"
+              target="_blank"
+              ><code class="language-css">sticky</code></a
+            >
+            position value is a hybrid of both
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#relative"
+              target="_blank"
+              ><code class="language-css">relative</code></a
+            >
+            and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute"
+              target="_blank"
+              ><code class="language-css">absolute</code></a
+            >
+            positioning, in that it still takes up space but can <i>stick</i> to
+            a desired edge of its ancestor while scrolling. For
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#sticky"
+              target="_blank"
+              ><code class="language-css">position: sticky</code></a
+            >
+            to work, none of its ancestors can have their overflow set to
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow"
+              target="_blank"
+              ><code class="language-css">overflow: hidden</code></a
+            >.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;div class="scroll-container"&gt;
+  &lt;section&gt;
+    &lt;h2 class="sticky-top"&gt;Sticks to top&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum…&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;p&gt;Lorem ipsum…&lt;/p&gt;
+    &lt;h2 class="sticky-bottom"&gt;Sticks to bottom&lt;/h2&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">.scroll-container {
+  height: 256px;
+  overflow-y: scroll;
+}
+
+section {
+  height: 512px;
+  background-color: #e4e4e4;
+}
+
+h2 {position: sticky;}
+
+.sticky-top {top: 0;}
+
+.sticky-bottom {bottom: 0;}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="sticky-positioning">
+              <div class="scroll-container">
+                <section>
+                  <h2 class="user-agent sticky-top">Sticks to top</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Doloremque, voluptatibus. Voluptate mollit ut excepteur
+                    minim. Deserunt nostrud excepteur voluptate est adipisicing
+                    commodo in laborum. Culpa ut duis duis proident elit eu.
+                    Voluptate pariatur minim voluptate nostrud consequat
+                    excepteur laborum nulla proident irure proident labore.
+                    Consectetur reprehenderit nostrud duis in excepteur non sint
+                    est pariatur. Proident commodo minim quis non et ad occaecat
+                    ut. Reprehenderit aute eu amet ipsum sunt amet proident
+                    deserunt est nostrud proident id. Aute laborum occaecat
+                    veniam ipsum in ullamco aliquip ex nulla eu veniam minim
+                    aliquip commodo amet.
+                  </p>
+                </section>
+                <section>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptate mollit ut excepteur minim. Deserunt nostrud
+                    excepteur voluptate est adipisicing commodo in laborum.
+                    Culpa ut duis duis proident elit eu. Voluptate pariatur
+                    minim voluptate nostrud consequat excepteur laborum nulla
+                    proident irure proident labore. Consectetur reprehenderit
+                    nostrud duis in excepteur non sint est pariatur. Proident
+                    commodo minim quis non et ad occaecat ut. Reprehenderit aute
+                    eu amet ipsum sunt amet proident deserunt est nostrud
+                    proident id. Aute laborum occaecat veniam ipsum in ullamco
+                    aliquip ex nulla eu veniam minim aliquip commodo amet.
+                  </p>
+                  <h2 class="user-agent sticky-bottom">Sticks to bottom</h2>
+                </section>
+              </div>
+              <style>
+                #sticky-positioning .scroll-container {
+                  height: 256px;
+                  width: 30ch;
+                  overflow-y: scroll;
+                }
+
+                #sticky-positioning section {
+                  min-height: 512px;
+                  background-color: #e4e4e4;
+                  padding: 0 8px;
+                  display: flex;
+                  flex-direction: column;
+                }
+
+                #sticky-positioning section:not(:last-child) {
+                  margin-bottom: 1rem;
+                }
+
+                #sticky-positioning p {
+                  flex-grow: 1;
+                  text-indent: 0;
+                }
+
+                #sticky-positioning h2 {
+                  font-size: inherit;
+                  padding: 8px 0;
+                  background-color: inherit;
+                  position: sticky;
+                  margin: 0;
+                }
+
+                #sticky-positioning .sticky-top {
+                  top: 0;
+                  border-bottom: solid 1px #000;
+                }
+
+                #sticky-positioning .sticky-bottom {
+                  bottom: 0;
+                  border-top: solid 1px #000;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

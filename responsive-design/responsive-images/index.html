@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive design · Responsive images</title>
+    <link rel="icon" href="../../assets/favicon/favicon.ico" />
+    <link rel="stylesheet" href="../../assets/css/stylesheet.css" />
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/lesson.css" />
+    <script src="../../assets/js/highlight/highlight.js"></script>
+    <script src="../../assets/js/highlight/languages/apache.js"></script>
+    <script src="../../assets/js/highlight/languages/bash.js"></script>
+    <script src="../../assets/js/highlight/languages/css.js"></script>
+    <script src="../../assets/js/highlight/languages/javascript.js"></script>
+    <script src="../../assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div></div>
+    </header>
+
+    <main class="lesson-layout">
+      <aside class="sidebar">
+        <nav>
+          <h3>Tools & Resources</h3>
+          <ul>
+            <li>
+              <a href="../../tools-resources/setup-guide/">Setup Guide</a>
+            </li>
+            <li>
+              <a href="../../tools-resources/file-organisation/"
+                >File organisation</a
+              >
+            </li>
+            <li>
+              <a href="../../tools-resources/external-resources/"
+                >External resources</a
+              >
+            </li>
+          </ul>
+          <h3>HTML Basics</h3>
+          <ul>
+            <li>
+              <a href="../../html-basics/file-structure/">File structure</a>
+            </li>
+            <li>
+              <a href="../../html-basics/semantic-html/">Semantic HTML</a>
+            </li>
+            <li>
+              <a href="../../html-basics/common-tags/">Common tags</a>
+            </li>
+          </ul>
+          <h3>CSS Basics</h3>
+          <ul>
+            <li>
+              <a href="../../css-basics/rules-selectors/">Rules & Selectors</a>
+            </li>
+            <li><a href="../../css-basics/box-model/">Box Model</a></li>
+            <li>
+              <a href="../../css-basics/specificity/">Specificity</a>
+            </li>
+            <li><a href="../../css-basics/positions/">Positions</a></li>
+            <li>
+              <a href="../../css-basics/colours-units/">Colours & Units</a>
+            </li>
+          </ul>
+          <h3>Typography</h3>
+          <ul>
+            <li>
+              <a href="../../typography/importing-fonts/">Importing fonts</a>
+            </li>
+            <li>
+              <a href="../../typography/relevant-tags/">Relevant tags</a>
+            </li>
+            <li>
+              <a href="../../typography/font-properties/">Font properties</a>
+            </li>
+            <li>
+              <a href="../../typography/custom-properties/"
+                >Custom properties</a
+              >
+            </li>
+          </ul>
+          <h3>Display</h3>
+          <ul>
+            <li>
+              <a href="../../display/display-property/">Display property</a>
+            </li>
+            <li><a href="../../display/flexbox/">Flexbox</a></li>
+            <li><a href="../../display/grid/">Grid</a></li>
+          </ul>
+          <h3>Responsive design</h3>
+          <ul>
+            <li>
+              <a href="../../responsive-design/breakpoints/">Breakpoints</a>
+            </li>
+            <li>
+              <a href="../../responsive-design/printable-other/"
+                >Printable web & other</a
+              >
+            </li>
+            <li class="active">
+              <a href="../../responsive-design/responsive-images/"
+                >Responsive images</a
+              >
+            </li>
+          </ul>
+          <h3>Motion & Transform</h3>
+          <ul>
+            <li><a href="../../motion-transitions/transform/">Transform</a></li>
+            <li>
+              <a href="../../motion-transitions/transitions/">Transitions</a>
+            </li>
+            <li><a href="../../motion-transitions/animation/">Animation</a></li>
+          </ul>
+          <h3>Performance & Best practices</h3>
+          <ul>
+            <li>
+              <a href="../../performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+            <li>
+              <a href="../../performance-best-practices/accessibility/"
+                >Accessibility considerations</a
+              >
+            </li>
+            <li>
+              <a
+                href="../../performance-best-practices/performance-optimisation/"
+                >Performance optimisation</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="lesson">
+        <h1>Responsive images</h1>
+        <div class="block-wrapper">
+          <h2>What and why are responsive images?</h2>
+          <p>
+            Responsive images let you serve different image formats and sizes to
+            optimise loading time. Serving images in the correct size not only
+            optimises loading time, but rendering time as well, since the
+            browser won't have to downsample the image to its displayed size.
+          </p>
+        </div>
+        <div class="block-wrapper">
+          <h2>How to serve responsive images?</h2>
+          <p>
+            First, you need to define the appropriate image sizes for you
+            website. Yuo shouldn't offer too many sizes, since each individual
+            image variation will occupy storage space on your server.
+          </p>
+          <p>
+            Without getting too much into the weeds, the optimal iamge size is
+            not only defined by its display size, but also by the DPR (device
+            pixel ratio) of the device it is displayed on. The DPR is the ratio
+            between the physical size of the image and the size of the device's
+            screen. For example, a 1920x1080 image on a 2x DPR device will be
+            displayed at a size of 3840x2160. Keeping that in mind, here are
+            some common images sizes to consider:
+          </p>
+          <ul>
+            <li>
+              <strong>640px</strong> - Small mobile (320px logical × 2x DPR)
+            </li>
+            <li>
+              <strong>960px</strong> - Small mobile high-end (320px × 3x DPR)
+            </li>
+            <li>
+              <strong>1200px</strong> - Medium mobile/tablet (400-600px logical
+              × 2x DPR)
+            </li>
+            <li>
+              <strong>1800px</strong> - Tablet/small desktop with high DPR
+            </li>
+            <li><strong>2560px</strong> - Large desktop (1280px × 2x DPR)</li>
+            <li>
+              <strong>3840px</strong> - 4K displays and high-DPR large screens
+            </li>
+          </ul>
+        </div>
+        <div class="block-wrapper" id="generating-images">
+          <h2>Generating the various images</h2>
+          <p>
+            Since resizing every image to all the different sizes is a tedious
+            task, we can use a tool like
+            <a href="https://imagemagick.org/">ImageMagick</a> to generate all
+            the images for us. To do so, we first need to install HomeBrew,
+            which is a package manager for macOS.
+          </p>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-bash">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+          <!-- prettier-ignore-end -->
+          <p>
+            Once HomeBrew is installed, install ImageMagick using the
+            <code class="language-bash">brew install imagemagick</code> command.
+            Download the bash script using the following link:
+            <a
+              href="assets/script/batch-resize-and-convert.sh"
+              download="batch-resize-and-convert.sh"
+              >batch-resize-and-convert.sh</a
+            >. Move the script inside the folder containing the images. Then,
+            get the folder's path (<code class="language-plaintext"
+              >opt + right click</code
+            >
+            the folder in your file explorer, and select "Copy folder-name as
+            Pathname") and run the following command:
+          </p>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-bash">cd /path/to/folder
+# Makes the script executable
+chmod +x batch-resize-and-convert.sh
+# Run the script
+./batch-resize-and-convert.sh</code></pre>
+          <!-- prettier-ignore-end -->
+          <p>
+            You should now have a new folder named
+            <code class="language-plaintext">resized</code> containing all the
+            images in all the different sizes, both in JPEG and WebP format.
+          </p>
+        </div>
+        <div class="block-wrapper">
+          <h2>Using the images</h2>
+          <p>
+            To use the images, you can use the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#srcset"
+              target="_blank"
+              ><code class="language-html">srcset</code></a
+            >
+            attribute. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#srcset"
+              target="_blank"
+              ><code class="language-html">srcset</code></a
+            >
+            attribute allows you to specify different image sources for
+            different screen sizes. The attribute value is a comma-separated
+            list of image source strings, each followed by a width descriptor
+            (<a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#width"
+              target="_blank"
+              ><code class="language-html">600w</code></a
+            >). If you want to offer multiple image format, wrap the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"
+              target="_blank"
+              ><code class="language-html">&lt;img&gt;</code></a
+            >
+            tag in a
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture"
+              target="_blank"
+              ><code class="language-html">&lt;picture&gt;</code></a
+            >
+            tag and place a
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source"
+              target="_blank"
+              ><code class="language-html">&lt;source&gt;</code></a
+            >
+            tag before the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"
+              target="_blank"
+              ><code class="language-html">&lt;img&gt;</code></a
+            >
+            tag for each format.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html">&lt;picture&gt;
+  &lt;source srcset="assets/media/resized/placeholder-480w.webp 480w, 
+                  assets/media/resized/placeholder-800w.webp 800w, 
+                  assets/media/resized/placeholder-1200w.webp 1200w, 
+                  assets/media/resized/placeholder-1920w.webp 1920w, 
+                  assets/media/resized/placeholder-2560w.webp 2560w" 
+          type="image/webp"&gt;
+  &lt;source srcset="assets/media/resized/placeholder-480w.jpg 480w, 
+                  assets/media/resized/placeholder-800w.jpg 800w, 
+                  assets/media/resized/placeholder-1200w.jpg 1200w, 
+                  assets/media/resized/placeholder-1920w.jpg 1920w, 
+                  assets/media/resized/placeholder-2560w.jpg 2560w"
+          type="image/jpeg"&gt;
+  &lt;img src="assets/media/placeholder.jpg" alt="Grey placeholder rectangle" /&gt;
+&lt;/picture&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="responsive-images-example">
+              <picture>
+                <source
+                  srcset="
+                    assets/media/resized/placeholder-480w.webp   480w,
+                    assets/media/resized/placeholder-800w.webp   800w,
+                    assets/media/resized/placeholder-1200w.webp 1200w,
+                    assets/media/resized/placeholder-1920w.webp 1920w,
+                    assets/media/resized/placeholder-2560w.webp 2560w
+                  "
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    assets/media/resized/placeholder-480w.jpg   480w,
+                    assets/media/resized/placeholder-800w.jpg   800w,
+                    assets/media/resized/placeholder-1200w.jpg 1200w,
+                    assets/media/resized/placeholder-1920w.jpg 1920w,
+                    assets/media/resized/placeholder-2560w.jpg 2560w
+                  "
+                  type="image/jpeg"
+                />
+                <img
+                  src="assets/media/placeholder.jpg"
+                  alt="Grey placeholder rectangle"
+                />
+              </picture>
+              <p class="user-agent">Displayed image: placeholder.jpg</p>
+              <script>
+                const responsiveImage = document
+                  .getElementById("responsive-images-example")
+                  .querySelector("img");
+                const responsiveImageOutput = document
+                  .getElementById("responsive-images-example")
+                  .querySelector("p");
+                responsiveImage.onload = () => {
+                  console.log("new image loaded");
+                  console.log(responsiveImage.currentSrc.split("/").pop());
+
+                  responsiveImageOutput.innerText = `Displayed image: ${responsiveImage.currentSrc
+                    .split("/")
+                    .pop()}`;
+                };
+
+                window.addEventListener("resize", () => {
+                  responsiveImage.onload = () => {
+                    console.log("new image loaded");
+                    console.log(responsiveImage.currentSrc.split("/").pop());
+
+                    responsiveImageOutput.innerText = `Displayed image: ${responsiveImage.currentSrc
+                      .split("/")
+                      .pop()}`;
+                  };
+                });
+              </script>
+              <style>
+                #responsive-images-example picture {
+                  display: block;
+                  width: 100%;
+                  height: auto;
+                  line-height: 0;
+                  font-size: 0;
+                }
+                #responsive-images-example img {
+                  width: 100%;
+                  max-width: 100vw;
+                }
+                #responsive-images-example p {
+                  margin-bottom: 0;
+                }
+              </style>
+            </div>
+          </div>
+          <div class="further-reading">
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images"
+              target="_blank"
+              >Learn more about the responsive images</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
