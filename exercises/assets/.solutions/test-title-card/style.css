@@ -1,0 +1,73 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+.title-card {
+  /* Simple centering */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Remove default styling */
+  color: inherit;
+  text-decoration: none;
+
+  /* Add styling */
+  background-color: white;
+  width: 45ch;
+  padding: 0.5rem;
+  border: dashed 1px #000;
+  border-radius: 0.5rem;
+}
+
+.title-card img {
+  max-width: 100%;
+}
+
+/* Hover effect */
+
+.title-card:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Transition */
+
+/* .title-card {
+  transition: transform 200ms ease-in-out;
+} */
+
+/* More complex hover effect */
+
+/* .title-card {
+  transition: transform 200ms ease-in-out;
+}
+
+.title-card img {
+  filter: grayscale(1);
+  transition: filter 200ms ease-in-out;
+}
+
+.title-card:hover img {
+  filter: grayscale(0);
+}
+
+.title-card:hover {
+  transform: translate(-50%, -60%) scale(1.05);
+} */
+
+/* Small additional styling */
+
+.title-card {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.title-card h1 {
+  margin-block: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.title-card p {
+  margin: 0;
+  font-size: 1rem;
+}

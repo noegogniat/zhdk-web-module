@@ -1,0 +1,74 @@
+/* 
+
+- The font size is 14px (.875rem)
+- The line height is 16.8px (120%)
+- The background colour is black
+- The text colour is white
+- The page has a padding of 14px
+- Each major section is seperated by a 14px gap
+- The language indicators are 14px above the text
+- The texts are seperated by a 14px gap
+
++ Hints:
+- Some properties have been prefilled for you, keep them as they are.
+- The body and footer are displayed in a grid, try to see if you can style them.
+
+*/
+
+html {
+  background-color: black;
+  font-size: 0.875rem;
+  line-height: 120%;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  height: 100vh;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+h1,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+h1 {
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+footer {
+  display: grid;
+  gap: 1rem;
+}
+
+footer p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* Prefilled properties (and hints) */
+
+body {
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+}
+
+main {
+  min-height: 0;
+}
+
+footer {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}

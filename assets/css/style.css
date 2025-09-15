@@ -60,14 +60,11 @@ code {
 
 ul li:not(.user-agent) {
   list-style: "– " outside;
-  margin-inline-start: 1.7ch;
 }
 
 ul li:not(.user-agent).active {
   list-style: "• " outside;
   color: blue;
-  margin-inline-start: 1.65ch;
-  padding-left: 0.05ch;
 }
 
 code {
@@ -99,4 +96,48 @@ main:not(.user-agent) {
 
 aside h3:not(:first-child) {
   margin-top: 1rem;
+}
+
+ul li:not(.user-agent) {
+  margin-inline-start: 1.7ch;
+}
+ul li:not(.user-agent).active {
+  position: relative;
+  margin-inline-start: 1.65ch;
+  padding-left: 0.05ch;
+}
+
+/* Short active transition */
+
+ul li:not(.user-agent).active::marker {
+  animation: marker-fade-in 100ms ease-in-out forwards;
+}
+
+ul li:not(.user-agent).active::before {
+  content: "–";
+  position: absolute;
+  left: -1.5815ch;
+  animation: marker-fade-out 100ms ease-in-out forwards;
+}
+
+@keyframes marker-fade-in {
+  from {
+    transform: scale(0.75);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes marker-fade-out {
+  from {
+    transform: scale3d(1, 1, 1) translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale3d(0.5, 2, 1) translateY(-0.05ch);
+    opacity: 0;
+  }
 }

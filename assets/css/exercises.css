@@ -52,7 +52,7 @@
   left: 1ch;
   top: 50%;
   transform: translate(0, -50%) rotate(0deg);
-  transition: transform 200ms ease-in-out;
+  transition: transform 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .exercise-block[open] > summary {
@@ -84,32 +84,26 @@
   font-size: 1rem;
 }
 
+.exercise-block > summary .download-button:hover {
+  color: #00f;
+  border-color: #00f;
+}
+
 /* Transition details opening if supported */
 @supports (interpolate-size: allow-keywords) {
   .exercise-block::details-content {
-    transition-property: padding, block-size, content-visibility;
-    transition: 200ms 0ms ease-in-out, border-top-width 10ms 190ms linear;
+    transition: padding 200ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      block-size 200ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      content-visibility 200ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      border-top-width 10ms 190ms linear;
     transition-behavior: allow-discrete;
   }
   .exercise-block[open]::details-content {
-    /* transition-delay: 75ms; */
-    transition: 200ms 0ms ease-in-out, border-top-width 0ms linear;
+    transition: padding 200ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      block-size 200ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      content-visibility 200ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      border-top-width 0ms linear;
   }
-  .exercise-block summary {
-    transition: 200ms ease-in-out;
-    transition-behavior: allow-discrete;
-  }
-  .exercise-block[open] summary {
-    transition-delay: 0ms;
-  }
-
-  .exercise-block > summary::before {
-    transition-delay: 0ms;
-  }
-
-  /* .exercise-block[open] > summary::before {
-    transition-delay: 75ms;
-  } */
 }
 
 .exercise-block p {
@@ -120,6 +114,11 @@
 
 .exercise-block pre {
   margin-top: 0.5rem;
+}
+
+.exercise-block img {
+  border-radius: 0.5rem;
+  margin-block: 0.5rem;
 }
 
 .exercise-block ol:not(.user-agent),

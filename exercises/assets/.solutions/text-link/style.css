@@ -1,0 +1,51 @@
+/* Simple hover effect */
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: deeppink;
+}
+
+/* Hover effect with transition */
+
+/* a {
+  color: inherit;
+  transition: color 200ms ease-in-out;
+}
+
+a:hover {
+  color: deeppink;
+} */
+
+/* More complex hover effect */
+
+/* a {
+  display: inline-block;
+  color: inherit;
+  transition: color 200ms ease-in-out, text-shadow 200ms ease-in-out;
+}
+
+a:hover {
+  text-decoration: none;
+  color: deeppink;
+  text-shadow: 0 0 2ch blue;
+  animation: jump 900ms ease-in-out forwards;
+}
+
+@keyframes jump {
+  0% {
+    scale: 1;
+    rotate: 0turn;
+  }
+
+  30% {
+    scale: 1.5;
+  }
+
+  100% {
+    scale: 1;
+    rotate: 1turn;
+  }
+} */

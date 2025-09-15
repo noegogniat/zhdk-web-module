@@ -4,9 +4,9 @@ This website should serve as a reference for the topics covered in the course, a
 
 ## Table of Contents
 
-[↖ HOME](https://zhdk.noegogniat.com)
+[Home](https://zhdk.noegogniat.com)
 
-[↓ DOWNLOAD](https://github.com/noegogniat/zhdk-web-module)
+[Download](https://github.com/noegogniat/zhdk-web-module)
 
 [↗ EXERCISES](https://zhdk.noegogniat.com/exercises)
 

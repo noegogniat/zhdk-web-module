@@ -18,13 +18,8 @@ html {
 
 #top-nav li {
   list-style-type: none;
-  margin: 0;
   border-radius: 0.5rem;
   width: fit-content;
-}
-
-#top-nav li.active {
-  padding-left: 0.15ch;
 }
 
 #top-nav li a {
@@ -32,15 +27,52 @@ html {
 }
 
 #top-nav li:nth-child(1) {
+  list-style: "↖ " outside;
   color: blue;
 }
 
 #top-nav li:nth-child(2) {
+  list-style: "↓ " outside;
   color: limegreen;
 }
 
 #top-nav li:nth-child(3) {
+  list-style: "↗ " outside;
   color: deeppink;
+}
+
+/* Short active transition */
+
+#top-nav li:nth-child(1).active::before {
+  content: "↖ ";
+}
+
+#top-nav li:nth-child(2).active::before {
+  content: "↓ ";
+}
+#top-nav li:nth-child(3).active::before {
+  content: "↗ ";
+}
+
+#top-nav li.active::before {
+  position: absolute;
+  left: -1.5815ch;
+  animation: arrow-marker-fade-out 100ms ease-in-out forwards;
+}
+
+#top-nav li.active {
+  list-style: "• " outside;
+}
+
+@keyframes arrow-marker-fade-out {
+  from {
+    transform: scale3d(1, 1, 1) translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale3d(0.25, 0.25, 1) translateY(0);
+    opacity: 0;
+  }
 }
 
 .sidebar,
@@ -77,7 +109,6 @@ h1:not(.user-agent) {
 
 .block-wrapper {
   margin-block: 2rem 1rem;
-  /* padding-bottom: 1rem; */
 }
 
 .block-wrapper:last-child {
@@ -290,7 +321,7 @@ pre code::-webkit-scrollbar {
   content: "→";
   position: absolute;
   left: 1ch;
-  transition: transform 75ms ease-in-out;
+  transition: transform 75ms cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
 .tip-block[open] > summary {
@@ -305,17 +336,19 @@ pre code::-webkit-scrollbar {
 /* Transition details opening if supported */
 @supports (interpolate-size: allow-keywords) {
   .tip-block::details-content {
-    transition-property: padding, block-size, content-visibility,
-      border-bottom-width;
-    transition: 200ms 0ms ease-in-out;
+    transition: padding 200ms 0ms cubic-bezier(0.55, 0.055, 0.675, 0.19),
+      block-size 200ms 0ms cubic-bezier(0.55, 0.055, 0.675, 0.19),
+      content-visibility 200ms 0ms cubic-bezier(0.55, 0.055, 0.675, 0.19),
+      border-bottom-width 200ms 0ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition-behavior: allow-discrete;
   }
   .tip-block[open]::details-content {
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     transition-delay: 75ms;
   }
   .tip-block summary {
-    transition-property: width, border-radius;
-    transition: 75ms 200ms ease-in-out;
+    transition: width 75ms 200ms cubic-bezier(0.47, 0, 0.745, 0.715),
+      border-radius 75ms 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
     transition-behavior: allow-discrete;
   }
   .tip-block[open] summary {
@@ -323,7 +356,7 @@ pre code::-webkit-scrollbar {
   }
 
   .tip-block > summary::before {
-    transition-delay: 0ms;
+    transition-delay: 200ms;
   }
 
   .tip-block[open] > summary::before {
@@ -416,8 +449,9 @@ pre code::-webkit-scrollbar {
   width: fit-content;
   margin: auto;
   box-shadow: 0 0 0 #3a6ede;
-  transition-property: background-color, box-shadow, transform;
-  transition: 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 100ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 100ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 100ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .further-reading a:hover:not(.user-agent) {
