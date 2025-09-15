@@ -33,11 +33,9 @@ p:not(.user-agent) {
   margin-block: 1rem;
 }
 
+p:not(.user-agent):first-child,
 ul p:not(.user-agent),
-ol p:not(.user-agent) {
-  text-indent: 0;
-}
-
+ol p:not(.user-agent),
 h1 + p:not(.user-agent),
 h2 + p:not(.user-agent),
 h3 + p:not(.user-agent) {
@@ -57,7 +55,7 @@ i {
 }
 
 code {
-  font-family: "Pelikan Mono";
+  font-family: "Pelikan Mono", "Courier New", Courier, monospace;
 }
 
 ul li:not(.user-agent) {

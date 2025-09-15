@@ -1,0 +1,171 @@
+/* Exercises list */
+
+:root {
+  interpolate-size: allow-keywords;
+}
+
+.exercises-wrapper {
+  display: block;
+  border-top: solid 1px #000;
+}
+
+.exercise-block {
+  background-color: #f5f5f5;
+  overflow: hidden;
+  border-bottom: solid 1px #000;
+}
+
+.exercise-block:nth-child(2n + 1) {
+  background-color: #ececec;
+}
+
+.exercise-block::details-content {
+  block-size: 0;
+  background-color: inherit;
+  border-top: solid 0 #000;
+  padding: 0 1ch;
+}
+
+.exercise-block[open]::details-content {
+  block-size: auto;
+  border-top-width: 1px;
+  padding: 0 1ch 0.5rem;
+}
+
+.exercise-block > summary {
+  position: relative;
+  padding: 0.5rem 1ch 0.5rem 3ch;
+  cursor: pointer;
+  user-select: none;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 9ch auto;
+}
+
+.exercise-block > summary::-webkit-details-marker {
+  display: none;
+}
+
+.exercise-block > summary::before {
+  content: "→";
+  position: absolute;
+  left: 1ch;
+  top: 50%;
+  transform: translate(0, -50%) rotate(0deg);
+  transition: transform 200ms ease-in-out;
+}
+
+.exercise-block[open] > summary {
+  width: 100%;
+}
+
+.exercise-block[open] > summary::before {
+  transform: translate(0, -50%) rotate(90deg);
+}
+
+.exercise-block > summary > * {
+  height: fit-content;
+  margin: auto 0;
+}
+
+.exercise-block > summary h2 {
+  display: block;
+  text-transform: initial;
+  text-align: left;
+}
+
+.exercise-block > summary .download-button {
+  padding: 0.25rem 1ch;
+  border-radius: 0.5rem;
+  background-color: #d2f2fb;
+  border: solid 1px #3a6ede;
+  color: #3a6ede;
+  text-decoration: none !important;
+  font-size: 1rem;
+}
+
+/* Transition details opening if supported */
+@supports (interpolate-size: allow-keywords) {
+  .exercise-block::details-content {
+    transition-property: padding, block-size, content-visibility;
+    transition: 200ms 0ms ease-in-out, border-top-width 10ms 190ms linear;
+    transition-behavior: allow-discrete;
+  }
+  .exercise-block[open]::details-content {
+    /* transition-delay: 75ms; */
+    transition: 200ms 0ms ease-in-out, border-top-width 0ms linear;
+  }
+  .exercise-block summary {
+    transition: 200ms ease-in-out;
+    transition-behavior: allow-discrete;
+  }
+  .exercise-block[open] summary {
+    transition-delay: 0ms;
+  }
+
+  .exercise-block > summary::before {
+    transition-delay: 0ms;
+  }
+
+  /* .exercise-block[open] > summary::before {
+    transition-delay: 75ms;
+  } */
+}
+
+.exercise-block p {
+  text-indent: 0;
+  padding-top: 0.5rem;
+  margin-block: 0;
+}
+
+.exercise-block pre {
+  margin-top: 0.5rem;
+}
+
+.exercise-block ol:not(.user-agent),
+.exercise-block ul:not(.user-agent) {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.exercise-block ul:not(.user-agent):not(.user-agent),
+.exercise-block ol:not(.user-agent):not(.user-agent) {
+  padding-left: 2.5ch !important;
+}
+
+.exercise-block .compare-block {
+  margin-block: 0.5rem;
+  gap: 0.5rem;
+  flex-flow: column nowrap;
+}
+
+.exercise-block .compare-block > * {
+  max-width: 100%;
+  flex-basis: 100%;
+}
+
+.exercise-block .compare-block-code {
+  flex-shrink: initial;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.exercise-block .compare-block-code > * {
+  margin-block: 0;
+}
+
+.exercise-block .compare-block-code > *,
+.exercise-block .compare-block-code:has(> *:nth-child(2)) > * {
+  max-height: 90svh;
+  max-width: 100%;
+}
+
+.exercise-block .compare-block > span {
+  width: fit-content;
+  transform: rotate(90deg);
+}
+
+.exercise-block .compare-block-result {
+  max-height: 100%;
+}

@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tools & Resources · External resources</title>
+    <title>Web Module – Table of Contents</title>
     <link rel="icon" href="/assets/favicon/favicon.ico" />
     <link rel="stylesheet" href="/assets/css/stylesheet.css" />
     <link rel="stylesheet" href="/assets/css/reset.css" />
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/lesson.css" />
+    <link rel="stylesheet" href="/assets/css/exercises.css" />
     <script src="/assets/js/highlight/highlight.js"></script>
     <script src="/assets/js/highlight/languages/apache.js"></script>
     <script src="/assets/js/highlight/languages/bash.js"></script>
@@ -18,6 +19,10 @@
   </head>
 
   <body>
+    <header class="site-header">
+      <div></div>
+    </header>
+
     <main class="lesson-layout">
       <aside class="sidebar">
         <nav>
@@ -34,8 +39,8 @@
                 >
               </h3>
             </li>
-            <li>
-              <h3><a href="/exercises">↗ Excercises</a></h3>
+            <li class="active">
+              <h3><a href="/exercises">• Excercises</a></h3>
             </li>
           </ul>
           <h3>Tools & Resources</h3>
@@ -48,7 +53,7 @@
                 >File organisation</a
               >
             </li>
-            <li class="active">
+            <li>
               <a href="/tools-resources/external-resources/"
                 >External resources</a
               >
@@ -121,14 +126,10 @@
           </ul>
           <h3>Motion & Transform</h3>
           <ul>
-            <li>
-              <a href="/motion-transitions/transform/">Transform</a>
-            </li>
+            <li><a href="/motion-transitions/transform/">Transform</a></li>
+            <li><a href="/motion-transitions/animation/">Animation</a></li>
             <li>
               <a href="/motion-transitions/transitions/">Transitions</a>
-            </li>
-            <li>
-              <a href="/motion-transitions/animation/">Animation</a>
             </li>
           </ul>
           <h3>Performance & Best practices</h3>
@@ -152,128 +153,56 @@
         </nav>
       </aside>
       <section class="lesson">
-        <h1>External resources</h1>
+        <h1>Exercises</h1>
         <div class="block-wrapper">
-          <h2>Rule of thumb</h2>
           <p>
-            If you have an idea in mind, there is a good chance someone else has
-            already thought of it and shared it online.
-            <strong> Look for a solution online </strong>, try to understand
-            what the code effectively does, and only then implement it.
+            Here you'll find a few exercises we'll be going through during the
+            course. I'll be adding more as we go along, so stay tuned!
           </p>
-          <p>
-            It is also ok to not understand everything right away. Try to get an
-            <strong>abstract understanding</strong> of what you copy paste, and
-            try to alter, tweat, or improve it. You'll learn a lot more by
-            getting your hands dirty.
-          </p>
-        </div>
-        <div class="block-wrapper">
-          <h2>Useful resources</h2>
-          <h3>Guides and references</h3>
-          <ul>
-            <li>
-              W3 Schools:
-              <a
-                target="_blank"
-                href="https://www.w3schools.com/html/default.asp"
-                >HTML</a
-              >,
-              <a
-                target="_blank"
-                href="https://www.w3schools.com/css/default.asp"
-                >CSS</a
-              >,
-              <a target="_blank" href="https://www.w3schools.com/js/default.asp"
-                >JS</a
-              >
-              — good introductory guides to the subject.
-            </li>
-            <li>
-              MDN:
-              <a
-                target="_blank"
-                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference"
-                >HTML</a
-              >,
-              <a
-                target="_blank"
-                href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference"
-                >CSS</a
-              >,
-              <a
-                target="_blank"
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference"
-                >JS</a
-              >
-              — authoritative docs with examples.
-            </li>
-          </ul>
-          <h3>Font convertion tools</h3>
-          <ul>
-            <li>
-              <a target="_blank" href="https://transfonter.org/">Transfonter</a>
-              — convert fonts to WOFF/WOFF2 for the web.
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href="https://www.fontsquirrel.com/tools/webfont-generator"
-                >Fontsquirrel</a
-              >
-              — convert fonts to WOFF/WOFF2 for the web.
-            </li>
-          </ul>
-          <h3>Media file compressors</h3>
-          <ul>
-            <li>
-              <a target="_blank" href="https://imageoptim.com/mac"
-                >ImageOptim</a
-              >
-              — optimise images, remove metadata, and convert to WebP format.
-            </li>
-            <li>
-              <a target="_blank" href="https://handbrake.fr/">HandBrake</a>
-              — optimise videos for the web and convert to WebM format.
-            </li>
-          </ul>
-          <h3>Favicon generators</h3>
-          <ul>
-            <li>
-              <a target="_blank" href="https://realfavicongenerator.net/"
-                >RealFaviconGenerator</a
-              >
-              — generate icons and HTML tags.
-            </li>
-            <li>
-              <a target="_blank" href="https://favicon.io/favicon-converter/"
-                >favicon.io</a
-              >
-              — generate icons and HTML tags.
-            </li>
-          </ul>
-          <h3>Files and scripts</h3>
-          <ul>
-            <li>
-              <a download="reset.css" href="assets/scripts/reset.css"
-                >Modern CSS Reset (altered)</a
-              >
-              — normalizes default styles across browsers.
-            </li>
-            <li>
-              <a
-                download="batch-resize-and-convert.sh"
-                href="assets/scripts/batch-resize-and-convert.sh"
-                >Batch resize and convert images</a
-              >
-              — resizes and converts images using ImageMagick. Follow the guide
-              on the
-              <a href="/responsive-design/responsive-images/#generating-images"
-                >Responsive images</a
-              >
-              page to use it.
-            </li>
-          </ul>
+          <div class="exercises-wrapper">
+            <details class="exercise-block">
+              <summary>
+                <h2>Test: Link</h2>
+                <span class="duration">20' + 10'</span>
+                <a
+                  class="download-button"
+                  href="assets/exercises/Test – Link.zip"
+                  download
+                  >↓ Download</a
+                >
+              </summary>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-plaintext">1. Create an empty HTML document
+2. Link the provided CSS file
+3. Add some placeholder text
+4. In it, add a link to the any website
+5. Change its look and behaviour:
+  - Opens in a new tab
+  - Same text colour as the paragraph
+  - Underlined
+  - Make something happen on hover</code></pre>
+            </details>
+            <details class="exercise-block">
+              <summary>
+                <h2>Test: Title card</h2>
+                <span class="duration">20' + 10'</span>
+                <a
+                  class="download-button"
+                  href="assets/exercises/Test – Title card.zip"
+                  download
+                  >↓ Download</a
+                >
+              </summary>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-plaintext">1. Create an empty HTML document
+2. Link the provided CSS file
+3. At the center of the screen, add a info card:
+  - Content: image, title and some text
+  - Borders of your choice
+  - Rounded corners
+  - Make something happen on hover</code></pre>
+            </details>
+          </div>
         </div>
       </section>
     </main>

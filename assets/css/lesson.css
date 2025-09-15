@@ -16,6 +16,33 @@ html {
   width: 30ch;
 }
 
+#top-nav li {
+  list-style-type: none;
+  margin: 0;
+  border-radius: 0.5rem;
+  width: fit-content;
+}
+
+#top-nav li.active {
+  padding-left: 0.15ch;
+}
+
+#top-nav li a {
+  white-space: nowrap;
+}
+
+#top-nav li:nth-child(1) {
+  color: blue;
+}
+
+#top-nav li:nth-child(2) {
+  color: limegreen;
+}
+
+#top-nav li:nth-child(3) {
+  color: deeppink;
+}
+
 .sidebar,
 h1:not(.user-agent) {
   position: sticky;
@@ -23,7 +50,7 @@ h1:not(.user-agent) {
   height: fit-content;
   padding: 1rem;
   border: solid 1px #efefef;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   background-color: #fefefe;
 }
 
