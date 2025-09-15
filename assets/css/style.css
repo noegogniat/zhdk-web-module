@@ -347,12 +347,25 @@ pre code::-webkit-scrollbar {
     align-items: center;
   }
 
+  #home {
+    flex-flow: column-reverse nowrap;
+  }
+
   .sidebar {
     width: 100%;
     margin-top: 1rem;
   }
 
-  .sidebar nav > *:not(#top-nav, #simple-nav) {
+  #home .sidebar {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  #home .sidebar nav {
+    max-height: 500vh;
+  }
+
+  .lesson-layout:not(#home) .sidebar nav > *:not(#top-nav, #simple-nav) {
     display: none;
   }
 
