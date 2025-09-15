@@ -52,7 +52,7 @@
   left: 1ch;
   top: 50%;
   transform: translate(0, -50%) rotate(0deg);
-  transition: transform 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform 350ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .exercise-block[open] > summary {
@@ -92,17 +92,17 @@
 /* Transition details opening if supported */
 @supports (interpolate-size: allow-keywords) {
   .exercise-block::details-content {
-    transition: padding 200ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
-      block-size 200ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
-      content-visibility 200ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
-      border-top-width 10ms 190ms linear;
+    transition: padding 350ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      block-size 350ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      content-visibility 350ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      border-top-width 10ms 330ms linear;
     transition-behavior: allow-discrete;
   }
   .exercise-block[open]::details-content {
-    transition: padding 200ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
-      block-size 200ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
-      content-visibility 200ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
-      border-top-width 0ms linear;
+    transition: padding 350ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      block-size 350ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      content-visibility 350ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      border-top-width 0ms 10ms linear;
   }
 }
 
