@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="/assets/css/stylesheet.css" />
     <link rel="stylesheet" href="/assets/css/reset.css" />
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/lesson.css" />
     <script src="/assets/js/highlight/highlight.js"></script>
     <script src="/assets/js/highlight/languages/apache.js"></script>
     <script src="/assets/js/highlight/languages/bash.js"></script>
@@ -136,13 +135,13 @@
           <h3>Motion & Transform</h3>
           <ul>
             <li>
-              <a href="/motion-transitions/transform/">Transform</a>
+              <a href="/motion-transform/transform/">Transform</a>
             </li>
             <li class="active">
-              <a href="/motion-transitions/transitions/">Transitions</a>
+              <a href="/motion-transform/transitions/">Transitions</a>
             </li>
             <li>
-              <a href="/motion-transitions/animation/">Animation</a>
+              <a href="/motion-transform/animation/">Animation</a>
             </li>
           </ul>
           <h3>Performance & Best practices</h3>
@@ -161,6 +160,14 @@
               <a href="/performance-best-practices/performance-optimisation/"
                 >Performance optimisation</a
               >
+            </li>
+          </ul>
+          <ul class="mobile-only" id="simple-nav">
+            <li id="simple-nav-previous">
+              <a href="/motion-transform/transform/">Transform</a>
+            </li>
+            <li id="simple-nav-next">
+              <a href="/motion-transform/animation/">Animation</a>
             </li>
           </ul>
         </nav>
@@ -260,8 +267,10 @@
   color: black;
   transform: scale(1);
 
-  transition: color 1s 1s ease-in, 
-              transform 1s 1s ease-in;
+  transition-property: color, transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+  transition-delay: 1s;
 }
 
 .transition:hover {
@@ -269,8 +278,6 @@
   transform: scale(1.25);
 
   transition-delay: 0s;
-  transition-duration: 300ms;
-  transition-timing-function: ease-out;
 }</code></pre>
               <!-- prettier-ignore-end -->
             </div>
@@ -293,7 +300,6 @@
                   color: deeppink;
                   transform: scale(1.25);
                   transition-delay: 0s;
-                  transition-duration: 300ms;
                 }
               </style>
             </div>

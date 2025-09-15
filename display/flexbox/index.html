@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="/assets/css/stylesheet.css" />
     <link rel="stylesheet" href="/assets/css/reset.css" />
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/lesson.css" />
     <script src="/assets/js/highlight/highlight.js"></script>
     <script src="/assets/js/highlight/languages/apache.js"></script>
     <script src="/assets/js/highlight/languages/bash.js"></script>
@@ -138,13 +137,13 @@
           <h3>Motion & Transform</h3>
           <ul>
             <li>
-              <a href="/motion-transitions/transform/">Transform</a>
+              <a href="/motion-transform/transform/">Transform</a>
             </li>
             <li>
-              <a href="/motion-transitions/transitions/">Transitions</a>
+              <a href="/motion-transform/transitions/">Transitions</a>
             </li>
             <li>
-              <a href="/motion-transitions/animation/">Animation</a>
+              <a href="/motion-transform/animation/">Animation</a>
             </li>
           </ul>
           <h3>Performance & Best practices</h3>
@@ -163,6 +162,14 @@
               <a href="/performance-best-practices/performance-optimisation/"
                 >Performance optimisation</a
               >
+            </li>
+          </ul>
+          <ul class="mobile-only" id="simple-nav">
+            <li id="simple-nav-previous">
+              <a href="/display/display-property/">Display property</a>
+            </li>
+            <li id="simple-nav-next">
+              <a href="/display/grid/">Grid</a>
             </li>
           </ul>
         </nav>
@@ -1197,11 +1204,12 @@
             <div class="compare-block-code">
               <!-- prettier-ignore-start -->
               <pre><code class="language-html wrap">&lt;div class="flex-container"&gt;
-  &lt;div class="flex-item flex-start"&gt;1&lt;/div&gt;
-  &lt;div class="flex-item flex-end"&gt;2&lt;/div&gt;
-  &lt;div class="flex-item center"&gt;3&lt;/div&gt;
-  &lt;div class="flex-item baseline"&gt;4&lt;/div&gt;
-  &lt;div class="flex-item stretch"&gt;5&lt;/div&gt;
+  &lt;div class="flex-item"&gt;1&lt;/div&gt;
+  &lt;div class="flex-item flex-start"&gt;2&lt;/div&gt;
+  &lt;div class="flex-item flex-end"&gt;3&lt;/div&gt;
+  &lt;div class="flex-item center"&gt;4&lt;/div&gt;
+  &lt;div class="flex-item baseline"&gt;5&lt;/div&gt;
+  &lt;div class="flex-item stretch"&gt;6&lt;/div&gt;
 &lt;/div&gt;</code></pre>
               <!-- prettier-ignore-end -->
               <span>+</span>
@@ -1215,7 +1223,7 @@
 
 .flex-item {
   background-color: #beb;
-  height: 1rem;
+height: 1rem;
   flex-grow: 1;
 }
 
@@ -1223,7 +1231,11 @@
 .flex-end {align-self: flex-end;}
 .center {align-self: center;}
 .baseline {align-self: baseline;}
-.stretch {align-self: stretch;}</code></pre>
+.stretch {
+  align-self: stretch; 
+  /* Necessary for 'stretch' to work */
+  height: auto; 
+}</code></pre>
               <!-- prettier-ignore-end -->
             </div>
             <span>→</span>
@@ -1278,6 +1290,7 @@
 
                 #align-self-example .stretch {
                   align-self: stretch;
+                  height: auto;
                 }
               </style>
             </div>

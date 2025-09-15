@@ -4,16 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HTML Basics · Attributes</title>
-    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
-<link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="NG ZHDK" />
-<link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="NG ZHDK" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
     <link rel="stylesheet" href="/assets/css/stylesheet.css" />
     <link rel="stylesheet" href="/assets/css/reset.css" />
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/lesson.css" />
     <script src="/assets/js/highlight/highlight.js"></script>
     <script src="/assets/js/highlight/languages/apache.js"></script>
     <script src="/assets/js/highlight/languages/bash.js"></script>
@@ -26,14 +34,15 @@
     <main class="lesson-layout">
       <aside class="sidebar">
         <nav>
-          
           <ul id="top-nav">
             <li>
               <h3><a href="/">Home</a></h3>
             </li>
             <li>
               <h3>
-                <a href="https://github.com/noegogniat/zhdk-web-module" target="_blank"
+                <a
+                  href="https://github.com/noegogniat/zhdk-web-module"
+                  target="_blank"
                   >Download</a
                 >
               </h3>
@@ -94,9 +103,7 @@
               <a href="/typography/font-properties/">Font properties</a>
             </li>
             <li>
-              <a href="/typography/custom-properties/"
-                >Custom properties</a
-              >
+              <a href="/typography/custom-properties/">Custom properties</a>
             </li>
           </ul>
           <h3>Display</h3>
@@ -125,11 +132,11 @@
           </ul>
           <h3>Motion & Transform</h3>
           <ul>
-            <li><a href="/motion-transitions/transform/">Transform</a></li>
+            <li><a href="/motion-transform/transform/">Transform</a></li>
             <li>
-              <a href="/motion-transitions/transitions/">Transitions</a>
+              <a href="/motion-transform/transitions/">Transitions</a>
             </li>
-            <li><a href="/motion-transitions/animation/">Animation</a></li>
+            <li><a href="/motion-transform/animation/">Animation</a></li>
           </ul>
           <h3>Performance & Best practices</h3>
           <ul>
@@ -144,10 +151,17 @@
               >
             </li>
             <li>
-              <a
-                href="/performance-best-practices/performance-optimisation/"
+              <a href="/performance-best-practices/performance-optimisation/"
                 >Performance optimisation</a
               >
+            </li>
+          </ul>
+          <ul class="mobile-only" id="simple-nav">
+            <li id="simple-nav-previous">
+              <a href="/html-basics/file-structure/">File structure</a>
+            </li>
+            <li id="simple-nav-next">
+              <a href="/html-basics/common-tags/">Common tags</a>
             </li>
           </ul>
         </nav>
@@ -164,11 +178,21 @@
           </p>
           <p>
             Each HTML element has built-in styling and behaviour. For example,
-            the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements" target="_blank"><code class="language-html">&lt;h1&gt;</code></a> element is used to
-            create a heading, and therefore has a larger font size, whereas the
-            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank"><code class="language-html">&lt;a&gt;</code></a> element is used to
-            create a link, and is therefor highlighted by an underline as well
-            as having a different colour.
+            the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements"
+              target="_blank"
+              ><code class="language-html">&lt;h1&gt;</code></a
+            >
+            element is used to create a heading, and therefore has a larger font
+            size, whereas the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a"
+              target="_blank"
+              ><code class="language-html">&lt;a&gt;</code></a
+            >
+            element is used to create a link, and is therefor highlighted by an
+            underline as well as having a different colour.
           </p>
           <div class="compare-block">
             <div class="compare-block-code">
@@ -187,8 +211,17 @@
             Those default styles (defined by the user agent stylesheet) vary
             from browser to browser. The most notable example being interactive
             elements such as
-            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" target="_blank"><code class="language-html">&lt;button&gt;</code></a> and
-            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" target="_blank"><code class="language-html">&lt;input&gt;</code></a>.
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button"
+              target="_blank"
+              ><code class="language-html">&lt;button&gt;</code></a
+            >
+            and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"
+              target="_blank"
+              ><code class="language-html">&lt;input&gt;</code></a
+            >.
           </p>
           <div class="compare-block">
             <div class="compare-block-code">
@@ -222,7 +255,7 @@
               >
               page.
             </p>
-          </d>
+          </details>
         </div>
       </section>
     </main>

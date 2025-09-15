@@ -51,9 +51,9 @@ RESPONSIVE DESIGN
 
 MOTION & TRANSFORM
 
-- [Transform](https://zhdk.noegogniat.com/motion-transitions/transform)
-- [Transitions](https://zhdk.noegogniat.com/motion-transitions/transitions)
-- [Animation](https://zhdk.noegogniat.com/motion-transitions/animation)
+- [Transform](https://zhdk.noegogniat.com/motion-transform/transform)
+- [Transitions](https://zhdk.noegogniat.com/motion-transform/transitions)
+- [Animation](https://zhdk.noegogniat.com/motion-transform/animation)
 
 PERFORMANCE & BEST PRACTICES
 
