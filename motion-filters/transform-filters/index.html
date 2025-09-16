@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Motion & Transform · Transform & Filters</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="NG ZHDK" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/stylesheet.css" />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="/assets/js/highlight/highlight.js"></script>
+    <script src="/assets/js/highlight/languages/apache.js"></script>
+    <script src="/assets/js/highlight/languages/bash.js"></script>
+    <script src="/assets/js/highlight/languages/css.js"></script>
+    <script src="/assets/js/highlight/languages/javascript.js"></script>
+    <script src="/assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <main class="lesson-layout">
+      <aside class="sidebar">
+        <nav>
+          <ul id="top-nav">
+            <li>
+              <h3><a href="/">Home</a></h3>
+            </li>
+            <li>
+              <h3>
+                <a
+                  href="https://github.com/noegogniat/zhdk-web-module"
+                  target="_blank"
+                  >Download</a
+                >
+              </h3>
+            </li>
+            <li>
+              <h3><a href="/exercises">Excercises</a></h3>
+            </li>
+          </ul>
+          <h3>Tools & Resources</h3>
+          <ul>
+            <li>
+              <a href="/tools-resources/setup-guide/">Setup Guide</a>
+            </li>
+            <li>
+              <a href="/tools-resources/using-vs-code/">Using VS Code</a>
+            </li>
+            <li>
+              <a href="/tools-resources/file-organisation/"
+                >File organisation</a
+              >
+            </li>
+            <li>
+              <a href="/tools-resources/external-resources/"
+                >External resources</a
+              >
+            </li>
+          </ul>
+          <h3>HTML Basics</h3>
+          <ul>
+            <li>
+              <a href="/html-basics/file-structure/">File structure</a>
+            </li>
+            <li>
+              <a href="/html-basics/semantic-html/">Semantic HTML</a>
+            </li>
+            <li>
+              <a href="/html-basics/common-tags/">Common tags</a>
+            </li>
+          </ul>
+          <h3>CSS Basics</h3>
+          <ul>
+            <li>
+              <a href="/css-basics/rules-selectors/">Rules & Selectors</a>
+            </li>
+            <li><a href="/css-basics/box-model/">Box Model</a></li>
+            <li>
+              <a href="/css-basics/specificity/">Specificity</a>
+            </li>
+            <li><a href="/css-basics/positions/">Positions</a></li>
+            <li>
+              <a href="/css-basics/colours-units/">Colours & Units</a>
+            </li>
+          </ul>
+          <h3>Typography</h3>
+          <ul>
+            <li>
+              <a href="/typography/importing-fonts/">Importing fonts</a>
+            </li>
+            <li>
+              <a href="/typography/relevant-tags/">Relevant tags</a>
+            </li>
+            <li>
+              <a href="/typography/font-properties/">Font properties</a>
+            </li>
+            <li>
+              <a href="/typography/custom-properties/">Custom properties</a>
+            </li>
+          </ul>
+          <h3>Display</h3>
+          <ul>
+            <li>
+              <a href="/display/display-property/">Display property</a>
+            </li>
+            <li><a href="/display/flexbox/">Flexbox</a></li>
+            <li><a href="/display/grid/">Grid</a></li>
+          </ul>
+          <h3>Responsive design</h3>
+          <ul>
+            <li>
+              <a href="/responsive-design/breakpoints/">Breakpoints</a>
+            </li>
+            <li>
+              <a href="/responsive-design/printable-other/"
+                >Printable web & other</a
+              >
+            </li>
+            <li>
+              <a href="/responsive-design/responsive-images/"
+                >Responsive images</a
+              >
+            </li>
+          </ul>
+          <h3>Motion & Transform</h3>
+          <ul>
+            <li class="active">
+              <a href="/motion-filters/transform-filters/"
+                >Transform & Filters</a
+              >
+            </li>
+            <li>
+              <a href="/motion-filters/transitions/">Transitions</a>
+            </li>
+            <li>
+              <a href="/motion-filters/animation/">Animation</a>
+            </li>
+          </ul>
+          <h3>Performance & Best practices</h3>
+          <ul>
+            <li>
+              <a href="/performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+            <li>
+              <a href="/performance-best-practices/accessibility/"
+                >Accessibility considerations</a
+              >
+            </li>
+            <li>
+              <a href="/performance-best-practices/performance-optimisation/"
+                >Performance optimisation</a
+              >
+            </li>
+          </ul>
+          <ul class="mobile-only" id="simple-nav">
+            <li id="simple-nav-previous">
+              <a href="/responsive-design/responsive-images/"
+                >Responsive images</a
+              >
+            </li>
+            <li id="simple-nav-next">
+              <a href="/motion-filters/transitions/">Transitions</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="lesson">
+        <h1>Transform & Filters</h1>
+        <div class="block-wrapper">
+          <h2>Transform</h2>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"
+              target="_blank"
+              ><code class="language-css">transform</code></a
+            >
+            property can be used to rotate, scale, translate, skew, or even
+            create custom transformations using matrix functions.
+          </p>
+          <h3>Translation</h3>
+          <p>
+            You can displace an element in one, two, or three dimensions using
+            the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform#Values"
+              target="_blank"
+              ><code class="language-css"
+                >transform: translate() | translateX() | translateY() |
+                translateZ() | translate3d()</code
+              ></a
+            >
+            rule. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate"
+              target="_blank"
+              ><code class="language-css">translate()</code></a
+            >
+            function takes two values, x-translation (horizontal) and
+            y-translation (veritcal). The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX"
+              target="_blank"
+              ><code class="language-css">translateX()</code></a
+            >,
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateY"
+              target="_blank"
+              ><code class="language-css">translateY()</code></a
+            >
+            and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateZ"
+              target="_blank"
+              ><code class="language-css">translateZ()</code></a
+            >
+            functions accepts one value for the axis concerned. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d"
+              target="_blank"
+              ><code class="language-css">translate3d()</code></a
+            >
+            function takes three values, x-translation, y-translation, and
+            z-translation. Note that for you to see the effect of translation on
+            the z-axis, the parent element must have a
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/perspective"
+              target="_blank"
+              ><code class="language-css">perspective</code></a
+            >
+            property.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.translate {transform: translate(-10px, -10px);}
+.translate-x {transform: translateX(10px);}
+.translate-y {transform: translateY(10px);}
+.translate3d {transform: translate3d(10px, 10px, 0);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="translate-example">
+              <div class="flex-container">
+                <p class="user-agent translate">translate(-10px, -10px)</p>
+                <p class="user-agent translate-x">translateX(10px)</p>
+                <p class="user-agent translate-y">translateY(10px)</p>
+                <p class="user-agent translate3d">translate3d(10px, 10px, 0)</p>
+              </div>
+              <style>
+                #translate-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #translate-example .flex-container {
+                  display: flex;
+                  flex-flow: column nowrap;
+                  gap: 16px;
+                  padding: 16px;
+                  background-color: lavender;
+                }
+
+                #translate-example .flex-container > * {
+                  background-color: #beb;
+                  position: relative;
+                  margin-block: 0;
+                }
+
+                #translate-example p::before {
+                  content: "";
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  position: absolute;
+                  border-radius: 0.25rem;
+                  border: dotted 1px darkgrey;
+                }
+
+                #translate-example .translate {
+                  transform: translate(-10px, -10px);
+                }
+
+                #translate-example .translate::before {
+                  transform: translate(10px, 10px);
+                }
+
+                #translate-example .translate-x {
+                  transform: translateX(10px);
+                }
+
+                #translate-example .translate-x::before {
+                  transform: translateX(-10px);
+                }
+
+                #translate-example .translate-y {
+                  transform: translateY(10px);
+                }
+
+                #translate-example .translate-y::before {
+                  transform: translateY(-10px);
+                }
+
+                #translate-example .translate3d {
+                  transform: translate3d(10px, 10px, 0);
+                }
+
+                #translate-example .translate3d::before {
+                  transform: translate3d(-10px, -10px, 0);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Rotation</h3>
+          <p>
+            You can rotate an element around its origin using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform#Values"
+              target="_blank"
+              ><code class="language-css">transform: rotate()</code></a
+            >
+            rule. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate"
+              target="_blank"
+              ><code class="language-css">rotate()</code></a
+            >
+            function takes one value, the angle of rotation in degrees. The
+            angle is measured clockwise, starting from the positive x-axis. You
+            can also rotate elements in 3d space using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateX"
+              target="_blank"
+              ><code class="language-css">rotateX()</code></a
+            >,
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateY"
+              target="_blank"
+              ><code class="language-css">rotateY()</code></a
+            >, and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d"
+              target="_blank"
+              ><code class="language-css">rotate3d()</code></a
+            >
+            functions.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.box {transform: rotate(45deg);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="rotate-example">
+              <p class="user-agent box">45deg</p>
+              <style>
+                #rotate-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #rotate-example .box {
+                  width: 100%;
+                  height: 100px;
+                  background-color: lavender;
+                  position: relative;
+                  transform: rotate(45deg);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-block: 0;
+                }
+
+                #rotate-example .box::before {
+                  content: "";
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  position: absolute;
+                  border-radius: 0.25rem;
+                  border: dotted 1px darkgrey;
+                  transform: rotate(-45deg);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Scaling</h3>
+          <p>
+            You can scale an element using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform#Values"
+              target="_blank"
+              ><code class="language-css">transform: scale()</code></a
+            >
+            rule. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale"
+              target="_blank"
+              ><code class="language-css">scale()</code></a
+            >
+            function takes one value, the scale factor. The scale factor is a
+            number greater than zero and less than or equal to one. The scale
+            factor is applied to the element's width and height.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.box {transform: scale(0.75);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="scale-example">
+              <p class="user-agent box">scale(.5)</p>
+              <style>
+                #scale-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #scale-example .box {
+                  width: 100%;
+                  height: 100px;
+                  background-color: lavender;
+                  position: relative;
+                  transform: scale(0.75);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-block: 0;
+                }
+
+                #scale-example .box::before {
+                  content: "";
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  position: absolute;
+                  border-radius: 0.25rem;
+                  border: dotted 1px darkgrey;
+                  transform: scale(1.3333);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Skewing</h3>
+          <p>
+            You can skew an element using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform#Values"
+              target="_blank"
+              ><code class="language-css">transform: skew()</code></a
+            >
+            rule. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew"
+              target="_blank"
+              ><code class="language-css">skew()</code></a
+            >
+            function takes two values, the x-skew and y-skew. The x-skew is the
+            amount of skew in the horizontal direction, and the y-skew is the
+            amount of skew in the vertical direction.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">.box {transform: skew(10deg, 10deg);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="skew-example">
+              <p class="user-agent box">skew(10deg, 10deg)</p>
+              <style>
+                #skew-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #skew-example .box {
+                  width: 100%;
+                  height: 100px;
+                  background-color: lavender;
+                  position: relative;
+                  transform: skew(10deg, 10deg);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-block: 0;
+                }
+
+                #skew-example .box::before {
+                  content: "";
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  position: absolute;
+                  border-radius: 0.25rem;
+                  border: dotted 1px darkgrey;
+                  transform: skew(-10deg, -10deg);
+                }
+              </style>
+            </div>
+          </div>
+          <div class="further-reading">
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"
+              target="_blank"
+              >Learn more about transform</a
+            >
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <h2>Filters</h2>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter"
+              target="_blank"
+              ><code class="language-css">filter</code></a
+            >
+            property can be used to apply a filter to an element. The filter
+            property accepts a list of filter functions, which can be used to
+            apply different effects to any element. For these examples, we'll be
+            applying the filters to an image.
+          </p>
+          <h3>Blur</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur"
+              target="_blank"
+              ><code class="language-css">blur()</code></a
+            >
+            function can be used to blur an element. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur#Syntax"
+              target="_blank"
+              ><code class="language-css">blur()</code></a
+            >
+            function takes a single value, which is the amount of blur to apply
+            to the element.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">img {filter: blur(4px);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="blur-example">
+              <img
+                class="user-agent"
+                src="assets/media/placeholder.jpg"
+                alt="Trailcam image of a tiger passing by"
+              />
+              <style>
+                #blur-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #blur-example img {
+                  filter: blur(4px);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Brightness</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness"
+              target="_blank"
+              ><code class="language-css">brightness()</code></a
+            >
+            function can be used to adjust the brightness of an element. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness#Syntax"
+              target="_blank"
+              ><code class="language-css">brightness()</code></a
+            >
+            function takes a single value, which is the amount of brightness to
+            apply to the element.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">img {filter: brightness(3.7);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="brightness-example">
+              <img
+                class="user-agent"
+                src="assets/media/placeholder.jpg"
+                alt="Trailcam image of a tiger passing by"
+              />
+              <style>
+                #brightness-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #brightness-example img {
+                  filter: brightness(3.7);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Contrast</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/contrast"
+              target="_blank"
+              ><code class="language-css">contrast()</code></a
+            >
+            function can be used to adjust the contrast of an element. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/contrast#Syntax"
+              target="_blank"
+              ><code class="language-css">contrast()</code></a
+            >
+            function takes a single value, which is the amount of contrast to
+            apply to the element.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">img {filter: contrast(1.8);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="contrast-example">
+              <img
+                class="user-agent"
+                src="assets/media/placeholder.jpg"
+                alt="Trailcam image of a tiger passing by"
+              />
+              <style>
+                #contrast-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #contrast-example img {
+                  filter: contrast(1.8);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Drop shadow</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow"
+              target="_blank"
+              ><code class="language-css">drop-shadow()</code></a
+            >
+            function can be used to add a drop shadow to an element. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow#Syntax"
+              target="_blank"
+              ><code class="language-css">drop-shadow()</code></a
+            >
+            function takes four values: the horizontal offset, the vertical
+            offset, the blur radius, and the color of the shadow. This filter
+            has a similiar effect to the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow"
+              target="_blank"
+              ><code class="language-css">text-shadow</code></a
+            >
+            and the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow"
+              target="_blank"
+              ><code class="language-css">box-shadow</code></a
+            >
+            properties.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">img {filter: drop-shadow(4px 4px 4px deeppink);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="drop-shadow-example">
+              <img
+                class="user-agent"
+                src="assets/media/placeholder.jpg"
+                alt="Trailcam image of a tiger passing by"
+              />
+              <style>
+                #drop-shadow-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #drop-shadow-example img {
+                  filter: drop-shadow(4px 4px 4px deeppink);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Grayscale</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/grayscale"
+              target="_blank"
+              ><code class="language-css">grayscale()</code></a
+            >
+            function can be used to convert an element to grayscale. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/grayscale#Syntax"
+              target="_blank"
+              ><code class="language-css">grayscale()</code></a
+            >
+            function takes a single value, which is the amount of grayscale to
+            apply to the element.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">img {filter: grayscale(.8);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="grayscale-example">
+              <img
+                class="user-agent"
+                src="assets/media/placeholder.jpg"
+                alt="Trailcam image of a tiger passing by"
+              />
+              <style>
+                #grayscale-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #grayscale-example img {
+                  filter: grayscale(0.8);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Hue rotate</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate"
+              target="_blank"
+              ><code class="language-css">hue-rotate()</code></a
+            >
+            function can be used to rotate the hue of an element. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate#Syntax"
+              target="_blank"
+              ><code class="language-css">hue-rotate()</code></a
+            >
+            function takes a single angulare value (<a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/angle"
+              target="_blank"
+              ><code class="language-css"
+                >30deg | 0.5turn | 1rad | 70grad</code
+              ></a
+            >), which is the amount of hue rotation to apply to the element.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">img {filter: hue-rotate(90deg);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="hue-rotate-example">
+              <img
+                class="user-agent"
+                src="assets/media/placeholder.jpg"
+                alt="Trailcam image of a tiger passing by"
+              />
+              <style>
+                #hue-rotate-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #hue-rotate-example img {
+                  filter: hue-rotate(90deg);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Invert</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert"
+              target="_blank"
+              ><code class="language-css">invert()</code></a
+            >
+            function can be used to invert the colors of an element. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/invert#Syntax"
+              target="_blank"
+              ><code class="language-css">invert()</code></a
+            >
+            function takes a single value, which is the amount of invert to
+            apply to the element.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">img {filter: invert(0.75);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="invert-example">
+              <img
+                class="user-agent"
+                src="assets/media/placeholder.jpg"
+                alt="Trailcam image of a tiger passing by"
+              />
+              <style>
+                #invert-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #invert-example img {
+                  filter: invert(0.75);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Opacity</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/opacity"
+              target="_blank"
+              ><code class="language-css">opacity()</code></a
+            >
+            function can be used to change the opacity of an element. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/opacity#Syntax"
+              target="_blank"
+              ><code class="language-css">opacity()</code></a
+            >
+            function takes a single value, which is the amount of opacity to
+            apply to the element. This filter is equivalent to the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/opacity"
+              target="_blank"
+              ><code class="language-css">opacity</code></a
+            >
+            property.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">img {filter: opacity(0.5);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="opacity-example">
+              <p class="user-agent">poking through</p>
+              <img
+                class="user-agent"
+                src="assets/media/placeholder.jpg"
+                alt="Trailcam image of a tiger passing by"
+              />
+              <style>
+                #opacity-example {
+                  position: relative;
+                }
+
+                #opacity-example p {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  font-size: 2rem;
+                  text-align: center;
+                  color: deeppink;
+                  margin: 0;
+                }
+
+                #opacity-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #opacity-example img {
+                  filter: opacity(0.5);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Saturate</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate"
+              target="_blank"
+              ><code class="language-css">saturate()</code></a
+            >
+            function can be used to adjust the saturation of an element. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate#Syntax"
+              target="_blank"
+              ><code class="language-css">saturate()</code></a
+            >
+            function takes a single value, which is the amount of saturation to
+            apply to the element.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">img {filter: saturate(1.5);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="saturate-example">
+              <img
+                class="user-agent"
+                src="assets/media/placeholder.jpg"
+                alt="Trailcam image of a tiger passing by"
+              />
+              <style>
+                #saturate-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #saturate-example img {
+                  filter: saturate(1.5);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Sepia</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/sepia"
+              target="_blank"
+              ><code class="language-css">sepia()</code></a
+            >
+            function can be used to convert an element to sepia. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/sepia#Syntax"
+              target="_blank"
+              ><code class="language-css">sepia()</code></a
+            >
+            function takes a single value, which is the amount of sepia to apply
+            to the element.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">img {filter: sepia(0.8);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="sepia-example">
+              <img
+                class="user-agent"
+                src="assets/media/placeholder.jpg"
+                alt="Trailcam image of a tiger passing by"
+              />
+              <style>
+                #sepia-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #sepia-example img {
+                  filter: sepia(0.8);
+                }
+              </style>
+            </div>
+          </div>
+          <h3>Combining filters</h3>
+          <p>
+            Just like with the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow"
+              target="_blank"
+              ><code class="language-css">text-shadow</code></a
+            >
+            and the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow"
+              target="_blank"
+              ><code class="language-css">box-shadow</code></a
+            >
+            properties, you can combine filters by separating them with a space.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">img {filter: sepia(0.8) invert(1);}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="sepia-saturate-example">
+              <img
+                class="user-agent"
+                src="assets/media/placeholder.jpg"
+                alt="Trailcam image of a tiger passing by"
+              />
+              <style>
+                #sepia-saturate-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #sepia-saturate-example img {
+                  filter: sepia(0.8) invert(1);
+                }
+              </style>
+            </div>
+          </div>
+          <details class="tip-block">
+            <summary>Advanced: custom filters</summary>
+            <p>
+              You can also create your own filters using SVG filters. This is a
+              bit more complex, but it allows you to create effects that are not
+              possible using the filters presented above, like displacing the
+              image or applying a color matrix. To apply a custom filter, you
+              can use the
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter#referencing_an_svg_filter"
+                target="_blank"
+                ><code class="language-css">url(#filter-id)</code></a
+              >
+              value.
+            </p>
+            <p>
+              Some tools exist to play around with SVG filters, such as
+              <a href="https://yoksel.github.io/svg-filters/" target="_blank"
+                >Yoksel's SVG Filters playground</a
+              >
+              or the
+              <a href="https://svgfilters.com/" target="_blank"
+                >SVG Filter Builder</a
+              >.
+            </p>
+          </details>
+        </div>
+        <div class="block-wrapper">
+          <h2>Backdrop filters</h2>
+          <p>
+            A backdrop filter is a filter that is applied to the elements that
+            are behind the element on which the filter is applied to. The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter"
+              target="_blank"
+              ><code class="language-css">backdrop-filter</code></a
+            >
+            property can be used to create a variety of effects, such as
+            blurring, darkening, and lightening the background.
+          </p>
+          <p>
+            All filters presented above can be used as backdrop filters
+            (although drop-shadow and opacity don't do anything). Here is a list
+            of all the backdrop filters:
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#syntax"
+                target="_blank"
+                ><code class="language-css">blur</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#syntax"
+                target="_blank"
+                ><code class="language-css">brightness</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#syntax"
+                target="_blank"
+                ><code class="language-css">contrast</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#syntax"
+                target="_blank"
+                ><code class="language-css">grayscale</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#syntax"
+                target="_blank"
+                ><code class="language-css">hue-rotate</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#syntax"
+                target="_blank"
+                ><code class="language-css">invert</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#syntax"
+                target="_blank"
+                ><code class="language-css">saturate</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#syntax"
+                target="_blank"
+                ><code class="language-css">sepia</code></a
+              >
+            </li>
+          </ul>
+          <div class="compare-block">
+            <div class="compare-block-result" id="backdrop-filter-example">
+              <img
+                class="user-agent"
+                src="assets/media/placeholder.jpg"
+                alt="Trailcam image of a tiger passing by"
+              />
+              <p class="user-agent overlay">Inquisitive creature</p>
+              <style>
+                #backdrop-filter-example {
+                  position: relative;
+                }
+                #backdrop-filter-example .overlay {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  font-size: 2rem;
+                  text-align: center;
+                  text-transform: uppercase;
+                  margin: 0;
+                  width: max-content;
+                  border-radius: 2.5rem;
+                  padding: 1rem 2ch;
+                  background-color: #fff8;
+                  animation: filter-galore 20s cubic-bezier(0.19, 1, 0.22, 1)
+                    infinite;
+                }
+
+                @keyframes filter-galore {
+                  0% {
+                    backdrop-filter: blur(0) brightness(1) contrast(1)
+                      grayscale(0) hue-rotate(0deg) invert(0) saturate(1)
+                      sepia(0);
+                  }
+                  10% {
+                    backdrop-filter: blur(8px) brightness(1) contrast(1)
+                      grayscale(0) hue-rotate(0deg) invert(0) saturate(1)
+                      sepia(0);
+                  }
+                  20% {
+                    backdrop-filter: blur(0) brightness(3.7) contrast(1)
+                      grayscale(0) hue-rotate(0deg) invert(0) saturate(1)
+                      sepia(0);
+                  }
+                  30% {
+                    backdrop-filter: blur(0) brightness(1) contrast(1.8)
+                      grayscale(0) hue-rotate(0deg) invert(0) saturate(1)
+                      sepia(0);
+                  }
+                  40% {
+                    backdrop-filter: blur(0) brightness(1) contrast(1)
+                      grayscale(0.8) hue-rotate(0deg) invert(0) saturate(1)
+                      sepia(0);
+                  }
+                  50% {
+                    backdrop-filter: blur(0) brightness(1) contrast(1)
+                      grayscale(0) hue-rotate(180deg) invert(0) saturate(1)
+                      sepia(0);
+                  }
+                  60% {
+                    backdrop-filter: blur(0) brightness(1) contrast(1)
+                      grayscale(0) hue-rotate(0) invert(0.75) saturate(1)
+                      sepia(0);
+                  }
+                  70% {
+                    backdrop-filter: blur(0) brightness(1) contrast(1)
+                      grayscale(0) hue-rotate(0) invert(0) saturate(4) sepia(0);
+                  }
+                  80% {
+                    backdrop-filter: blur(0) brightness(1) contrast(1)
+                      grayscale(0) hue-rotate(0) invert(0) saturate(1)
+                      sepia(0.8);
+                  }
+                  90% {
+                    backdrop-filter: blur(12px) brightness(1.2) contrast(4)
+                      grayscale(0.9) hue-rotate(10deg) invert(0.4) saturate(6)
+                      sepia(0.2);
+                  }
+                  100% {
+                    backdrop-filter: blur(0) brightness(1) contrast(1)
+                      grayscale(0) hue-rotate(0) invert(0) saturate(1) sepia(0);
+                  }
+                }
+                @media screen and (max-width: calc(600px + 30ch + 10rem)) {
+                  #backdrop-filter-example .overlay {
+                    font-size: 1rem;
+                  }
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <h2>Blend modes</h2>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode"
+              target="_blank"
+              ><code class="language-css">mix-blend-mode</code></a
+            >
+            property can be used to change the blend mode of an element. The
+            possible values are:
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">normal</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">multiply</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">screen</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">overlay</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">darken</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">lighten</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">color-dodge</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">color-burn</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">hard-light</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">soft-light</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">difference</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">exclusion</code></a
+              >: The element is excluded with the backdrop.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">hue</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">saturation</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">color</code></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode#values"
+                target="_blank"
+                ><code class="language-css">luminosity</code></a
+              >
+            </li>
+          </ul>
+          <p>Here are all of them applied from left to right:</p>
+          <div class="compare-block">
+            <div class="compare-block-result" id="mix-blend-mode-example">
+              <div class="grid">
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay normal"></div>
+                    <span>normal</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay multiply"></div>
+                    <span>multiply</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay screen"></div>
+                    <span>screen</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay overlay"></div>
+                    <span>overlay</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay darken"></div>
+                    <span>darken</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay lighten"></div>
+                    <span>lighten</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay color-dodge"></div>
+                    <span>color-dodge</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay color-burn"></div>
+                    <span>color-burn</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay hard-light"></div>
+                    <span>hard-light</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay soft-light"></div>
+                    <span>soft-light</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay difference"></div>
+                    <span>difference</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay exclusion"></div>
+                    <span>exclusion</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay hue"></div>
+                    <span>hue</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay saturation"></div>
+                    <span>saturation</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay color"></div>
+                    <span>color</span>
+                  </div>
+                </div>
+                <div class="grid-item">
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder.jpg"
+                    alt="Trailcam image of a tiger passing by"
+                  />
+                  <div class="overlay-wrapper">
+                    <div class="background-overlay luminosity"></div>
+                    <span>luminosity</span>
+                  </div>
+                </div>
+              </div>
+              <style>
+                #mix-blend-mode-example * {
+                  border-radius: 0.25rem;
+                }
+
+                #mix-blend-mode-example .grid {
+                  display: grid;
+                  grid-template-columns: 1fr 1fr 1fr 1fr;
+                  gap: 1rem;
+                }
+                @media screen and (max-width: calc(600px + 30ch + 10rem + 200px)) and (min-width: calc(600px + 30ch + 10rem)) {
+                  #mix-blend-mode-example .grid {
+                    grid-template-columns: 1fr 1fr;
+                  }
+                }
+
+                @media screen and (max-width: 900px) {
+                  #mix-blend-mode-example .grid {
+                    grid-template-columns: 1fr 1fr;
+                  }
+                }
+
+                #mix-blend-mode-example .grid-item {
+                  position: relative;
+                }
+
+                #mix-blend-mode-example .overlay-wrapper {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+                #mix-blend-mode-example .background-overlay {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-image: linear-gradient(to left, #f000, #f00f),
+                    linear-gradient(to bottom, #0f00, #0f0f),
+                    linear-gradient(45deg, #00f0, #00ff);
+                  background-blend-mode: screen;
+                  transition: opacity 200ms 100ms linear;
+                  will-change: opacity;
+                }
+
+                #mix-blend-mode-example .background-overlay:hover {
+                  transition: opacity 200ms linear;
+                  opacity: 0;
+                }
+
+                #mix-blend-mode-example .overlay-wrapper span {
+                  padding: 0 1ch;
+                  border-radius: 1rem;
+                  background-color: #fff;
+                  opacity: 0;
+                  transition: opacity 100ms linear;
+                }
+
+                #mix-blend-mode-example .overlay-wrapper:hover span {
+                  transition: opacity 100ms 200ms linear;
+                  opacity: 1;
+                }
+
+                #mix-blend-mode-example .normal {
+                  mix-blend-mode: normal;
+                }
+                #mix-blend-mode-example .multiply {
+                  mix-blend-mode: multiply;
+                }
+                #mix-blend-mode-example .screen {
+                  mix-blend-mode: screen;
+                }
+                #mix-blend-mode-example .overlay {
+                  mix-blend-mode: overlay;
+                }
+                #mix-blend-mode-example .darken {
+                  mix-blend-mode: darken;
+                }
+                #mix-blend-mode-example .lighten {
+                  mix-blend-mode: lighten;
+                }
+                #mix-blend-mode-example .color-dodge {
+                  mix-blend-mode: color-dodge;
+                }
+                #mix-blend-mode-example .color-burn {
+                  mix-blend-mode: color-burn;
+                }
+                #mix-blend-mode-example .hard-light {
+                  mix-blend-mode: hard-light;
+                }
+                #mix-blend-mode-example .soft-light {
+                  mix-blend-mode: soft-light;
+                }
+                #mix-blend-mode-example .difference {
+                  mix-blend-mode: difference;
+                }
+                #mix-blend-mode-example .exclusion {
+                  mix-blend-mode: exclusion;
+                }
+                #mix-blend-mode-example .hue {
+                  mix-blend-mode: hue;
+                }
+                #mix-blend-mode-example .saturation {
+                  mix-blend-mode: saturation;
+                }
+                #mix-blend-mode-example .color {
+                  mix-blend-mode: color;
+                }
+                #mix-blend-mode-example .luminosity {
+                  mix-blend-mode: luminosity;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

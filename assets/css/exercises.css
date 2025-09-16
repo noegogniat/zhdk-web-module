@@ -72,6 +72,9 @@
   display: block;
   text-transform: initial;
   text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .exercise-block > summary .download-button {
@@ -167,4 +170,20 @@
 
 .exercise-block .compare-block-result {
   max-height: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .exercise-block,
+  .exercise-block > summary .download-button {
+    font-size: 0.8rem;
+  }
+  .exercise-block pre code {
+    font-size: 0.6rem;
+  }
+  .exercise-block > summary {
+    grid-template-columns: 1fr auto;
+  }
+  .exercise-block > summary .duration {
+    display: none;
+  }
 }

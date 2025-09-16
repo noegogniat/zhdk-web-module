@@ -57,6 +57,9 @@
               <a href="/tools-resources/setup-guide/">Setup Guide</a>
             </li>
             <li>
+              <a href="/tools-resources/using-vs-code/">Using VS Code</a>
+            </li>
+            <li>
               <a href="/tools-resources/file-organisation/"
                 >File organisation</a
               >
@@ -135,13 +138,15 @@
           <h3>Motion & Transform</h3>
           <ul>
             <li>
-              <a href="/motion-transform/transform/">Transform</a>
+              <a href="/motion-filters/transform-filters/"
+                >Transform & Filters</a
+              >
             </li>
             <li>
-              <a href="/motion-transform/transitions/">Transitions</a>
+              <a href="/motion-filters/transitions/">Transitions</a>
             </li>
             <li>
-              <a href="/motion-transform/animation/">Animation</a>
+              <a href="/motion-filters/animation/">Animation</a>
             </li>
           </ul>
           <h3>Performance & Best practices</h3>
@@ -183,6 +188,63 @@
             selectors in the selector. The more specific the selector, the
             higher its specificity value.
           </p>
+          <p>
+            By default, every new rule assigned to an element gets added to the
+            previous rules. If a rule is stated twice and both selectors has an
+            equal specificity, the last one will be used.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;nav&gt;
+  &lt;a href="#" class="nav-link"&gt;Link 1&lt;/a&gt;
+  &lt;a href="#" class="nav-link active"&gt;Link 2&lt;/a&gt;
+  &lt;a href="#" class="nav-link"&gt;Link 3&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <div class="compare-block-code">
+                <!-- prettier-ignore-start -->
+                <pre><code class="language-css">.nav-link {
+  display: block;
+  padding: 8px;
+  margin-right: 2px;
+  /* The new rule overwrites 
+  the previous one */
+  margin-right: 12px;
+  color: lightgreen;
+}
+
+/* Both .nav-link and .active have an equal 
+specificity, so the last one will be used */
+.active {
+  color: deeppink;
+}</code></pre>
+                <!-- prettier-ignore-end -->
+              </div>
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="equal-specificity">
+              <nav>
+                <a href="#" class="user-agent nav-link">Link 1</a>
+                <a href="#" class="user-agent nav-link active">Link 2</a>
+                <a href="#" class="user-agent nav-link">Link 3</a>
+              </nav>
+              <style>
+                #equal-specificity .nav-link {
+                  display: block;
+                  padding: 8px;
+                  margin-right: 2px;
+                  margin-right: 12px;
+                  color: lightgreen;
+                }
+
+                #equal-specificity .active {
+                  color: deeppink;
+                }
+              </style>
+            </div>
+          </div>
           <h3>Specificity hierarchy</h3>
           <p>From most to least specific, here is the specificity hierarchy:</p>
           <ul>
@@ -263,69 +325,13 @@ p {color: burlywood;}
               </style>
             </div>
           </div>
-          <p>
-            By default, every new rule assigned to an element gets added to the
-            previous rules. If a rule is stated twice and both selectors has an
-            equal specificity, the last one will be used.
-          </p>
-          <div class="compare-block">
-            <div class="compare-block-code">
-              <!-- prettier-ignore-start -->
-              <pre><code class="language-html wrap">&lt;nav&gt;
-  &lt;a href="#" class="nav-link"&gt;Link 1&lt;/a&gt;
-  &lt;a href="#" class="nav-link active"&gt;Link 2&lt;/a&gt;
-  &lt;a href="#" class="nav-link"&gt;Link 3&lt;/a&gt;
-&lt;/nav&gt;</code></pre>
-              <!-- prettier-ignore-end -->
-              <span>+</span>
-              <div class="compare-block-code">
-                <!-- prettier-ignore-start -->
-                <pre><code class="language-css">.nav-link {
-  display: block;
-  padding: 8px;
-  margin-right: 2px;
-  /* The new rule overwrites 
-  the previous one */
-  margin-right: 12px;
-  color: lightgreen;
-}
-
-/* Both .nav-link and .active have an equal 
-specificity, so the last one will be used */
-.active {
-  color: deeppink;
-}</code></pre>
-                <!-- prettier-ignore-end -->
-              </div>
-            </div>
-            <span>→</span>
-            <div class="compare-block-result" id="equal-specificity">
-              <nav>
-                <a href="#" class="user-agent nav-link">Link 1</a>
-                <a href="#" class="user-agent nav-link active">Link 2</a>
-                <a href="#" class="user-agent nav-link">Link 3</a>
-              </nav>
-              <style>
-                #equal-specificity .nav-link {
-                  display: block;
-                  padding: 8px;
-                  margin-right: 2px;
-                  margin-right: 12px;
-                  color: lightgreen;
-                }
-
-                #equal-specificity .active {
-                  color: deeppink;
-                }
-              </style>
-            </div>
-          </div>
+          <h3>Combining selectors</h3>
           <p>
             Specificity can also be increased by using combinators, like
             <a
               href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator"
               target="_blank"
-              ><code class="language-css">></code></a
+              ><code class="language-css">&gt;</code></a
             >
             or
             <a
@@ -337,6 +343,23 @@ specificity, so the last one will be used */
               >Common combinators and separators</a
             >" for more.
           </p>
+        </div>
+        <div class="block-wrapper">
+          <h2>Debugging specificity</h2>
+          <p>
+            Every browser allow you to inspect the content and styling of any
+            element on the page. Every rule overwritten by a later or more
+            specific rule will usually be crossed out. Chrome and Firefox will
+            also show you the specificity score of each selector when you hover
+            over it.
+          </p>
+          <div class="further-reading">
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity"
+              target="_blank"
+              >Learn more about specificity</a
+            >
+          </div>
         </div>
       </section>
     </main>

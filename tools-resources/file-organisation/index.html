@@ -56,6 +56,9 @@
             <li>
               <a href="/tools-resources/setup-guide/">Setup Guide</a>
             </li>
+            <li>
+              <a href="/tools-resources/using-vs-code/">Using VS Code</a>
+            </li>
             <li class="active">
               <a href="/tools-resources/file-organisation/"
                 >File organisation</a
@@ -135,13 +138,15 @@
           <h3>Motion & Transform</h3>
           <ul>
             <li>
-              <a href="/motion-transform/transform/">Transform</a>
+              <a href="/motion-filters/transform-filters/"
+                >Transform & Filters</a
+              >
             </li>
             <li>
-              <a href="/motion-transform/transitions/">Transitions</a>
+              <a href="/motion-filters/transitions/">Transitions</a>
             </li>
             <li>
-              <a href="/motion-transform/animation/">Animation</a>
+              <a href="/motion-filters/animation/">Animation</a>
             </li>
           </ul>
           <h3>Performance & Best practices</h3>
@@ -164,7 +169,7 @@
           </ul>
           <ul class="mobile-only" id="simple-nav">
             <li id="simple-nav-previous">
-              <a href="/tools-resources/setup-guide/">Setup Guide</a>
+              <a href="/tools-resources/using-vs-code/">Using VS Code</a>
             </li>
             <li id="simple-nav-next">
               <a href="/tools-resources/external-resources/"
@@ -260,6 +265,23 @@ project-name/index.html</code></pre>
           <div class="compare-block">
             <div class="compare-block-code">
               <!-- prettier-ignore-start -->
+              <pre><code class="language-html">&lt;!-- Relative to the root of the website
+A --&gt; &lt;a href="/index.html"&gt;Home&lt;/a&gt;
+
+&lt;!-- Relative to the current folder
+B --&gt; &lt;link rel="stylesheet" href="css/main.css"&gt;&lt;!--
+C --&gt; &lt;img src="assets/media/hero-image.jpg" alt="Hero image" /&gt;
+
+&lt;!-- Relative moving up the folder hierarchy
+D --&gt; &lt;a href="/about/index.html"&gt;About&lt;/a&gt;
+
+&lt;!-- Absolute link to another website
+E --&gt; &lt;a href="https:&#47;&#47;example.com/"&gt;Somehwere else&lt;/a&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
               <pre><code class="language-plaintext hljs" data-highlighted="yes" style="font-family:monospace">portfolio/
 ├── index.html ←─────────────────────── A ┐
 ├── favicon.ico                           │
@@ -295,23 +317,6 @@ project-name/index.html</code></pre>
     └── index.html ←─────────────────── D ┤
                                           │
 https://example.com/ ←───────────────── E ┘</code></pre>
-              <!-- prettier-ignore-end -->
-            </div>
-            <span>→</span>
-            <div class="compare-block-code">
-              <!-- prettier-ignore-start -->
-              <pre><code class="language-html">&lt;!-- Relative to the root of the website
-A --&gt; &lt;a href="/index.html"&gt;Home&lt;/a&gt;
-
-&lt;!-- Relative to the current folder
-B --&gt; &lt;link rel="stylesheet" href="css/main.css"&gt;&lt;!--
-C --&gt; &lt;img src="assets/media/hero-image.jpg" alt="Hero image" /&gt;
-
-&lt;!-- Relative moving up the folder hierarchy
-D --&gt; &lt;a href="/about/index.html"&gt;About&lt;/a&gt;
-
-&lt;!-- Absolute link to another website
-E --&gt; &lt;a href="https:&#47;&#47;example.com/"&gt;Somehwere else&lt;/a&gt;</code></pre>
               <!-- prettier-ignore-end -->
             </div>
           </div>

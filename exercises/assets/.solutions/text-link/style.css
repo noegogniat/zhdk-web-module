@@ -21,7 +21,7 @@ a:hover {
 
 /* More complex hover effect */
 
-/* a {
+a {
   display: inline-block;
   color: inherit;
   transition: color 200ms ease-in-out, text-shadow 200ms ease-in-out;
@@ -48,4 +48,4 @@ a:hover {
     scale: 1;
     rotate: 1turn;
   }
-} */
+}

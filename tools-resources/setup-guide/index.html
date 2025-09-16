@@ -57,6 +57,9 @@
               <a href="/tools-resources/setup-guide/">Setup Guide</a>
             </li>
             <li>
+              <a href="/tools-resources/using-vs-code/">Using VS Code</a>
+            </li>
+            <li>
               <a href="/tools-resources/file-organisation/"
                 >File organisation</a
               >
@@ -135,13 +138,15 @@
           <h3>Motion & Transform</h3>
           <ul>
             <li>
-              <a href="/motion-transform/transform/">Transform</a>
+              <a href="/motion-filters/transform-filters/"
+                >Transform & Filters</a
+              >
             </li>
             <li>
-              <a href="/motion-transform/transitions/">Transitions</a>
+              <a href="/motion-filters/transitions/">Transitions</a>
             </li>
             <li>
-              <a href="/motion-transform/animation/">Animation</a>
+              <a href="/motion-filters/animation/">Animation</a>
             </li>
           </ul>
           <h3>Performance & Best practices</h3>
@@ -164,9 +169,7 @@
           </ul>
           <ul class="mobile-only" id="simple-nav">
             <li id="simple-nav-next">
-              <a href="/tools-resources/file-organisation/"
-                >File organisation</a
-              >
+              <a href="/tools-resources/using-vs-code/">Using VS Code</a>
             </li>
           </ul>
         </nav>
@@ -222,49 +225,6 @@
               >: Keeps opening/closing tags in sync to avoid syntax errors.
             </li>
           </ul>
-          <p>
-            To open your website, use the <em>Live Server</em> extension to open
-            a local preview:
-            <code class="language-plaintext">cmd + shift + P</code>, search for
-            "Open with Live Server", and press enter. The website will open in
-            your default browser.
-          </p>
-          <p>
-            You can also simply open the
-            <code class="language-plaintext">index.html</code> file using your
-            browser of choice.
-          </p>
-          <details class="tip-block">
-            <summary>Advanced: live preview on mobile</summary>
-            <p>
-              If both your computer and mobile device are connected to the same
-              network, you can preview your website on your mobile device by
-              running a live server on your computer's ip address.
-            </p>
-            <ol>
-              <li>
-                Either <code class="language-plaintext">right click</code> the
-                folder in the finder and select "Services" → "New Terminal at
-                Folder" or (more advanced) et get the path to your website's
-                folder:
-                <code class="language-plaintext">opt + right click</code> the
-                folder in your file explorer, and select "Copy folder-name as
-                Pathname". Then, open the terminal and navigate to the folder:
-                <code class="language-bash">cd /path/to/folder</code>
-              </li>
-              <li>
-                Run the live server on your computer's ip address:
-                <code class="language-bash">npx http-server -p 8000 -c-1</code>
-              </li>
-              <li>
-                Open the
-                <code class="language-plaintext"
-                  >http://xxx.xxx.x.xxx:8000</code
-                >
-                URL on your phone.
-              </li>
-            </ol>
-          </details>
         </div>
         <div class="block-wrapper">
           <h2>Browsers</h2>

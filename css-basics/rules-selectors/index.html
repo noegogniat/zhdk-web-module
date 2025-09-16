@@ -57,6 +57,9 @@
               <a href="/tools-resources/setup-guide/">Setup Guide</a>
             </li>
             <li>
+              <a href="/tools-resources/using-vs-code/">Using VS Code</a>
+            </li>
+            <li>
               <a href="/tools-resources/file-organisation/"
                 >File organisation</a
               >
@@ -135,13 +138,15 @@
           <h3>Motion & Transform</h3>
           <ul>
             <li>
-              <a href="/motion-transform/transform/">Transform</a>
+              <a href="/motion-filters/transform-filters/"
+                >Transform & Filters</a
+              >
             </li>
             <li>
-              <a href="/motion-transform/transitions/">Transitions</a>
+              <a href="/motion-filters/transitions/">Transitions</a>
             </li>
             <li>
-              <a href="/motion-transform/animation/">Animation</a>
+              <a href="/motion-filters/animation/">Animation</a>
             </li>
           </ul>
           <h3>Performance & Best practices</h3>
@@ -500,6 +505,16 @@ li:last-child {
           <h2 id="combinators-and-separators">
             Common combinators and separators
           </h2>
+          <h3>Increase specificity</h3>
+          <p>
+            You can combine selectors to increase the specificity of a selector.
+            To to so, simply append another selector to the first one. For
+            example, you can select all the paragraphs with the
+            <code class="language-css">.running-text</code> class like so:
+          </p>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-css wrap">p.running-text {text-indent: 2ch}</code></pre>
+          <!-- prettier-ignore-end -->
           <h3>Select more than on element</h3>
           <p>
             You can select any HTML element by its tags name. To selector more

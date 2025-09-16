@@ -81,6 +81,12 @@ code {
   white-space: pre-wrap;
 }
 
+@media screen and (max-width: calc(600px + 30ch + 10rem)) {
+  :root {
+    font-size: 1.25rem;
+  }
+}
+
 /* Lesson layout ======================================================================= */
 
 html {
@@ -359,7 +365,7 @@ pre code::-webkit-scrollbar {
     padding-top: 1rem;
     display: flex;
     gap: 1ch;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
   }
   #simple-nav li {
@@ -420,7 +426,7 @@ pre code::-webkit-scrollbar {
 }
 
 .compare-block > * {
-  max-width: 50%;
+  max-width: 900px;
 }
 
 .compare-block-code {
@@ -430,6 +436,10 @@ pre code::-webkit-scrollbar {
 .compare-block-code > * {
   margin-block: 0.5rem;
   max-height: 600px;
+}
+
+.compare-block:has(> *:nth-child(2)) > * {
+  max-width: 50%;
 }
 
 .compare-block-code:has(> *:nth-child(2)) > * {
@@ -457,20 +467,24 @@ pre code::-webkit-scrollbar {
 
 .compare-block-result {
   min-width: 24rch;
-  max-height: 600px;
   padding: 1rem;
   border: solid 1px #bbb;
   border-radius: 0.5rem;
+}
+
+.compare-block:has(> *:nth-child(2)) .compare-block-result {
+  max-height: 600px;
 }
 
 @media screen and (max-width: 160ch) {
   .compare-block {
     gap: 0.5rem;
     flex-flow: column nowrap;
+    max-width: 100%;
   }
 
   .compare-block > * {
-    max-width: 100%;
+    max-width: 100% !important;
     flex-basis: 100%;
   }
 

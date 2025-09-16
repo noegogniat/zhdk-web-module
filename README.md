@@ -13,6 +13,7 @@ This website should serve as a reference for the topics covered in the course, a
 TOOLS & RESOURCES
 
 - [Setup Guide](https://zhdk.noegogniat.com/html-basics/setup-guide)
+- [Using VS Code](https://zhdk.noegogniat.com/tools-resources/using-vs-code)
 - [File organisation](https://zhdk.noegogniat.com/html-basics/file-organisation)
 - [External resources](https://zhdk.noegogniat.com/html-basics/external-resources)
 
@@ -51,9 +52,9 @@ RESPONSIVE DESIGN
 
 MOTION & TRANSFORM
 
-- [Transform](https://zhdk.noegogniat.com/motion-transform/transform)
-- [Transitions](https://zhdk.noegogniat.com/motion-transform/transitions)
-- [Animation](https://zhdk.noegogniat.com/motion-transform/animation)
+- [Transform](https://zhdk.noegogniat.com/motion-filters/transform-filters)
+- [Transitions](https://zhdk.noegogniat.com/motion-filters/transitions)
+- [Animation](https://zhdk.noegogniat.com/motion-filters/animation)
 
 PERFORMANCE & BEST PRACTICES
 
