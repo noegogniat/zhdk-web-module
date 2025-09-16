@@ -1,0 +1,180 @@
+/* Preset values ============================================================= */
+
+@font-face {
+  font-family: "Pelikan Semi Mono";
+  src: url("/assets/fonts/ABCPelikanSemi-Mono-Book-Trial.woff2") format("woff2"),
+    url("/assets/fonts/ABCPelikanSemi-Mono-Book-Trial.woff") format("woff");
+  font-weight: normal;
+  font-style: monospace;
+  font-display: block;
+}
+
+body {
+  font-family: "Pelikan Semi Mono", monospace;
+  margin: 0;
+  padding: 2rem 0.5rem;
+  box-sizing: border-box;
+  gap: 2rem 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+}
+
+.exercise-a {
+  height: 500px;
+  width: 1000px;
+}
+
+.exercise-a .child {
+  min-height: calc(500px / 9);
+  box-sizing: border-box;
+}
+
+.exercise-a .child-1::after,
+.exercise-a .child-9::after {
+  content: "1/25";
+}
+.exercise-a .child-2::after,
+.exercise-a .child-8::after {
+  content: "2/25";
+}
+.exercise-a .child-3::after,
+.exercise-a .child-7::after {
+  content: "3/25";
+}
+.exercise-a .child-4::after,
+.exercise-a .child-6::after {
+  content: "4/25";
+}
+.exercise-a .child-5::after {
+  content: "5/25";
+}
+
+.exercise-b {
+  width: 500px;
+  height: 500px;
+}
+
+.exercise-b .child {
+  box-sizing: border-box;
+  min-height: calc(500px / 9);
+}
+
+.exercise-b .child-1::after {
+  content: "1/3 1/4";
+}
+
+.exercise-b .child-2::after {
+  content: "3/4 1/7";
+}
+
+.exercise-b .child-3::after {
+  content: "4/5 1/3";
+}
+
+.exercise-b .child-4::after {
+  content: "5/7 1/3";
+}
+
+.exercise-b .child-5::after {
+  content: "4/5 3/5";
+}
+
+.exercise-b .child-6::after {
+  content: "5/7 3/5";
+}
+
+.exercise-b .child-7::after {
+  content: "1/3 4/7";
+}
+
+.exercise-b .child-8::after {
+  content: "4/6 5/7";
+}
+
+.exercise-b .child-9::after {
+  content: "6/7 5/7";
+}
+
+.parent {
+  position: relative;
+  background-color: #eee;
+  border: solid 1px #888;
+  border-radius: 0 0.5rem 0.5rem 0.5rem;
+  padding: 0.5rem;
+}
+
+.parent::before {
+  position: absolute;
+  height: 1.45rem;
+  line-height: 0.75rem;
+  top: calc(-1.4rem - 1px);
+  left: -1px;
+  padding: 0.5rem 0.5rem 0;
+  background-color: #eee;
+  border: solid 1px #888;
+  border-bottom: none;
+  border-radius: 0.5rem 0.5rem 0 0;
+  box-sizing: border-box;
+}
+
+.exercise-a::before {
+  content: "Exercise A";
+}
+
+.exercise-b::before {
+  content: "Exercise B";
+}
+
+.child {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.child::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4ch;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.child:nth-child(1) {
+  background-color: lch(70% 75 0);
+}
+
+.child:nth-child(2) {
+  background-color: lch(70% 75 40);
+}
+
+.child:nth-child(3) {
+  background-color: lch(70% 75 80);
+}
+
+.child:nth-child(4) {
+  background-color: lch(70% 75 120);
+}
+
+.child:nth-child(5) {
+  background-color: lch(70% 75 160);
+}
+
+.child:nth-child(6) {
+  background-color: lch(70% 75 200);
+}
+
+.child:nth-child(7) {
+  background-color: lch(70% 75 240);
+}
+
+.child:nth-child(8) {
+  background-color: lch(70% 75 280);
+}
+
+.child:nth-child(9) {
+  background-color: lch(70% 75 320);
+}
