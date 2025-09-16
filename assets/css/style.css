@@ -138,26 +138,11 @@ ul li:not(.user-agent).active {
 
 /* Short .active transition */
 
-ul li:not(.user-agent).active::marker {
-  animation: marker-fade-in 100ms ease-in-out forwards;
-}
-
 ul li:not(.user-agent).active::before {
   content: "–";
   position: absolute;
   left: -1.5815ch;
   animation: marker-fade-out 100ms ease-in-out forwards;
-}
-
-@keyframes marker-fade-in {
-  from {
-    transform: scale(0.75);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 
 @keyframes marker-fade-out {
@@ -201,7 +186,6 @@ ul li:not(.user-agent).active::before {
 #top-nav li:nth-child(1).active::before {
   content: "↖ ";
 }
-
 #top-nav li:nth-child(2).active::before {
   content: "↓ ";
 }
@@ -209,14 +193,14 @@ ul li:not(.user-agent).active::before {
   content: "↗ ";
 }
 
+#top-nav li.active {
+  list-style: "• " outside;
+}
+
 #top-nav li.active::before {
   position: absolute;
   left: -1.5815ch;
   animation: arrow-marker-fade-out 100ms ease-in-out forwards;
-}
-
-#top-nav li.active {
-  list-style: "• " outside;
 }
 
 @keyframes arrow-marker-fade-out {
