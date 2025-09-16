@@ -52,7 +52,7 @@ RESPONSIVE DESIGN
 
 MOTION & TRANSFORM
 
-- [Transform](https://zhdk.noegogniat.com/motion-filters/transform-filters)
+- [Transform & Filters](https://zhdk.noegogniat.com/motion-filters/transform-filters)
 - [Transitions](https://zhdk.noegogniat.com/motion-filters/transitions)
 - [Animation](https://zhdk.noegogniat.com/motion-filters/animation)
 
