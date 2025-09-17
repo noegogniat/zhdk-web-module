@@ -39,6 +39,7 @@
   user-select: none;
   list-style-type: none;
   display: grid;
+  gap: 0.5rem;
   grid-template-columns: 1fr 9ch auto;
 }
 
@@ -77,7 +78,7 @@
   text-overflow: ellipsis;
 }
 
-.exercise-block > summary .download-button {
+.exercise-block .download-button {
   padding: 0.25rem 1ch;
   border-radius: 0.5rem;
   background-color: #d2f2fb;
@@ -90,6 +91,10 @@
 .exercise-block > summary .download-button:hover {
   color: #00f;
   border-color: #00f;
+}
+
+.exercise-block > summary .duration {
+  text-align: center;
 }
 
 /* Transition details opening if supported */
@@ -107,6 +112,21 @@
       content-visibility 350ms 0ms cubic-bezier(0.075, 0.82, 0.165, 1),
       border-top-width 0ms 10ms linear;
   }
+}
+
+.exercise-block .download-button.solution {
+  background-color: #dfd;
+  color: #0b0;
+  border-color: #0b0;
+  margin: 1rem auto 0.5rem;
+  display: block;
+  width: fit-content;
+}
+
+.exercise-block .download-button.solution:hover {
+  background-color: #efe;
+  color: #0c0;
+  border-color: #0c0;
 }
 
 .exercise-block p {

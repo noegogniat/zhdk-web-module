@@ -675,6 +675,7 @@
               <pre><code class="language-css wrap">.flex-container {
   display: flex;
   width: 100%;
+  min-height: 6rem;
   background-color: lavender;
 }
 
@@ -694,7 +695,10 @@
 .flex-item:nth-child(2n-1) {height: 1rem;}
 
 /* Even items have a height of 3rem */
-.flex-item:nth-child(2n) {height: 3rem;}</code></pre>
+.flex-item:nth-child(2n) {height: 3rem;}
+
+/* Required for stretch to work */
+.stretch > .flex-item {height: auto;}</code></pre>
               <!-- prettier-ignore-end -->
             </div>
             <span>→</span>
@@ -749,6 +753,7 @@
                   gap: 8px;
                   padding: 8px;
                   width: 100%;
+                  min-height: 6rem;
                   background-color: lavender;
                 }
 
@@ -784,6 +789,10 @@
                 }
                 #align-items-example .flex-item:nth-child(2n) {
                   height: 3rem;
+                }
+
+                #align-items-example .stretch > .flex-item {
+                  height: auto;
                 }
 
                 #align-items-example p {
@@ -1156,6 +1165,14 @@
               }
             </style>
           </div>
+          <div class="further-reading">
+            <a
+              href="https://css-tricks.com/understanding-flex-grow-flex-shrink-and-flex-basis/"
+              target="_blank"
+            >
+              Learn more about flex-grow, flex-shrink and flex-basis
+            </a>
+          </div>
           <h3>Self alignment</h3>
           <p>
             The
@@ -1299,6 +1316,13 @@ height: 1rem;
                 }
               </style>
             </div>
+          </div>
+          <div class="further-reading">
+            <a
+              href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+              target="_blank"
+              >The flexbox cheatsheet</a
+            >
           </div>
         </div>
       </section>

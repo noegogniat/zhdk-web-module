@@ -2,13 +2,15 @@
 
 .exercise-a {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .exercise-a .child {
   height: 200px;
+  width: 70px;
 }
 
 .exercise-a .child-1,
@@ -44,12 +46,13 @@
 
 /* Exercise B =============================================================== */
 
-/* Using grid columns and rows */
+/* Using grid column and row */
 
-.exercise-b {
+/* .exercise-b {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+
   gap: 0.5rem;
 }
 
@@ -96,11 +99,11 @@
 .exercise-b .child-9 {
   grid-column: 6 / 7;
   grid-row: 5 / 7;
-}
+} */
 
 /* Using grid areas */
 
-/* .exercise-b {
+.exercise-b {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
@@ -140,4 +143,4 @@
 }
 .exercise-b .child-9 {
   grid-area: nine;
-} */
+}
