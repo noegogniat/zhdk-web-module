@@ -316,6 +316,18 @@ chmod +x batch-resize-and-convert.sh
             >
             tag for each format.
           </p>
+          <p>
+            Here is an example of a responsive image with a
+            <code class="language-html">picture</code> tag. For demonstative
+            purposes, I've altered the default behaviour of the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#srcset"
+              target="_blank"
+              ><code class="language-html">srcset</code></a
+            >
+            to reload the image when the window is resized. This usually only
+            happens if the previous source is smaller than the new one.
+          </p>
           <div class="compare-block">
             <div class="compare-block-code">
               <!-- prettier-ignore-start -->
@@ -340,27 +352,29 @@ chmod +x batch-resize-and-convert.sh
             <div class="compare-block-result" id="responsive-images-example">
               <picture>
                 <source
+                  width="50vw"
                   srcset="
-                    assets/media/resized/placeholder-480w.webp   480w,
-                    assets/media/resized/placeholder-800w.webp   800w,
-                    assets/media/resized/placeholder-1200w.webp 1200w,
-                    assets/media/resized/placeholder-1920w.webp 1920w,
-                    assets/media/resized/placeholder-2560w.webp 2560w
+                    assets/media/resized/placeholder-480w.webp?v=0   480w,
+                    assets/media/resized/placeholder-800w.webp?v=0   800w,
+                    assets/media/resized/placeholder-1200w.webp?v=0 1200w,
+                    assets/media/resized/placeholder-1920w.webp?v=0 1920w,
+                    assets/media/resized/placeholder-2560w.webp?v=0 2560w
                   "
                   type="image/webp"
                 />
                 <source
+                  width="50vw"
                   srcset="
-                    assets/media/resized/placeholder-480w.jpg   480w,
-                    assets/media/resized/placeholder-800w.jpg   800w,
-                    assets/media/resized/placeholder-1200w.jpg 1200w,
-                    assets/media/resized/placeholder-1920w.jpg 1920w,
-                    assets/media/resized/placeholder-2560w.jpg 2560w
+                    assets/media/resized/placeholder-480w.jpg?v=0   480w,
+                    assets/media/resized/placeholder-800w.jpg?v=0   800w,
+                    assets/media/resized/placeholder-1200w.jpg?v=0 1200w,
+                    assets/media/resized/placeholder-1920w.jpg?v=0 1920w,
+                    assets/media/resized/placeholder-2560w.jpg?v=0 2560w
                   "
                   type="image/jpeg"
                 />
                 <img
-                  src="assets/media/placeholder.jpg"
+                  src="assets/media/resized/placeholder-480w.jpg"
                   alt="Grey placeholder rectangle"
                 />
               </picture>
@@ -369,27 +383,39 @@ chmod +x batch-resize-and-convert.sh
                 const responsiveImage = document
                   .getElementById("responsive-images-example")
                   .querySelector("img");
+                const responsiveImageSources = document
+                  .getElementById("responsive-images-example")
+                  .querySelectorAll("source");
                 const responsiveImageOutput = document
                   .getElementById("responsive-images-example")
                   .querySelector("p");
                 responsiveImage.onload = () => {
                   console.log("new image loaded");
-                  console.log(responsiveImage.currentSrc.split("/").pop());
+                  console.log(
+                    `Displayed image: ${responsiveImage.currentSrc
+                      .split("/")
+                      .pop()
+                      .replace(/\?v=\d+/g, "")}`
+                  );
 
                   responsiveImageOutput.innerText = `Displayed image: ${responsiveImage.currentSrc
                     .split("/")
-                    .pop()}`;
+                    .pop()
+                    .replace(/\?v=\d+/g, "")}`;
                 };
 
                 window.addEventListener("resize", () => {
-                  responsiveImage.onload = () => {
-                    console.log("new image loaded");
-                    console.log(responsiveImage.currentSrc.split("/").pop());
-
-                    responsiveImageOutput.innerText = `Displayed image: ${responsiveImage.currentSrc
-                      .split("/")
-                      .pop()}`;
-                  };
+                  // Forces the browser to reload the image
+                  responsiveImageSources.forEach(
+                    (source) =>
+                      (source.srcset = source.srcset.replaceAll(
+                        /\?v=\d+/g,
+                        `?v=${Math.max(
+                          document.documentElement.clientWidth || 0,
+                          window.innerWidth || 0
+                        )}`
+                      ))
+                  );
                 });
               </script>
               <style>

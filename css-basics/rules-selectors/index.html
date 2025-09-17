@@ -649,6 +649,167 @@ div p {color: deeppink}</code></pre>
             </div>
           </div>
         </div>
+        <div class="block-wrapper">
+          <h2>Pseudo-elements</h2>
+          <p>
+            Pseudo-elements are used to change, add, or remove content that
+            isn't declared in HTML, such as the list marker (except on Safari),
+            the scrollbar (only on Safari), or the backdorp of a dialog.
+          </p>
+          <p>
+            The most common pseudo-elements are the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before"
+              target="_blank"
+              ><code class="language-css">::before</code></a
+            >
+            and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after"
+              target="_blank"
+              ><code class="language-css">::after</code></a
+            >
+            pseudo-elements. They can be used to add content to the beginning or
+            end of an element, and can contain content (text or images). Here is
+            an example adding an arrow after every link on the page that opens
+            in a new tab:
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Link opening in the same tab&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#" target="_blank"&gt;Link opening in a new tab&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#" target="_blank"&gt;Link opening in a new tab&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">a[target="_blank"]::after {
+      content: " ↗";
+      display: inline-block;
+      margin-left: 0.25rem;
+    }</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="pseudo-element-example">
+              <ul class="user-agent">
+                <li class="user-agent">
+                  <a class="user-agent" href="#"
+                    >Link opening in the same tab</a
+                  >
+                </li>
+                <li class="user-agent">
+                  <a class="user-agent" href="#" target="_blank"
+                    >Link opening in a new tab</a
+                  >
+                </li>
+                <li class="user-agent">
+                  <a class="user-agent" href="#" target="_blank"
+                    >Link opening in a new tab</a
+                  >
+                </li>
+              </ul>
+              <style>
+                #pseudo-element-example a[target="_blank"]::after {
+                  content: " ↗";
+                  display: inline-block;
+                  margin-left: 0.25rem;
+                }
+
+                #pseudo-element-example ul {
+                  padding-inline-start: 0;
+                  list-style-position: inside;
+                }
+              </style>
+            </div>
+          </div>
+          <p>
+            Here is another example using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar"
+              target="_blank"
+              ><code class="language-css">::-webkit-scrollbar</code></a
+            >
+            pseudo-element to remove the scrollbar on an scrollable element:
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html wrap">&lt;div class="scroll-container"&gt;
+  &lt;p&gt;Lorem ipsum…&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum…&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum…&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css wrap">.scroll-container {
+  height: 256px;
+  overflow-y: scroll;
+
+  /* Hides the scrollbar on most browsers */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hides the scrollbar on Webkit browsers (Safari) */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="pseudo-element-example-2">
+              <div class="user-agent scroll-container">
+                <p class="user-agent">
+                  Nulla eu ut esse officia velit non fugiat cupidatat ipsum. Ad
+                  culpa aute amet commodo officia est anim fugiat excepteur
+                  magna nisi commodo deserunt. Non nostrud irure deserunt sunt
+                  aute est incididunt laboris veniam duis do in reprehenderit
+                  tempor velit. Eiusmod adipisicing mollit excepteur nulla
+                  aliqua nostrud amet qui quis est id. Minim eu fugiat occaecat
+                  proident cupidatat minim officia cupidatat mollit est ullamco
+                  nulla.
+                </p>
+                <p class="user-agent">
+                  Dolor exercitation officia id. Consequat proident laboris
+                  aliquip exercitation aliqua ex amet voluptate. Et quis
+                  occaecat voluptate do aute ipsum dolore commodo dolor
+                  consectetur velit fugiat consectetur occaecat. Elit elit
+                  occaecat amet qui do. Ipsum exercitation enim tempor quis
+                  magna. Incididunt do nisi laboris fugiat exercitation aliqua
+                  culpa do exercitation nisi elit dolor elit. Excepteur magna
+                  laborum incididunt ipsum aute consectetur.
+                </p>
+                <p class="user-agent">
+                  Id minim amet sint mollit. Ipsum incididunt consequat
+                  consectetur aliqua officia anim id consectetur voluptate.
+                  Adipisicing consequat tempor qui Lorem mollit aute non do ex
+                  labore dolore. Minim consectetur sint proident. Irure elit
+                  proident eiusmod duis excepteur sunt nostrud duis nostrud
+                  exercitation est aute labore irure.
+                </p>
+              </div>
+              <style>
+                #pseudo-element-example-2 .scroll-container {
+                  height: 256px;
+                  overflow-y: scroll;
+                  -ms-overflow-style: none;
+                  scrollbar-width: none;
+                  border-radius: 0.5rem;
+                  padding: 0.5rem;
+                  background-color: lavender;
+                }
+
+                #pseudo-element-example-2 .scroll-container::-webkit-scrollbar {
+                  display: none;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   </body>
