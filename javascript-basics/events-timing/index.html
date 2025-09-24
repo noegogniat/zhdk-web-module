@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript basics · Events & timing</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="NG ZHDK" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/stylesheet.css?v=2" />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/style.css?v=4" />
+    <script src="/assets/js/highlight/highlight.js"></script>
+    <script src="/assets/js/highlight/languages/apache.js"></script>
+    <script src="/assets/js/highlight/languages/bash.js"></script>
+    <script src="/assets/js/highlight/languages/css.js"></script>
+    <script src="/assets/js/highlight/languages/javascript.js"></script>
+    <script src="/assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <main class="lesson-layout">
+      <aside class="sidebar">
+        <nav>
+          <ul id="top-nav">
+            <li>
+              <h3><a href="/">Home</a></h3>
+            </li>
+            <li>
+              <h3>
+                <a
+                  href="https://github.com/noegogniat/zhdk-web-module"
+                  target="_blank"
+                  >Download</a
+                >
+              </h3>
+            </li>
+            <li>
+              <h3><a href="/exercises">Excercises</a></h3>
+            </li>
+          </ul>
+          <h3>Tools & Resources</h3>
+          <ul>
+            <li>
+              <a href="/tools-resources/setup-guide/">Setup Guide</a>
+            </li>
+            <li>
+              <a href="/tools-resources/using-vs-code/">Using VS Code</a>
+            </li>
+            <li>
+              <a href="/tools-resources/file-organisation/"
+                >File organisation</a
+              >
+            </li>
+            <li>
+              <a href="/tools-resources/external-resources/"
+                >External resources</a
+              >
+            </li>
+          </ul>
+          <h3>HTML Basics</h3>
+          <ul>
+            <li>
+              <a href="/html-basics/file-structure/">File structure</a>
+            </li>
+            <li>
+              <a href="/html-basics/semantic-html/">Semantic HTML</a>
+            </li>
+            <li>
+              <a href="/html-basics/common-tags/">Common tags</a>
+            </li>
+          </ul>
+          <h3>CSS Basics</h3>
+          <ul>
+            <li>
+              <a href="/css-basics/rules-selectors/">Rules & Selectors</a>
+            </li>
+            <li><a href="/css-basics/box-model/">Box Model</a></li>
+            <li>
+              <a href="/css-basics/specificity/">Specificity</a>
+            </li>
+            <li><a href="/css-basics/positions/">Positions</a></li>
+            <li>
+              <a href="/css-basics/colours-units/">Colours & Units</a>
+            </li>
+          </ul>
+          <h3>Typography</h3>
+          <ul>
+            <li>
+              <a href="/typography/importing-fonts/">Importing fonts</a>
+            </li>
+            <li>
+              <a href="/typography/relevant-tags/">Relevant tags</a>
+            </li>
+            <li>
+              <a href="/typography/font-properties/">Font properties</a>
+            </li>
+            <li>
+              <a href="/typography/custom-properties/">Custom properties</a>
+            </li>
+          </ul>
+          <h3>Display</h3>
+          <ul>
+            <li>
+              <a href="/display/display-property/">Display property</a>
+            </li>
+            <li><a href="/display/flexbox/">Flexbox</a></li>
+            <li><a href="/display/grid/">Grid</a></li>
+          </ul>
+          <h3>Responsive design</h3>
+          <ul>
+            <li>
+              <a href="/responsive-design/breakpoints/">Breakpoints</a>
+            </li>
+            <li>
+              <a href="/responsive-design/printable-other/"
+                >Printable web & other</a
+              >
+            </li>
+            <li>
+              <a href="/responsive-design/responsive-images/"
+                >Responsive images</a
+              >
+            </li>
+          </ul>
+          <h3>Motion & Transform</h3>
+          <ul>
+            <li>
+              <a href="/motion-filters/transform-filters/"
+                >Transform & Filters</a
+              >
+            </li>
+            <li>
+              <a href="/motion-filters/transitions/">Transitions</a>
+            </li>
+            <li>
+              <a href="/motion-filters/animation/">Animation</a>
+            </li>
+          </ul>
+          <h3>JavaScript basics</h3>
+          <ul>
+            <li>
+              <a href="/javascript-basics/syntax-basics/">Syntax & basics</a>
+            </li>
+            <li class="active">
+              <a href="/javascript-basics/events-timing">Events & timing</a>
+            </li>
+            <li>
+              <a href="/javascript-basics/handy-libraries/">Handy libraries</a>
+            </li>
+          </ul>
+          <h3>Performance & Best practices</h3>
+          <ul>
+            <li>
+              <a href="/performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+            <li>
+              <a href="/performance-best-practices/accessibility/"
+                >Accessibility considerations</a
+              >
+            </li>
+            <li>
+              <a href="/performance-best-practices/performance-optimisation/"
+                >Performance optimisation</a
+              >
+            </li>
+          </ul>
+          <ul class="mobile-only" id="simple-nav">
+            <li id="simple-nav-previous">
+              <a href="/motion-filters/transitions/">Transitions</a>
+            </li>
+            <li id="simple-nav-next">
+              <a href="/performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="lesson">
+        <h1>Events & timing</h1>
+        <div class="block-wrapper">
+          <h2>What are events?</h2>
+          <p>
+            Event are actions that happen in the browser, such as a user
+            interacting with the page, the window being resized, or some content
+            being loaded. You can listen to these events using JavaScript and
+            run some code when they occur. While there are many events, we'll
+            focus on the most common ones:
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event"
+                target="_blank"
+                ><code class="language-plaintext">click</code></a
+              >
+              – Fires when an element is clicked.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event"
+                target="_blank"
+                ><code class="language-plaintext">mousemove</code></a
+              >
+              – Fires when the mouse is moved over an element.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event"
+                target="_blank"
+                ><code class="language-plaintext">resize</code></a
+              >
+              – Fires when the document view has been resized.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scroll_event"
+                target="_blank"
+                ><code class="language-plaintext">scroll</code></a
+              >
+              – Fires when the view of an element has been scrolled.
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event"
+                target="_blank"
+                ><code class="language-plaintext">keydown</code></a
+              >
+              – Fires when the user presses a key.
+            </li>
+          </ul>
+          <div class="further-reading">
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events"
+              target="_blank"
+              >Learn more about events</a
+            >
+          </div>
+          <h3>Event listeners</h3>
+          <p>
+            To listen to an event, you need to add an event listener to an
+            element. An event listener is a function that will be executed when
+            the event occurs. You can add an event listener to an element using
+            the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"
+              target="_blank"
+              ><code class="language-plaintext">addEventListener()</code></a
+            >
+            method. The first argument is the name of the event, and the second
+            argument is the function that will be executed when the event
+            occurs. The function automatically takes the fired event object as
+            input, which contains information about the event.
+          </p>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-javascript">// Function to remove the outline of the target when leaving target
+function removeOutline(event) {
+  // Get the target of the event
+  var target = event.target;
+  // Remove the outline of the target
+  target.style.removeProperty('outline');
+  target.removeEventListener('mouseleave', removeOutline);
+}
+
+// Function outlining the target of the event
+function outlineTarget(event) {
+  // Get the target of the event
+  var target = event.target;
+  // Set the outline of the target
+  target.style.outline = 'dotted 1px red';
+  target.addEventListener('mouseleave', removeOutline);
+}
+
+// Listen to the movement of the mouse on the window
+window.addEventListener("mousemove", outlineTarget);</code></pre>
+          <!-- prettier-ignore-end -->
+          <script>
+            function addEventListenerRemoveOutline(event) {
+              var target = event.target;
+              target.style.removeProperty("outline");
+              target.removeEventListener(
+                "mouseleave",
+                addEventListenerRemoveOutline
+              );
+            }
+
+            function addEventListenerOutlineTarget(event) {
+              var target = event.target;
+              target.style.outline = "dotted 1px red";
+              target.addEventListener(
+                "mouseleave",
+                addEventListenerRemoveOutline
+              );
+            }
+            function toggleAddEventListenerExample(input) {
+              if (input.checked)
+                window.addEventListener(
+                  "mousemove",
+                  addEventListenerOutlineTarget
+                );
+              else {
+                window.removeEventListener(
+                  "mousemove",
+                  addEventListenerOutlineTarget
+                );
+              }
+            }
+          </script>
+          <label
+            class="example-toggle"
+            for="add-event-listener-example-checkbox"
+            ><input
+              type="checkbox"
+              name="add-event-listener-example"
+              data-function="toggleAddEventListenerExample"
+              id="add-event-listener-example-checkbox"
+            /><span>example inactive</span>
+          </label>
+          <h3>The click event</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event"
+              target="_blank"
+              ><code class="language-plaintext">click</code></a
+            >
+            event is fired when an element is clicked. The event object contains
+            information about the click, such as the position of the click
+            relative to the page or window, the type of pointer that was used to
+            click, or the target of the click. Here is an example displaying the
+            information of the click event:
+          </p>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-javascript">// Get marker
+var marker = document.getElementById("marker");
+
+// Move the marker to the position of the click
+function updateMarkerToPosition(event) {
+  marker.style.left = event.clientX + "px";
+  marker.style.top = event.clientY + "px";
+
+  // Update the content of the marker
+  marger.innerHTML = event.pointerType + " clicked " + event.target.tagName + " at<br/>clientX: " + event.clientX + "px, clientY: " + event.clientY + "px";
+}
+
+// Add the event listener to the document
+document.addEventListener("click", updateMarkerToPosition);</code></pre>
+          <!-- prettier-ignore-end -->
+          <p class="user-agent" id="click-event-marker"></p>
+          <style>
+            #click-event-marker {
+              position: fixed;
+              visibility: none;
+              pointer-events: none;
+              z-index: 99999;
+              width: fit-content;
+              text-align: center;
+              transform: translate3d(-50%, -50%, 0);
+              background-color: #fffe;
+              white-space: nowrap;
+              border: solid 1px #bbb;
+              padding: 0.5rem 1ch;
+              box-sizing: content-box;
+              border-radius: 0.5rem;
+            }
+          </style>
+          <script>
+            const clickEventMarker =
+              document.getElementById("click-event-marker");
+
+            function clickEventUpdateMarker(event) {
+              clickEventMarker.style.visibility = "visible";
+              clickEventMarker.style.left = event.clientX + "px";
+              clickEventMarker.style.top = event.clientY + "px";
+              clickEventMarker.innerHTML = `${event.pointerType} clicked ${event.target.tagName} at<br/>clientX: ${event.clientX}px, clientY: ${event.clientY}px`;
+            }
+            function toggleClickEventExample(input) {
+              if (input.checked) {
+                document.addEventListener("click", clickEventUpdateMarker);
+                clickEventMarker.style.visibility = "visible";
+              } else {
+                document.removeEventListener("click", clickEventUpdateMarker);
+                clickEventMarker.style.visibility = "hidden";
+              }
+            }
+          </script>
+          <label class="example-toggle" for="click-event-example-checkbox"
+            ><input
+              type="checkbox"
+              name="click-event-example"
+              data-function="toggleClickEventExample"
+              id="click-event-example-checkbox"
+            /><span>example inactive</span>
+          </label>
+          <h3>The mousemove event</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event"
+              target="_blank"
+              ><code class="language-plaintext">mousemove</code></a
+            >
+            event is fired when the mouse is moved over an element. Similarly to
+            the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event"
+              target="_blank"
+              ><code class="language-plaintext">click</code></a
+            >
+            event, the event object contains information about the mouse move,
+            such as its position relative to the page, window or screen and its
+            target. This event listener is essential if you want to implement a
+            custom cursor. Additionally, the event contains information about
+            the mouse buttons and modifier keys that were pressed when the mouse
+            was moved. Here is an example displaying the information of the
+            mousemove event:
+          </p>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-javascript">// Get marker
+var marker = document.getElementById("marker");
+
+// Move the marker to the position of the mousemove
+function updateMarkerToPosition(event) {
+  marker.style.left = event.clientX + "px";
+  marker.style.top = event.clientY + "px";
+
+  // Get the modifier keys pressed
+  let modifierKeysPressed = [];
+  if (event.altKey) {modifierKeysPressed.push("alt");}
+  if (event.ctrlKey) {modifierKeysPressed.push("ctrl");}
+  if (event.metaKey) {modifierKeysPressed.push("meta");}
+  if (event.shiftKey) {modifierKeysPressed.push("shift");}
+  if (modifierKeysPressed.length === 0) {modifierKeysPressed = "no modifier keys";}
+
+  // Update the content of the marker
+  marger.innerHTML = event.pointerType + " moved over " + event.target.tagName + " at<br/>clientX: " + event.clientX + "px, clientY: " + event.clientY + "px<br/>while pressing " + modifierKeysPressed;
+}
+
+// Add the event listener to the document
+document.addEventListener("mousemove", updateMarkerToPosition);</code></pre>
+          <p class="user-agent" id="mousemove-event-marker"></p>
+          <style>
+            #mousemove-event-marker {
+              position: fixed;
+              visibility: none;
+              pointer-events: none;
+              z-index: 99999;
+              width: fit-content;
+              text-align: center;
+              transform: translate3d(-50%, -50%, 0);
+              background-color: #fffe;
+              white-space: nowrap;
+              border: solid 1px #bbb;
+              padding: 0.5rem 1ch;
+              box-sizing: content-box;
+              border-radius: 0.5rem;
+            }
+          </style>
+          <script>
+            const mousemoveEventMarker = document.getElementById(
+              "mousemove-event-marker"
+            );
+
+            function mousemoveEventUpdateMarker(event) {
+              mousemoveEventMarker.style.visibility = "visible";
+              mousemoveEventMarker.style.left = event.clientX + "px";
+              mousemoveEventMarker.style.top = event.clientY + "px";
+              let modifierKeysPressed = [];
+              if (event.altKey) modifierKeysPressed.push("alt");
+              if (event.ctrlKey) modifierKeysPressed.push("ctrl");
+              if (event.metaKey) modifierKeysPressed.push("meta");
+              if (event.shiftKey) modifierKeysPressed.push("shift");
+              modifierKeysPressed = modifierKeysPressed.length
+                ? modifierKeysPressed.join(", ")
+                : "no modifier keys";
+              mousemoveEventMarker.innerHTML = ` moved over ${event.target.tagName} at<br/>clientX: ${event.clientX}px, clientY: ${event.clientY}px<br/>while pressing ${modifierKeysPressed}`;
+            }
+
+            function toggleMousemoveEventExample(input) {
+              if (input.checked) {
+                document.addEventListener(
+                  "mousemove",
+                  mousemoveEventUpdateMarker
+                );
+                mousemoveEventMarker.style.visibility = "visible";
+              } else {
+                document.removeEventListener(
+                  "mousemove",
+                  mousemoveEventUpdateMarker
+                );
+                mousemoveEventMarker.style.visibility = "hidden";
+              }
+            }
+          </script>
+          <label class="example-toggle" for="mousemove-event-example-checkbox"
+            ><input
+              type="checkbox"
+              name="mousemove-event-example"
+              data-function="toggleMousemoveEventExample"
+              id="mousemove-event-example-checkbox"
+            /><span>example inactive</span>
+          </label>
+          <h3>The resize event</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Element/resize_event"
+              target="_blank"
+              ><code class="language-plaintext">resize</code></a
+            >
+            event is fired when the document view has been resized. While more
+            niche, this event is very useful for recalculating some layout
+            elements you can't do with CSS. Here is an example updating the
+            viewport width and height variables on resize:
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-javascript">// Get the viewport width and height
+var viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+var viewportHeight = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+// Get the output element
+var output = document.querySelector(".output");
+
+// Function to update the output
+function updateOutput() {
+  output.textContent = 'Viewport width: ' + viewportWidth + 'px,&lt;br/&gt;Viewport height: ' + viewportHeight + 'px';
+}
+
+// Add the event listener to the document
+window.addEventListener("resize", function () {
+  // Update the viewport width and height
+  viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  viewportHeight = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+  // Update the output
+  updateOutput();
+});</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="resize-event-example">
+              <output class="user-agent output"></output>
+              <style></style>
+              <script>
+                let resizeEventViewportWidth = Math.max(
+                  document.documentElement.clientWidth || 0,
+                  window.innerWidth || 0
+                );
+                let resizeEventViewportHeight = Math.max(
+                  document.documentElement.clientHeight || 0,
+                  window.innerHeight || 0
+                );
+                const resizeEventOutput = document.querySelector(
+                  "#resize-event-example .output"
+                );
+                function resizeEventUpdateOutput() {
+                  resizeEventOutput.innerHTML = `Viewport width: ${resizeEventViewportWidth}px,<br/>Viewport height: ${resizeEventViewportHeight}px`;
+                }
+                window.addEventListener("resize", () => {
+                  resizeEventViewportWidth = Math.max(
+                    document.documentElement.clientWidth || 0,
+                    window.innerWidth || 0
+                  );
+                  resizeEventViewportHeight = Math.max(
+                    document.documentElement.clientHeight || 0,
+                    window.innerHeight || 0
+                  );
+                  resizeEventUpdateOutput();
+                });
+                resizeEventUpdateOutput();
+              </script>
+            </div>
+          </div>
+          <h3>The scroll event</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event"
+              target="_blank"
+              ><code class="language-plaintext">scroll</code></a
+            >
+            event is fired when the view of an element has been scrolled. This
+            event is useful if you want to implement scroll-driven animations or
+            other effects. Here is an example displaying the scroll position of
+            the page:
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-javascript">// Get the scroll position
+var scrollPositionX = window.scrollX;
+var scrollPositionY = window.scrollY;
+
+// Get the output element
+var output = document.querySelector(".output");
+
+// Function to update the output
+function updateOutput() {
+  output.textContent = 'Scroll position X: ' + scrollPositionX + 'px,&lt;br/&gt;Scroll position Y: ' + scrollPositionY + 'px';
+}
+
+// Add the event listener to the document
+window.addEventListener("scroll", function () {
+  // Update the scroll position
+  scrollPositionX = window.scrollX;
+  scrollPositionY = window.scrollY;
+  // Update the output
+  updateOutput();
+});</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="scroll-event-example">
+              <output class="user-agent output"></output>
+              <style></style>
+              <script>
+                let scrollEventScrollPositionX = window.scrollX;
+                let scrollEventScrollPositionY = window.scrollY;
+                const scrollEventOutput = document.querySelector(
+                  "#scroll-event-example .output"
+                );
+                function scrollEventUpdateOutput() {
+                  scrollEventOutput.innerHTML = `Scroll position X: ${scrollEventScrollPositionX}px,<br/>Scroll position Y: ${scrollEventScrollPositionY}px`;
+                }
+                window.addEventListener("scroll", () => {
+                  scrollEventScrollPositionX = window.scrollX;
+                  scrollEventScrollPositionY = window.scrollY;
+                  scrollEventUpdateOutput();
+                });
+                scrollEventUpdateOutput();
+              </script>
+            </div>
+          </div>
+          <h3>The keydown event</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event"
+              target="_blank"
+              ><code class="language-plaintext">keydown</code></a
+            >
+            event is fired when the user presses a key. This event is useful if
+            you want to implement keyboard shortcuts or navigation. Here is an
+            example displaying the key that was pressed on keydown:
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-javascript">// Get the key that was pressed
+var keyPressed = null;
+
+// Get the output element
+var output = document.querySelector(".output");
+
+// Add the event listener to the document
+document.addEventListener("keydown", function (event) {
+  // Update the key that was pressed
+  keyPressed = event.key;
+  // Update the output
+  output.textContent = 'Key pressed: ' + keyPressed;
+});</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="keydown-event-example">
+              <output class="user-agent output"></output>
+              <style></style>
+              <script>
+                let keydownEventKeyPressed = null;
+                const keydownEventOutput = document.querySelector(
+                  "#keydown-event-example .output"
+                );
+                keydownEventOutput.innerHTML = `Key pressed: ${keydownEventKeyPressed}`;
+                document.addEventListener("keydown", (event) => {
+                  keydownEventKeyPressed = event.key;
+                  keydownEventOutput.innerHTML = `Key pressed: ${keydownEventKeyPressed}`;
+                });
+                keydownEventUpdateOutput();
+              </script>
+            </div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <h2>Delays, intervals & frames</h2>
+          <h3>The setTimeout function</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout"
+              target="_blank"
+              ><code class="language-plaintext">setTimeout()</code></a
+            >
+            function is used to delay the execution of a function. It takes two
+            arguments: the function to execute, and the delay in milliseconds.
+            By assigning the return value of the
+            <code class="language-plaintext">setTimeout()</code> function to a
+            variable, you can cancel the execution of the function using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearTimeout"
+              target="_blank"
+              ><code class="language-plaintext">clearTimeout()</code></a
+            >
+            function.
+          </p>
+          <pre><code class="language-javascript">alert("You've just run the code");
+
+setTimeout(function () {
+  alert("It's time to do something!");
+}, 5000); // 5000 ms = 5 seconds</code></pre>
+          <script>
+            function timeoutExampleRun() {
+              alert("You've just run the code");
+              setTimeout(function () {
+                alert("It's time to do something!");
+              }, 5000);
+            }
+          </script>
+          <button class="example-button" data-function="timeoutExampleRun">
+            Run code
+          </button>
+          <h3>The setInterval function</h3>
+          <p>
+            Similarly, the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval"
+              target="_blank"
+              ><code class="language-plaintext">setInterval()</code></a
+            >
+            function is used to repeatedly execute a function at a specified
+            interval. It takes two arguments: the function to execute, and the
+            delay in milliseconds. By assigning the return value of the
+            <code class="language-plaintext">setInterval()</code> function to a
+            variable, you can cancel the execution of the function using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval"
+              target="_blank"
+              ><code class="language-plaintext">clearInterval()</code></a
+            >
+            function.
+          </p>
+          <pre><code class="language-javascript">let interval = setInterval(function () {
+  alert("Friendly reminder!");
+}, 3000); // 3000 ms = 3 seconds</code></pre>
+          <script>
+            let intervalExampleInterval = null;
+            function intervalExampleToggle(element) {
+              if (element.checked)
+                intervalExampleInterval = setInterval(function () {
+                  alert("Friendly reminder!");
+                }, 3000);
+              else clearInterval(intervalExampleInterval);
+            }
+          </script>
+          <label class="example-toggle" for="interval-example-checkbox"
+            ><input
+              type="checkbox"
+              name="interval-example"
+              data-function="intervalExampleToggle"
+              id="interval-example-checkbox"
+            /><span>example inactive</span>
+          </label>
+          <h3>The requestAnimationFrame function</h3>
+          <p>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame"
+              target="_blank"
+              ><code class="language-plaintext"
+                >requestAnimationFrame()</code
+              ></a
+            >
+            function is used to execute a function at the next available screen
+            refresh. It takes one argument: the function to execute. By
+            assigning the return value of the
+            <code class="language-plaintext">requestAnimationFrame()</code>
+            function to a variable, you can cancel the execution of the function
+            using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame"
+              target="_blank"
+              ><code class="language-plaintext">cancelAnimationFrame()</code></a
+            >
+            function. This function is especially useful for creating procedural
+            animations.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-js">// Declare an empty requestAnimationFrame variable
+let frame;
+
+// Select the element to animate
+const animated = document.querySelector(".animation");
+
+// Function to animate the element
+function animate() {
+  // Get the parent element of the element to animate
+  const parent = animated.parentElement;
+
+  // Get the current time
+  const now = Date.now() * 0.002;
+
+  // Animate the element
+  animated.style.transform = `translate3d(${(
+      Math.sin(now) * 
+      (parent.clientWidth - animated.clientWidth)
+    ) / 2}px, ${(
+      Math.cos(now * Math.PI) * 
+      (parent.clientHeight - animated.clientHeight)
+    ) / 2
+  }px, 0)`;
+
+  // Request the next animation frame
+  frame = requestAnimationFrame(animate);
+}
+
+// Start the animation
+frame = requestAnimationFrame(animate);</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div
+              class="compare-block-result"
+              id="requestanimationframe-example"
+            >
+              <span>Procedurally animated</span>
+              <style>
+                #requestanimationframe-example {
+                  width: 600px;
+                  aspect-ratio: 3/2;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+                #requestanimationframe-example span {
+                  display: block;
+                  padding: 1.5rem 4ch;
+                  background-color: lavender;
+                  border-radius: 0.5rem;
+                  user-select: none;
+                  border: solid 1px deeppink;
+                }
+              </style>
+              <script>
+                const requestanimationframeExampleElement =
+                  document.querySelector("#requestanimationframe-example span");
+                let requestanimationframeExampleFrame = null;
+                function requestanimationframeExampleAnimate() {
+                  const parent =
+                    requestanimationframeExampleElement.parentElement;
+                  const now = Date.now() * 0.002;
+
+                  requestanimationframeExampleElement.style.transform = `translate3d(${
+                    (Math.sin(now) *
+                      (parent.clientWidth -
+                        requestanimationframeExampleElement.clientWidth)) /
+                    2
+                  }px, ${
+                    (Math.cos(now * Math.PI) *
+                      (parent.clientHeight -
+                        requestanimationframeExampleElement.clientHeight)) /
+                    2
+                  }px, 0)`;
+                  requestanimationframeExampleFrame = requestAnimationFrame(
+                    requestanimationframeExampleAnimate
+                  );
+                }
+                function requestanimationframeExampleToggle(element) {
+                  if (element.checked)
+                    requestanimationframeExampleFrame = requestAnimationFrame(
+                      requestanimationframeExampleAnimate
+                    );
+                  else cancelAnimationFrame(requestanimationframeExampleFrame);
+                }
+              </script>
+            </div>
+          </div>
+          <label
+            class="example-toggle"
+            for="requestanimationframe-example-checkbox"
+            ><input
+              type="checkbox"
+              name="requestanimationframe-example"
+              data-function="requestanimationframeExampleToggle"
+              id="requestanimationframe-example-checkbox"
+            /><span>example inactive</span>
+          </label>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

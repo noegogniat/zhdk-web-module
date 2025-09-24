@@ -302,6 +302,51 @@ h1:not(.user-agent) {
   text-decoration: none;
 }
 
+.example-toggle,
+.example-button {
+  display: block;
+  padding: 0.5rem 1ch;
+  background-color: #dfdfdf;
+  border-radius: 0.5rem;
+  border: solid 1px #606060;
+  color: #606060;
+  text-decoration: none;
+  width: 18ch;
+  text-align: center;
+  margin: auto;
+  user-select: none;
+  cursor: pointer;
+  margin-block: 1rem;
+  transition: background-color 100ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 100ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 100ms cubic-bezier(0.4, 0, 0.2, 1),
+    scale 100ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.example-button {
+  color: #ffb26b;
+  border-color: #ffb26b;
+  background-color: #feffaa;
+}
+
+.example-toggle:hover,
+.example-toggle:has(input:checked),
+.example-button:hover,
+.example-button:active {
+  color: #ff7b00;
+  border-color: #ff7b00;
+  background-color: #fdff6c;
+}
+
+.example-toggle:active,
+.example-button:active {
+  scale: 0.9;
+}
+
+.example-toggle input {
+  display: none;
+}
+
 pre {
   margin-block: 0;
   border-radius: 0.5rem;

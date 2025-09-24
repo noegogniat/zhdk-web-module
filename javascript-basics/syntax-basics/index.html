@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript basics · Syntax & basics</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="NG ZHDK" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="/assets/css/stylesheet.css?v=2" />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/style.css?v=4" />
+    <script src="/assets/js/highlight/highlight.js"></script>
+    <script src="/assets/js/highlight/languages/apache.js"></script>
+    <script src="/assets/js/highlight/languages/bash.js"></script>
+    <script src="/assets/js/highlight/languages/css.js"></script>
+    <script src="/assets/js/highlight/languages/javascript.js"></script>
+    <script src="/assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <main class="lesson-layout">
+      <aside class="sidebar">
+        <nav>
+          <ul id="top-nav">
+            <li>
+              <h3><a href="/">Home</a></h3>
+            </li>
+            <li>
+              <h3>
+                <a
+                  href="https://github.com/noegogniat/zhdk-web-module"
+                  target="_blank"
+                  >Download</a
+                >
+              </h3>
+            </li>
+            <li>
+              <h3><a href="/exercises">Excercises</a></h3>
+            </li>
+          </ul>
+          <h3>Tools & Resources</h3>
+          <ul>
+            <li>
+              <a href="/tools-resources/setup-guide/">Setup Guide</a>
+            </li>
+            <li>
+              <a href="/tools-resources/using-vs-code/">Using VS Code</a>
+            </li>
+            <li>
+              <a href="/tools-resources/file-organisation/"
+                >File organisation</a
+              >
+            </li>
+            <li>
+              <a href="/tools-resources/external-resources/"
+                >External resources</a
+              >
+            </li>
+          </ul>
+          <h3>HTML Basics</h3>
+          <ul>
+            <li>
+              <a href="/html-basics/file-structure/">File structure</a>
+            </li>
+            <li>
+              <a href="/html-basics/semantic-html/">Semantic HTML</a>
+            </li>
+            <li>
+              <a href="/html-basics/common-tags/">Common tags</a>
+            </li>
+          </ul>
+          <h3>CSS Basics</h3>
+          <ul>
+            <li>
+              <a href="/css-basics/rules-selectors/">Rules & Selectors</a>
+            </li>
+            <li><a href="/css-basics/box-model/">Box Model</a></li>
+            <li>
+              <a href="/css-basics/specificity/">Specificity</a>
+            </li>
+            <li><a href="/css-basics/positions/">Positions</a></li>
+            <li>
+              <a href="/css-basics/colours-units/">Colours & Units</a>
+            </li>
+          </ul>
+          <h3>Typography</h3>
+          <ul>
+            <li>
+              <a href="/typography/importing-fonts/">Importing fonts</a>
+            </li>
+            <li>
+              <a href="/typography/relevant-tags/">Relevant tags</a>
+            </li>
+            <li>
+              <a href="/typography/font-properties/">Font properties</a>
+            </li>
+            <li>
+              <a href="/typography/custom-properties/">Custom properties</a>
+            </li>
+          </ul>
+          <h3>Display</h3>
+          <ul>
+            <li>
+              <a href="/display/display-property/">Display property</a>
+            </li>
+            <li><a href="/display/flexbox/">Flexbox</a></li>
+            <li><a href="/display/grid/">Grid</a></li>
+          </ul>
+          <h3>Responsive design</h3>
+          <ul>
+            <li>
+              <a href="/responsive-design/breakpoints/">Breakpoints</a>
+            </li>
+            <li>
+              <a href="/responsive-design/printable-other/"
+                >Printable web & other</a
+              >
+            </li>
+            <li>
+              <a href="/responsive-design/responsive-images/"
+                >Responsive images</a
+              >
+            </li>
+          </ul>
+          <h3>Motion & Transform</h3>
+          <ul>
+            <li>
+              <a href="/motion-filters/transform-filters/"
+                >Transform & Filters</a
+              >
+            </li>
+            <li>
+              <a href="/motion-filters/transitions/">Transitions</a>
+            </li>
+            <li>
+              <a href="/motion-filters/animation/">Animation</a>
+            </li>
+          </ul>
+          <h3>JavaScript basics</h3>
+          <ul>
+            <li class="active">
+              <a href="/javascript-basics/syntax-basics/">Syntax & basics</a>
+            </li>
+            <li>
+              <a href="/javascript-basics/events-timing">Events & timing</a>
+            </li>
+            <li>
+              <a href="/javascript-basics/handy-libraries/">Handy libraries</a>
+            </li>
+          </ul>
+          <h3>Performance & Best practices</h3>
+          <ul>
+            <li>
+              <a href="/performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+            <li>
+              <a href="/performance-best-practices/accessibility/"
+                >Accessibility considerations</a
+              >
+            </li>
+            <li>
+              <a href="/performance-best-practices/performance-optimisation/"
+                >Performance optimisation</a
+              >
+            </li>
+          </ul>
+          <ul class="mobile-only" id="simple-nav">
+            <li id="simple-nav-previous">
+              <a href="/motion-filters/transitions/">Transitions</a>
+            </li>
+            <li id="simple-nav-next">
+              <a href="/performance-best-practices/image-optimisation/"
+                >Image & video optimisation</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="lesson">
+        <h1>Syntax & basics</h1>
+        <div class="block-wrapper">
+          <h2>Naming conventions & linking files</h2>
+          <p>
+            JavaScript files should have a
+            <code class="language-plaintext">.js</code> extension. We recommend
+            keeping all JavaScript files in a
+            <code class="language-plaintext">/js</code> folder alongside the
+            <code class="language-plaintext">/css</code> folder. Usually, the
+            primary JavaScript file is named
+            <code class="language-plaintext">main.js</code>, and all additional
+            ones should have a descriptive name.
+          </p>
+          <p>
+            A JavaScript file is executed as soon as it is loaded. This means
+            that, if you want to access an element on the page place after the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script"
+              target="_blank"
+              ><code class="language-html">&lt;script&gt;</code></a
+            >
+            tag, JavaScript will not be able to find it and will throw an error.
+            To avoid this, you place the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script"
+              target="_blank"
+              ><code class="language-html">&lt;script&gt;</code></a
+            >
+            tag at the end of the page, right before the closing
+            <code class="language-html">&lt;/body&gt;</code> tag.
+          </p>
+          <details class="tip-block">
+            <summary>Advanced: deffer and async</summary>
+            <p>
+              You can keep a cleaner file structure by keeping all your
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script"
+                target="_blank"
+                ><code class="language-html">&lt;script&gt;</code></a
+              >
+              tags in the
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head"
+                target="_blank"
+                ><code class="language-html">&lt;head&gt;</code></a
+              >
+              tag. You can then specify how and when the script will be loaded
+              using the
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async"
+                target="_blank"
+                ><code class="language-plaintext">async</code></a
+              >
+              and
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer"
+                target="_blank"
+                ><code class="language-plaintext">defer</code></a
+              >
+              attributes. The
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async"
+                target="_blank"
+                ><code class="language-plaintext">async</code></a
+              >
+              attribute will load the script asynchronously, which means that
+              the page will continue to load and render while the script is
+              being loaded. The
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer"
+                target="_blank"
+                ><code class="language-plaintext">defer</code></a
+              >
+              attribute will load the script after the page has finished
+              loading.
+            </p>
+          </details>
+        </div>
+        <div class="block-wrapper">
+          <h2>Variables & functions</h2>
+          <h3>What is a variable?</h3>
+          <p>
+            Variables are used to store a value. This value can be anything,
+            such as a number, a string (text), an object (structured data), an
+            array (a list of values), a function, or even an HTML element.
+            Variables are declared using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var"
+              target="_blank"
+              ><code class="language-plaintext">var</code></a
+            >
+            keyword, followed by the variable name and an optional initial
+            value. The variable name should serve as a hint as to what the
+            variable is used for. The initial value is optional, and if not
+            provided, the variable will be assigned the value of
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"
+              target="_blank"
+              ><code class="language-plaintext">undefined</code></a
+            >.
+          </p>
+          <p>
+            You should define a variable only once. If you need to reassign a
+            variable, you can use the same syntax as described above, but
+            without the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var"
+              target="_blank"
+              ><code class="language-plaintext">var</code></a
+            >
+            keyword.
+          </p>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-javascript">// Declare a variable
+var projectCount = 12;
+// Reassign a variable
+projectCount = 13;
+
+// Declare a variable without assigning a value
+var projectTitle;
+// Assign a value later on
+projectTitle = "Project Name";
+
+// → the "" denotes a string, some text that 
+//   should not by read as code by the browser.</code></pre>
+          <!-- prettier-ignore-end -->
+          <p>
+            You can combine variables together to create new variables using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence"
+              target="_blank"
+              ><code class="language-plaintext">+</code></a
+            >
+            operator. This is useful when you want to create a new variable that
+            is a combination of two or more existing variables. The same
+            operator can naturally also be used to perform arythmetic
+            operations.
+          </p>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-javascript">var projectName = "Project Name";
+var projectCount = 12;
+
+// Combine the two variables to create a new one
+var projectTitle = projectName + " - " + projectCount + " projects";
+
+// → The value of the projectTitle variable is now 
+//   "Project Name - 12 projects"</code></pre>
+          <!-- prettier-ignore-end -->
+          <details class="tip-block">
+            <summary>Advanced: mutable vs immutable</summary>
+            <p>
+              The
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var"
+                target="_blank"
+                ><code class="language-plaintext">var</code></a
+              >
+              declaration has become replaced by two new ones:
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let"
+                target="_blank"
+                ><code class="language-plaintext">let</code></a
+              >
+              and
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const"
+                target="_blank"
+                ><code class="language-plaintext">const</code></a
+              >. The
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let"
+                target="_blank"
+                ><code class="language-plaintext">let</code></a
+              >
+              declaration is used to declare a mutable variable, which means its
+              value can be reassigned. Conversely, the
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const"
+                target="_blank"
+                ><code class="language-plaintext">const</code></a
+              >
+              declaration is used to declare an immutable variable, which means
+              its value cannot be reassigned. The advantage of using
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const"
+                target="_blank"
+                ><code class="language-plaintext">const</code></a
+              >
+              is that you can't accidentally reassign a value to a variable,
+              which can lead to bugs.
+            </p>
+          </details>
+          <h3>What are function?</h3>
+          <p>
+            Functions are reusable blocks of code that perform a specific task.
+            They are how your code <i>does</i> something. You can think of it as
+            a mathematical formula: it takes some input, performs some
+            calculations, and returns a result. To declare a function, you use
+            the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function"
+              target="_blank"
+              ><code class="language-plaintext">function</code></a
+            >
+            keyword, followed by the function name and a set of parentheses
+            containing the function's parameters or inputs (comma-separated),
+            and lastly a set of curly braces containing the function's code. To
+            call, or execute, the function, you simply use the function name
+            followed by a set of parentheses containing the function's inputs.
+          </p>
+          <p>
+            The parameters or inputs are optional. They are usefull to declare
+            some variables that will be used inside the function.
+          </p>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-javascript">// Declare a function taking the name variable as input
+function sayHello(name) {
+  // The function's code goes here
+  alert("Hello " + name + "!");
+}
+
+// Call the function with the string "John" as input
+sayHello("John");</code></pre>
+          <!-- prettier-ignore-end -->
+          <script>
+            function functionExampleRun() {
+              function functionSayHello(name) {
+                alert("Hello " + name + "!");
+              }
+              functionSayHello("John");
+            }
+          </script>
+        </div>
+        <button class="example-button" data-function="functionExampleRun">
+          Run code
+        </button>
+        <div class="block-wrapper">
+          <h2>Manipulate HTML elements</h2>
+          <h3>Assign HTML elements to variables</h3>
+          <p>
+            You can use HTML elements as variables, which comes in handy when
+            you want to access or alter the class, content, or attributes of an
+            element. To assign an element to a variable, you need a way to
+            select it. Coming from CSS, the simplest way to do this is to use
+            the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"
+              target="_blank"
+              ><code class="language-javascript"
+                >document.querySelector()</code
+              ></a
+            >
+            method. This method takes a CSS selector as input, and returns the
+            first element that matches the selector. If no element matches the
+            selector, it returns
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null"
+              target="_blank"
+              ><code class="language-javascript">null</code></a
+            >.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html">&lt;div class="project-wrapper"&gt;
+  &lt;h2 class="project-title"&gt;Project Name&lt;/h2&gt;
+  &lt;p class="project-description"&gt;Lorem ipsum…&lt;/p&gt;
+  &lt;img id="hero-image" src="assets/media/placeholder-a.jpg" /&gt;
+&lt;/div&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>+</span>
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-javascript">// Select the first element with the class "project-wrapper"
+var projectWrapper = document.querySelector(".project-wrapper");
+
+// Select the first element with the id "hero-image"
+var heroImage = document.querySelector("#hero-image");
+
+// Select the first header 2 element with the class "project-title"
+var projectTitle = document.querySelector("h2.project-title");
+
+// Select the first paragraph Element
+var projectDescription = document.querySelector("p");
+
+// See the results in your browser's console
+console.log(projectWrapper);
+console.log(heroImage);
+console.log(projectTitle);
+console.log(projectDescription);</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <div id="query-selector-example" style="display: none">
+              <div class="project-wrapper">
+                <h2 class="project-title">Project Name</h2>
+                <p class="project-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Doloremque, voluptatibus.
+                </p>
+                <img
+                  id="query-selector-example-hero-image"
+                  src="assets/media/placeholder-a.jpg"
+                />
+              </div>
+              <script>
+                function querySelectorExampleRun() {
+                  var projectWrapper = document.querySelector(
+                    "#query-selector-example .project-wrapper"
+                  );
+                  var heroImage = document.querySelector(
+                    "#query-selector-example-hero-image"
+                  );
+                  var projectTitle = document.querySelector(
+                    "#query-selector-example h2.project-title"
+                  );
+                  var projectDescription = document.querySelector(
+                    "#query-selector-example p"
+                  );
+                  console.groupCollapsed("Query selector example");
+                  console.log(projectWrapper);
+                  console.log(heroImage);
+                  console.log(projectTitle);
+                  console.log(projectDescription);
+                  console.groupEnd();
+                }
+              </script>
+            </div>
+          </div>
+          <button
+            class="example-button"
+            data-function="querySelectorExampleRun"
+          >
+            Run code
+          </button>
+          <h3>Change an HTML element's class</h3>
+          <p>
+            A simple way to make an HTML element interactive is by adding or
+            removing a class. This lets you style the interaction in CSS, which
+            is much easier than designing the interaction using JavaScript. To
+            add a class, you use the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList"
+              target="_blank"
+              ><code class="language-javascript">element.classList</code></a
+            >
+            property. To add a class, use the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/add"
+              target="_blank"
+              ><code class="language-javascript">.add("class-name")</code></a
+            >
+            method, and the remove one, the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/remove"
+              target="_blank"
+              ><code class="language-javascript">.remove("class-name")</code></a
+            >
+            method. You can also toggle the class using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle"
+              target="_blank"
+              ><code class="language-javascript">.toggle("class-name")</code></a
+            >
+            method.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-css">span {
+  color: black;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  margin-block: 1rem;
+  transform: scale(1) rotate(0turn);
+  transition: transform 450ms ease-in-out, color 450ms ease-in-out;
+}
+
+span.active {
+  color: deeppink;
+  transform: scale(2) rotate(2turn);
+}</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-javascript">// Assign the elements to the variables
+var span1 = document.querySelector("span");
+var span2 = document.querySelector("#span-2");
+var span3 = document.querySelector("#span-3");
+
+span1.onclick = function () {
+  // Add the "active" class to the element
+  span1.classList.add("active");
+  console.log("Class added to span 1");
+}
+
+span2.onclick = function () {
+  // Remove the "active" class from the element
+  span2.classList.remove("active");
+  console.log("Class removed from span 2");
+}
+
+span3.onclick = function () {
+  // Toggle the "active" class on the element
+  span3.classList.toggle("active");
+  console.log("Class toggled on span 3");
+}</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="class-manipulation-example">
+              <span class="user-agent">Span 1</span>
+              <span
+                class="user-agent active"
+                id="class-manipulation-example-span-2"
+                >Span 2</span
+              >
+              <span class="user-agent" id="class-manipulation-example-span-3"
+                >Span 3</span
+              >
+              <style>
+                #class-manipulation-example span {
+                  color: black;
+                  display: block;
+                  cursor: pointer;
+                  user-select: none;
+                  text-align: center;
+                  margin-block: 1rem;
+                  transform: scale(1) rotate(0turn);
+                  transition: transform 450ms ease-in-out,
+                    color 450ms ease-in-out;
+                }
+
+                #class-manipulation-example span.active {
+                  color: deeppink;
+                  transform: scale(2) rotate(2turn);
+                }
+              </style>
+              <script>
+                var classManipulationSpan1 = document.querySelector(
+                  "#class-manipulation-example span"
+                );
+                var classManipulationSpan2 = document.querySelector(
+                  "#class-manipulation-example-span-2"
+                );
+                var classManipulationSpan3 = document.querySelector(
+                  "#class-manipulation-example-span-3"
+                );
+
+                classManipulationSpan1.onclick = function () {
+                  // Add the "active" class to the element
+                  classManipulationSpan1.classList.add("active");
+                  console.log("Class added to span 1");
+                };
+
+                classManipulationSpan2.onclick = function () {
+                  // Remove the "active" class from the element
+                  classManipulationSpan2.classList.remove("active");
+                  console.log("Class removed from span 2");
+                };
+
+                classManipulationSpan3.onclick = function () {
+                  // Toggle the "active" class on the element
+                  classManipulationSpan3.classList.toggle("active");
+                  console.log("Class toggled on span 3");
+                };
+              </script>
+            </div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <h2>Arrays and iteration</h2>
+          <p>
+            Arrays let you store multiple values in a single variable. Think of
+            it as a list of values, where you can store numbers, project names,
+            or even HTML elements. To create an array, you use the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"
+              target="_blank"
+              ><code class="language-plaintext">[x, y, z]</code></a
+            >
+            syntax, a list of values separated by commas surrounded by square
+            brackets. Every value in an array can be accessed by its
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#array_indices"
+              target="_blank"
+              ><code class="language-plaintext">index</code></a
+            >, its position in the array. The first index is 0, the second is 1,
+            and so on. To get the value stored at a desired index in an array,
+            you add the index surrounded by square brackets to the variable name
+            containing the array.
+          </p>
+          <!-- prettier-ignore-start -->
+          <pre><code class="language-javascript">// Create an array with three values
+var projectNames = ["Project Name", "Project Name 2", "Project Name 3"];
+
+// Get the value stored at the first position
+var projectName1 = projectNames[0];
+
+// Get the value stored at the third position
+var projectName3 = projectNames[2];
+
+alert('"' + arrayProjectName1 + '" and "' + arrayProjectName3 + '"');</code></pre>
+          <!-- prettier-ignore-end -->
+          <script>
+            function arrayExampleRun() {
+              var arrayProjectNames = [
+                "Project Name",
+                "Project Name 2",
+                "Project Name 3",
+              ];
+              var arrayProjectName1 = arrayProjectNames[0];
+              var arrayProjectName3 = arrayProjectNames[2];
+              alert(
+                '"' + arrayProjectName1 + '" and "' + arrayProjectName3 + '"'
+              );
+            }
+          </script>
+          <button class="example-button" data-function="arrayExampleRun">
+            Run code
+          </button>
+          <p>
+            Just like the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"
+              target="_blank"
+              ><code class="language-javascript"
+                >document.querySelector()</code
+              ></a
+            >
+            returns the first element that matches the selector, the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll"
+              target="_blank"
+              ><code class="language-javascript"
+                >document.querySelectorAll()</code
+              ></a
+            >
+            method returns an array containing all the elements that match the
+            selector.
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-html">&lt;div class="project-wrapper"&gt;
+  &lt;div class="project"&gt;
+    &lt;h2 class="project-title"&gt;Project Name&lt;/h2&gt;
+    &lt;img src="assets/media/placeholder-a.jpg" /&gt;
+  &lt;/div&gt;
+  &lt;div class="project"&gt;
+    &lt;h2 class="project-title"&gt;Project Name 2&lt;/h2&gt;
+    &lt;img src="assets/media/placeholder-b.jpg" /&gt;
+  &lt;/div&gt;
+  &lt;div class="project"&gt;
+    &lt;h2 class="project-title"&gt;Project Name 3&lt;/h2&gt;
+    &lt;img src="assets/media/placeholder-c.jpg" /&gt;
+  &lt;/div&gt;
+  &lt;div class="project"&gt;
+    &lt;h2 class="project-title"&gt;Project Name 3&lt;/h2&gt;
+    &lt;img src="assets/media/placeholder-d.jpg" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              <!-- prettier-ignore-end -->
+              <span>+</span>
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-javascript">// Select all the elements with the class "project"
+var projects = document.querySelectorAll(".project");
+
+projects[0].onclick = function () {
+  // Open / close the project
+  projects[0].classList.toggle("opened");
+  console.log("Project 1 opened / closed");
+};
+
+projects[1].onclick = function () {
+  // Open / close the project
+  projects[1].classList.toggle("opened");
+  console.log("Project 2 opened / closed");
+};
+
+projects[2].onclick = function () {
+  // Open / close the project
+  projects[2].classList.toggle("opened");
+  console.log("Project 3 opened / closed");
+};
+
+projects[3].onclick = function () {
+  // Open / close the project
+  projects[3].classList.toggle("opened");
+  console.log("Project 4 opened / closed");
+};</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="query-selector-all-example">
+              <div class="project-wrapper">
+                <div class="project">
+                  <h2 class="user-agent project-title">Project Name</h2>
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder-a.jpg"
+                  />
+                </div>
+                <div class="project">
+                  <h2 class="user-agent project-title">Project Name 2</h2>
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder-b.jpg"
+                  />
+                </div>
+                <div class="project">
+                  <h2 class="user-agent project-title">Project Name 3</h2>
+                  <img
+                    class="user-agent opened"
+                    src="assets/media/placeholder-c.jpg"
+                  />
+                </div>
+                <div class="project">
+                  <h2 class="user-agent project-title">Project Name 4</h2>
+                  <img
+                    class="user-agent opened"
+                    src="assets/media/placeholder-d.jpg"
+                  />
+                </div>
+              </div>
+              <style>
+                #query-selector-all-example .project {
+                  overflow: hidden;
+                  border-top: solid 1px #000;
+                  height: 2rem;
+                  transition: height 450ms ease-in-out;
+                }
+
+                #query-selector-all-example .project:last-child {
+                  border-bottom: solid 1px #000;
+                }
+
+                #query-selector-all-example .project.opened {
+                  height: calc(2rem + 400px);
+                }
+
+                #query-selector-all-example .project-title {
+                  font-size: 1rem;
+                  line-height: 2rem;
+                  margin-block: 0;
+                  color: #000;
+                  cursor: pointer;
+                  background-color: #fff;
+                  padding-left: 0;
+                  transition: color 200ms cubic-bezier(0.19, 1, 0.22, 1),
+                    padding 200ms cubic-bezier(0.19, 1, 0.22, 1),
+                    background-color 200ms cubic-bezier(0.19, 1, 0.22, 1);
+                }
+
+                #query-selector-all-example .project-title:hover {
+                  color: #fff;
+                  padding-left: 0.5rem;
+                  background-color: #000;
+                }
+
+                #query-selector-all-example .project img {
+                  width: 100%;
+                  height: 400px;
+                  object-fit: cover;
+                }
+              </style>
+              <script>
+                var querySelectorAllProjects = document.querySelectorAll(
+                  "#query-selector-all-example .project"
+                );
+
+                querySelectorAllProjects[0].onclick = function () {
+                  // Change the image source
+                  querySelectorAllProjects[0].classList.toggle("opened");
+                  console.log("Project 1 opened / closed");
+                };
+
+                querySelectorAllProjects[1].onclick = function () {
+                  // Change the image source
+                  querySelectorAllProjects[1].classList.toggle("opened");
+                  console.log("Project 2 opened / closed");
+                };
+
+                querySelectorAllProjects[2].onclick = function () {
+                  // Change the image source
+                  querySelectorAllProjects[2].classList.toggle("opened");
+                  console.log("Project 3 opened / closed");
+                };
+
+                querySelectorAllProjects[3].onclick = function () {
+                  // Change the image source
+                  querySelectorAllProjects[3].classList.toggle("opened");
+                  console.log("Project 4 opened / closed");
+                };
+              </script>
+            </div>
+          </div>
+          <h3>Looping through arrays</h3>
+          <p>
+            Other than storing multiple values in them, arrays come in very
+            handy when you want to loop through them and perform an action on
+            each value. To loop through an array, you use a
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for"
+              target="_blank"
+              ><code class="language-plaintext">for</code></a
+            >
+            loop. The loop will run through all the values in the array, and
+            execute the code inside the loop for each value. The loop will
+            continue until it has gone through all the values in the array. You
+            can also use the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"
+              target="_blank"
+              ><code class="language-javascript">forEach()</code></a
+            >
+            method, which does the same thing, but in a more concise way. Here
+            is the same example as before, but using a loop:
+          </p>
+          <div class="compare-block">
+            <div class="compare-block-code">
+              <!-- prettier-ignore-start -->
+              <pre><code class="language-javascript">// Select all the elements with the class "project"
+var projects = document.querySelectorAll(".project");
+
+// A function to toggle the opened class on a project
+function forLoopToggleOpened(project) {
+  project.classList.toggle("opened");
+}
+
+// Loop through the array using a for loop
+for (var i = 0; i &lt; projects.length; i++) {
+  var project = projects[i];
+  project.onclick = function () {
+    // `this` refers to the element that was clicked
+    forLoopToggleOpened(this);
+  };
+}
+
+// Loop using the forEach method
+projects.forEach(function (project) {
+  // Open each project when code is executed
+  project.classList.add("opened");
+});</code></pre>
+              <!-- prettier-ignore-end -->
+            </div>
+            <span>→</span>
+            <div class="compare-block-result" id="for-loop-example">
+              <div class="project-wrapper">
+                <div class="project">
+                  <h2 class="user-agent project-title">Project Name</h2>
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder-a.jpg"
+                  />
+                </div>
+                <div class="project">
+                  <h2 class="user-agent project-title">Project Name 2</h2>
+                  <img
+                    class="user-agent"
+                    src="assets/media/placeholder-b.jpg"
+                  />
+                </div>
+                <div class="project">
+                  <h2 class="user-agent project-title">Project Name 3</h2>
+                  <img
+                    class="user-agent opened"
+                    src="assets/media/placeholder-c.jpg"
+                  />
+                </div>
+                <div class="project">
+                  <h2 class="user-agent project-title">Project Name 4</h2>
+                  <img
+                    class="user-agent opened"
+                    src="assets/media/placeholder-d.jpg"
+                  />
+                </div>
+              </div>
+              <style>
+                #for-loop-example .project {
+                  overflow: hidden;
+                  border-top: solid 1px #000;
+                  height: 2rem;
+                  transition: height 450ms ease-in-out;
+                }
+
+                #for-loop-example .project:last-child {
+                  border-bottom: solid 1px #000;
+                }
+
+                #for-loop-example .project.opened {
+                  height: calc(2rem + 400px);
+                }
+
+                #for-loop-example .project-title {
+                  font-size: 1rem;
+                  line-height: 2rem;
+                  margin-block: 0;
+                  color: #000;
+                  cursor: pointer;
+                  background-color: #fff;
+                  padding-left: 0;
+                  transition: color 200ms cubic-bezier(0.19, 1, 0.22, 1),
+                    padding 200ms cubic-bezier(0.19, 1, 0.22, 1),
+                    background-color 200ms cubic-bezier(0.19, 1, 0.22, 1);
+                }
+
+                #for-loop-example .project-title:hover {
+                  color: #fff;
+                  padding-left: 0.5rem;
+                  background-color: #000;
+                }
+
+                #for-loop-example .project img {
+                  width: 100%;
+                  height: 400px;
+                  object-fit: cover;
+                }
+              </style>
+              <script>
+                var forLoopProjects = document.querySelectorAll(
+                  "#for-loop-example .project"
+                );
+
+                function forLoopToggleOpened(project) {
+                  project.classList.toggle("opened");
+                }
+
+                for (var i = 0; i < forLoopProjects.length; i++) {
+                  var project = forLoopProjects[i];
+                  project.onclick = function () {
+                    forLoopToggleOpened(this);
+                  };
+                }
+
+                forLoopProjects.forEach(function (project) {
+                  project.classList.add("opened");
+                });
+              </script>
+            </div>
+          </div>
+          <div class="further-reading">
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration"
+              target="_blank"
+              >Learn more about loops</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

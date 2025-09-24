@@ -56,6 +56,12 @@ MOTION & TRANSFORM
 - [Transitions](https://zhdk.noegogniat.com/motion-filters/transitions)
 - [Animation](https://zhdk.noegogniat.com/motion-filters/animation)
 
+JAVASCRIPT BASICS
+
+- [Syntax & basics](https://zhdk.noegogniat.com/javascript-basics/syntax-basics)
+- [Events & timing](https://zhdk.noegogniat.com/javascript-basics/events-timing)
+- [Handy libraries](https://zhdk.noegogniat.com/javascript-basics/handy-libraries)
+
 PERFORMANCE & BEST PRACTICES
 
 - [Image & video optimisation](https://zhdk.noegogniat.com/performance-best-practices/image-optimisation)
