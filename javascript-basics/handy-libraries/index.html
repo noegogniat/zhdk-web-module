@@ -358,9 +358,6 @@
   &lt;!-- Added for the navigation buttons --&gt;
   &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
   &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
-
-  &lt;!-- If we need scrollbar --&gt;
-  &lt;div class="swiper-scrollbar"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
               <!-- prettier-ignore-end -->
               <span>+</span>
@@ -372,18 +369,6 @@
   color: deeppkin;
   user-select: none; /* Disable selection if clicking too fast */
   font-weight: bold;
-}
-
-/* Styling the pagination bullets */
-.swiper-pagination-bullet {
-  opacity: 1;
-  background-color: #fff2;
-  backdrop-filter: invert(1);
-}
-
-/* Styling the pagination bullets when active */
-.swiper-pagination-bullet-active {
-  background-color: deeppink;
 }</code></pre>
               <!-- prettier-ignore-end -->
               <span>+</span>
@@ -452,14 +437,6 @@ const swiper = new Swiper(".swiper", {
                   color: deeppink;
                   user-select: none;
                   font-weight: bold;
-                }
-                #swiper-example-2 .swiper-pagination-bullet {
-                  opacity: 1;
-                  background-color: #fff2;
-                  backdrop-filter: invert(1);
-                }
-                #swiper-example-2 .swiper-pagination-bullet-active {
-                  background-color: deeppink;
                 }
               </style>
               <script>

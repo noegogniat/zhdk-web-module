@@ -353,7 +353,7 @@ function updateMarkerToPosition(event) {
   marker.style.top = event.clientY + "px";
 
   // Update the content of the marker
-  marger.innerHTML = event.pointerType + " clicked " + event.target.tagName + " at<br/>clientX: " + event.clientX + "px, clientY: " + event.clientY + "px";
+  marger.innerHTML = event.pointerType + " clicked " + event.target.tagName + " at&lt;br/&gt;clientX: " + event.clientX + "px, clientY: " + event.clientY + "px";
 }
 
 // Add the event listener to the document
@@ -634,7 +634,11 @@ window.addEventListener("scroll", function () {
                   "#scroll-event-example .output"
                 );
                 function scrollEventUpdateOutput() {
-                  scrollEventOutput.innerHTML = `Scroll position X: ${scrollEventScrollPositionX}px,<br/>Scroll position Y: ${scrollEventScrollPositionY}px`;
+                  scrollEventOutput.innerHTML = `Scroll position X: ${Math.round(
+                    scrollEventScrollPositionX
+                  )}px,<br/>Scroll position Y: ${Math.round(
+                    scrollEventScrollPositionY
+                  )}px`;
                 }
                 window.addEventListener("scroll", () => {
                   scrollEventScrollPositionX = window.scrollX;
@@ -686,7 +690,17 @@ document.addEventListener("keydown", function (event) {
                 );
                 keydownEventOutput.innerHTML = `Key pressed: ${keydownEventKeyPressed}`;
                 document.addEventListener("keydown", (event) => {
-                  keydownEventKeyPressed = event.key;
+                  keydownEventKeyPressed = "";
+                  if (event.ctrlKey && event.key !== "Control")
+                    keydownEventKeyPressed += "Ctrl + ";
+                  if (event.shiftKey && event.key !== "Shift")
+                    keydownEventKeyPressed += "Shift + ";
+                  if (event.altKey && event.key !== "Alt")
+                    keydownEventKeyPressed += "Alt + ";
+                  if (event.metaKey && event.key !== "Meta")
+                    keydownEventKeyPressed += "Meta + ";
+                  keydownEventKeyPressed += event.key.toUpperCase();
+
                   keydownEventOutput.innerHTML = `Key pressed: ${keydownEventKeyPressed}`;
                 });
                 keydownEventUpdateOutput();
