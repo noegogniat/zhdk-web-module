@@ -1,0 +1,48 @@
+h1 {
+  position: sticky;
+  top: 1rem;
+  background-color: #fefefe;
+  border: solid 1px #efefef;
+  border-radius: 1rem;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.work-number {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+}
+
+figure {
+  position: relative;
+}
+
+figcaption {
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  background-color: #fefefe;
+  border: solid 1px #efefef;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* Alternative: stack caption and image in one grid cell.
+
+*/
+
+figure {
+  display: grid;
+}
+
+figure img,
+figure figcaption {
+  grid-area: 1 / 1;
+}
+
+figure figcaption {
+  align-self: end;
+}

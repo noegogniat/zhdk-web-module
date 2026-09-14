@@ -317,10 +317,9 @@ h1:not(.user-agent) {
   user-select: none;
   cursor: pointer;
   margin-block: 1rem;
-  transition: background-color 100ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 100ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 100ms cubic-bezier(0.4, 0, 0.2, 1),
-    scale 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: width, background-color, border-color, color, scale;
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .example-button {
@@ -340,7 +339,7 @@ h1:not(.user-agent) {
 
 .example-toggle:active,
 .example-button:active {
-  scale: 0.9;
+  scale: 0.95;
 }
 
 .example-toggle input {
@@ -622,7 +621,8 @@ pre code::-webkit-scrollbar {
 /* Transition details opening if supported */
 @supports (interpolate-size: allow-keywords) {
   .tip-block::details-content {
-    transition: padding 200ms 0ms cubic-bezier(0.55, 0.055, 0.675, 0.19),
+    transition:
+      padding 200ms 0ms cubic-bezier(0.55, 0.055, 0.675, 0.19),
       block-size 200ms 0ms cubic-bezier(0.55, 0.055, 0.675, 0.19),
       content-visibility 200ms 0ms cubic-bezier(0.55, 0.055, 0.675, 0.19),
       border-bottom-width 200ms 0ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -633,7 +633,8 @@ pre code::-webkit-scrollbar {
     transition-delay: 75ms;
   }
   .tip-block summary {
-    transition: width 75ms 200ms cubic-bezier(0.47, 0, 0.745, 0.715),
+    transition:
+      width 75ms 200ms cubic-bezier(0.47, 0, 0.745, 0.715),
       border-radius 75ms 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
     transition-behavior: allow-discrete;
   }
@@ -719,7 +720,14 @@ pre code::-webkit-scrollbar {
 
 /* Further reading ===================================================================== */
 
+.further-reading {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+
 .further-reading a:not(.user-agent) {
+  position: relative;
   display: inline-block;
   padding: 0.5rem 1ch;
   background-color: #d2f2fb;
@@ -728,11 +736,28 @@ pre code::-webkit-scrollbar {
   color: #3a6ede;
   text-decoration: none;
   width: fit-content;
-  margin: auto;
   box-shadow: 0 0 0 #3a6ede;
-  transition: background-color 100ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 100ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color, box-shadow, transform;
+  transition-duration: 300ms;
+  transition-timing-function: linear(
+    0,
+    0 10.4%,
+    0.023 18.4%,
+    0.075 25.2%,
+    0.159 31.3%,
+    0.275 36.9%,
+    0.436 42.6%,
+    0.999 57.7%,
+    0.824 62.8%,
+    0.717 66.8%,
+    0.654 70.6%,
+    0.633 74.3%,
+    0.647 77.3%,
+    0.689 80.5%,
+    0.959 93.5%,
+    0.991 96.6%,
+    1
+  );
 }
 
 .further-reading a:hover:not(.user-agent) {
@@ -740,8 +765,58 @@ pre code::-webkit-scrollbar {
   box-shadow: -0.25ch 0.25ch 0 #3a6ede;
   background-color: #aeebfa;
   color: #3a6ede;
+  transition-property: background-color, box-shadow, transform;
+  transition-duration: 600ms;
+  transition-timing-function: linear(
+    0,
+    0.013 1.1%,
+    0.049 2.2%,
+    0.111 3.4%,
+    0.194 4.6%,
+    0.384 6.8%,
+    0.94 12.5%,
+    1.075 14.1%,
+    1.183 15.6%,
+    1.266 17%,
+    1.328 18.4%,
+    1.371 19.8%,
+    1.395 21.2%,
+    1.4 22.3%,
+    1.396 23.4%,
+    1.354 25.8%,
+    1.274 28.4%,
+    1.043 34.3%,
+    0.949 37.1%,
+    0.877 40.2%,
+    0.843 43.3%,
+    0.841 45.6%,
+    0.858 48.1%,
+    0.89 50.7%,
+    1.018 59.2%,
+    1.047 62.2%,
+    1.062 65.2%,
+    1.057 70.5%,
+    0.996 81%,
+    0.977 86.1%,
+    0.976 91.8%,
+    1
+  );
 }
 
-.further-reading a::after {
+.further-reading a:not(.user-agent)::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  transition: inherit;
+}
+
+.further-reading a:not(.user-agent):hover::before {
+  transform: translate3d(-0.25ch, 0.25ch, 0);
+}
+
+.further-reading a:not(.user-agent)::after {
   content: " ↗";
 }

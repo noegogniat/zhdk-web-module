@@ -1,0 +1,172 @@
+/* Imagine a design based on the HTML structure and CSS variables below.
+
+- Link the bold and italic cuts
+- Make the H1 scale as the viewport changes
+- Feel free to modify the HTML structure
+- Use the CSS variables to change the design
+- Find out how to break the text into columns
+
+! Info
+#character-detail reflects the last hovered character of the list
+*/
+
+@font-face {
+  font-family: "Pelikan Semi Mono";
+  src:
+    url("../fonts/ABCPelikanSemi-Mono-Book-Trial.woff2") format("woff2"),
+    url("../fonts/ABCPelikanSemi-Mono-Book-Trial.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pelikan Semi Mono";
+  src:
+    url("../fonts/ABCPelikanSemi-Mono-BookItalic-Trial.woff2") format("woff2"),
+    url("../fonts/ABCPelikanSemi-Mono-BookItalic-Trial.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Pelikan Semi Mono";
+  src:
+    url("../fonts/ABCPelikanSemi-Mono-Medium-Trial.woff2") format("woff2"),
+    url("../fonts/ABCPelikanSemi-Mono-Medium-Trial.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --color-background: oklch(95.75% 0.005 95);
+  --color-foreground: oklch(26% 0.003 197.5);
+  --color-accent: oklch(0.8823 0.2034 192.07);
+  --border-width: 1.5px;
+  --default-border: dashed var(--border-width) var(--color-foreground);
+  --gap: 0.75rem;
+}
+
+html {
+  font-family: "Pelikan Semi Mono", monospace;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+*::selection {
+  background-color: var(--color-accent);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+header,
+.running-text-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--gap);
+  line-height: 1;
+  justify-content: space-between;
+}
+
+h1 {
+  flex-basis: 100%;
+  font-size: 9.2vw;
+  text-align: center;
+  white-space: nowrap;
+  border-top: var(--default-border);
+  border-bottom: var(--default-border);
+}
+
+.running-text-wrapper {
+  margin-block: var(--gap);
+  border-bottom: var(--default-border);
+}
+
+.running-text-wrapper p {
+  padding: var(--gap) 0;
+  border-top: var(--default-border);
+  font-size: 8mm;
+  line-height: 9mm;
+  flex-basis: 100%;
+  columns: 2;
+  column-fill: balance;
+}
+
+.running-text-wrapper p.font-big {
+  font-size: 12mm;
+  line-height: 14mm;
+  columns: 1;
+}
+
+.running-text-wrapper p.font-small {
+  font-size: 4mm;
+  line-height: 5mm;
+  margin-top: 0;
+  columns: 3;
+}
+
+.character-overview {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--gap);
+}
+
+#character-detail {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25vw;
+  pointer-events: none;
+  border: var(--default-border);
+  height: calc(100svh - var(--gap) * 2);
+  top: calc(-1 * var(--border-width) + var(--gap));
+}
+
+#character-detail::before,
+#character-detail::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  left: 0;
+  border-top: var(--default-border);
+  z-index: -1;
+}
+
+#character-detail::before {
+  transform: translateY(-0.2075em);
+}
+#character-detail::after {
+  transform: translateY(0.3475em);
+}
+
+#character-list {
+  --cell-size: calc(12mm + 1.5rem);
+  display: grid;
+  font-size: 12mm;
+  grid-template-columns: repeat(auto-fill, minmax(var(--cell-size), 1fr));
+  gap: var(--gap);
+}
+
+#character-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  aspect-ratio: 1;
+  border: var(--default-border);
+  transition: 100ms ease-out;
+  transition-property: background-color, color, border-color;
+}
+
+#character-list li:hover {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  transition-duration: 0ms;
+}

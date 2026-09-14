@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Pelikan Semi Mono";
+  src: url("../fonts/ABCPelikanSemi-Mono-Book-Trial.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+html {
+  font-family: "Pelikan Semi Mono", monospace;
+  font-size: 1rem;
+  background-color: #fbfbfb;
+  color: #000;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  max-width: 42rem;
+}
+
+h1,
+p,
+figcaption {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 1rem 0;
+}
+
+.text p {
+  text-indent: 2ch;
+  margin-block: 1rem;
+}
+
+.text p:first-child {
+  text-indent: 0;
+}

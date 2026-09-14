@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -264,7 +264,8 @@
                   transition-timing-function: ease-in-out;
                   transition-delay: 0.1s;
 
-                  transition: color 1s ease-in-out 0.1ms,
+                  transition:
+                    color 1s ease-in-out 0.1ms,
                     transform 1s ease-in-out 0.1ms;
                 }
                 #transition-example .transition:hover {
@@ -406,6 +407,40 @@
 
 .cubic-bezier {transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);}
 
+.linear-func {
+  transition-timing-function: linear(
+    0,
+    0.01  0.7%,
+    0.046 1.5%,
+    0.192 3.2%,
+    0.391 4.8%,
+    0.954 8.8%,
+    1.201 11%,
+    1.347 13%,
+    1.388 14%,
+    1.41  15.1%,
+    1.411 15.9%,
+    1.4   16.8%,
+    1.342 18.6%,
+    1.256 20.3%,
+    1.013 24.5%,
+    0.913 26.7%,
+    0.857 28.6%,
+    0.831 30.6%,
+    0.833 32.1%,
+    0.851 33.7%,
+    1.024 41.6%,
+    1.055 43.8%,
+    1.069 46%,
+    1.061 49.3%,
+    0.991 57.1%,
+    0.972 61.4%,
+    0.974 64.8%,
+    1.011 76.7%,
+    0.996 91.2%,
+    1);
+}
+
 /* Transition the element 4 times 
   including the first position but excluding the last */
 .step {transition-timing-function: steps(4);}
@@ -434,20 +469,22 @@
             >
               <h2 class="transition linear">Linear</h2>
               <h2 class="transition ease">Ease</h2>
-              <h2 class="transition ease-in">Ease in</h2>
-              <h2 class="transition ease-out">Ease out</h2>
-              <h2 class="transition ease-in-out">Ease in out</h2>
-              <h2 class="transition cubic-bezier">Cubic bezier</h2>
+              <h2 class="transition ease-in">Ease-in</h2>
+              <h2 class="transition ease-out">Ease-out</h2>
+              <h2 class="transition ease-in-out">Ease-in-out</h2>
+              <h2 class="transition cubic-bezier">Cubic-bezier()</h2>
+              <h2 class="transition linear-func">Linear()</h2>
               <h2 class="transition step">Step</h2>
-              <h2 class="transition step-start">Step start</h2>
-              <h2 class="transition step-end">Step end</h2>
-              <h2 class="transition step-both">Step both</h2>
-              <h2 class="transition step-none">Step none</h2>
+              <h2 class="transition step-start">Steps start</h2>
+              <h2 class="transition step-end">Steps end</h2>
+              <h2 class="transition step-both">Steps both</h2>
+              <h2 class="transition step-none">Steps none</h2>
               <style>
                 #transition-timing-function-example .transition {
                   border-top: none !important;
                   font-size: 1.5rem !important;
                   padding-top: 0 !important;
+                  text-transform: unset;
                   min-width: 15ch;
                   transition: color 1s ease-in-out;
                   transition-property: color, transform;
@@ -482,6 +519,41 @@
                   transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
                 }
 
+                #transition-timing-function-example .linear-func {
+                  transition-timing-function: linear(
+                    0,
+                    0.01 0.7%,
+                    0.046 1.5%,
+                    0.192 3.2%,
+                    0.391 4.8%,
+                    0.954 8.8%,
+                    1.201 11%,
+                    1.347 13%,
+                    1.388 14%,
+                    1.41 15.1%,
+                    1.411 15.9%,
+                    1.4 16.8%,
+                    1.342 18.6%,
+                    1.256 20.3%,
+                    1.013 24.5%,
+                    0.913 26.7%,
+                    0.857 28.6%,
+                    0.831 30.6%,
+                    0.833 32.1%,
+                    0.851 33.7%,
+                    1.024 41.6%,
+                    1.055 43.8%,
+                    1.069 46%,
+                    1.061 49.3%,
+                    0.991 57.1%,
+                    0.972 61.4%,
+                    0.974 64.8%,
+                    1.011 76.7%,
+                    0.996 91.2%,
+                    1
+                  );
+                }
+
                 #transition-timing-function-example .step {
                   transition-timing-function: steps(4);
                 }
@@ -505,6 +577,9 @@
             </div>
           </div>
           <div class="further-reading">
+            <a href="https://easingwizard.com/" target="_blank"
+              >Linear easing playground</a
+            >
             <a href="https://cubic-bezier.com/" target="_blank"
               >Cubic bezier playground</a
             >

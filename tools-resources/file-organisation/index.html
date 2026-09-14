@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -201,8 +201,13 @@
             you visit the website.
           </p>
           <p>
-            All other file and folder should be named using the kebab-case
-            convention. For example:
+            All other file and folder should be named using the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case"
+              target="_blank"
+            >
+              kebab-case convention </a
+            >. For example:
           </p>
           <!-- prettier-ignore-start -->
           <pre><code>style.css
@@ -250,6 +255,13 @@ project-name/index.html</code></pre>
 └── about/
     └── index.html</code></pre>
           <!-- prettier-ignore-end -->
+          <div class="further-reading">
+            <a
+              href="https://medium.com/theymakedesign/static-vs-dynamic-website-design-929a34a01256"
+              target="_blank"
+              >Learn more about static vs dynamic website design</a
+            >
+          </div>
         </div>
         <div class="block-wrapper">
           <h2>Absolute vs relative paths</h2>
@@ -295,40 +307,40 @@ E --&gt; &lt;a href="https:&#47;&#47;example.com/"&gt;Somehwere else&lt;/a&gt;</
             <div class="compare-block-code">
               <!-- prettier-ignore-start -->
               <pre><code class="language-plaintext hljs" data-highlighted="yes" style="font-family:monospace">portfolio/
-├── index.html ←─────────────────────── A ┐
+├── index.html ←─ ←─ ←─ ←─ ←─ ←─ ←─ ←─ A ←┐
 ├── favicon.ico                           │
-├── css/                                  │
+├── css/                                  ↑
 │   ├── main.css                          │
-│   ├── project.css                       │
+│   ├── project.css                       ↑
 │   └── reset.css                         │
-├── js/                                   │
+├── js/                                   ↑
 │   ├── main.js                           │
 │   └── project.js                        ↑
 ├── assets/                               │
-│   └── media/                            │
+│   └── media/                            ↑
 │   │   ├──hero-image.jpg                 │
-│   │   └──profile-photo.jpg              │
+│   │   └──profile-photo.jpg              ↑
 │   └── documents/                        │
-│       └── cv.pdf                        │
+│       └── cv.pdf                        ↑
 ├── projects/                             │
-│   ├── project-1/                        │
-│   │   ├── <span class="hljs-meta">index.html</span> ─────────→─────────┤
-│   │   ├── css/                          │
-│   │   │   └── additional-style.css ←─ B ┤
-│   │   ├── js/                           │
-│   │   │   └── additional-script.js      ↓
-│   │   └── media/                        │
-│   │       ├── hero.jpg ←───────────── C ┤
-│   │       ├── process-1.jpg             │
+│   ├── project-1/                        ↑
+│   │   ├── <span class="hljs-meta">index.html</span> ─→ ─→ ─→ ─→ ─→ ─→ ─┤
+│   │   ├── css/                          ↓
+│   │   │   └── additional-style.css ← B ←┤
+│   │   ├── js/                           ↓
+│   │   │   └── additional-script.js      │
+│   │   └── media/                        ↓
+│   │       ├── hero.jpg ←─── ←─ ←─ ←─ C ←┤
+│   │       ├── process-1.jpg             ↓
 │   │       ├── final-design.jpg          │
-│   │       └──showreel-1.mp4             │
-│   ├──project-2/                         ↓
-│   …                                     │
+│   │       └── showreel-1.mp4            ↓
+│   ├──project-2/                         │
+│   …                                     ↓
 │                                         │
-└── about/                                │
-    └── index.html ←─────────────────── D ┤
-                                          │
-https://example.com/ ←───────────────── E ┘</code></pre>
+└── about/                                ↓
+    └── index.html ←─── ←─ ←─ ←─ ←─ ←─ D ←┤
+                                          ↓
+https://example.com/ ←─ ←─ ←─ ←─ ←─ ←─ E ←┘</code></pre>
               <!-- prettier-ignore-end -->
             </div>
           </div>

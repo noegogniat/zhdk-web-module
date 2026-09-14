@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Pelikan Semi Mono";
-  src: url("/assets/fonts/ABCPelikanSemi-Mono-Book-Trial.woff2") format("woff2"),
+  src:
+    url("/assets/fonts/ABCPelikanSemi-Mono-Book-Trial.woff2") format("woff2"),
     url("/assets/fonts/ABCPelikanSemi-Mono-Book-Trial.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -9,7 +10,8 @@
 
 @font-face {
   font-family: "Pelikan Semi Mono";
-  src: url("/assets/fonts/ABCPelikanSemi-Mono-BookItalic-Trial.woff2")
+  src:
+    url("/assets/fonts/ABCPelikanSemi-Mono-BookItalic-Trial.woff2")
       format("woff2"),
     url("/assets/fonts/ABCPelikanSemi-Mono-BookItalic-Trial.woff")
       format("woff");
@@ -20,8 +22,8 @@
 
 @font-face {
   font-family: "Pelikan Semi Mono";
-  src: url("/assets/fonts/ABCPelikanSemi-Mono-Medium-Trial.woff2")
-      format("woff2"),
+  src:
+    url("/assets/fonts/ABCPelikanSemi-Mono-Medium-Trial.woff2") format("woff2"),
     url("/assets/fonts/ABCPelikanSemi-Mono-Medium-Trial.woff") format("woff");
   font-weight: bold;
   font-style: normal;
@@ -30,14 +32,16 @@
 
 @font-face {
   font-family: "Pelikan Mono";
-  src: url("/assets/fonts/ABCPelikanMono-Regular-Trial.woff2") format("woff2"),
+  src:
+    url("/assets/fonts/ABCPelikanMono-Regular-Trial.woff2") format("woff2"),
     url("/assets/fonts/ABCPelikanMono-Regular-Trial.woff") format("woff");
   font-weight: normal;
   font-display: block;
 }
 @font-face {
   font-family: "Pelikan Mono";
-  src: url("/assets/fonts/ABCPelikanMono-RegularItalic-Trial.woff2")
+  src:
+    url("/assets/fonts/ABCPelikanMono-RegularItalic-Trial.woff2")
       format("woff2"),
     url("/assets/fonts/ABCPelikanMono-RegularItalic-Trial.woff") format("woff");
   font-weight: normal;

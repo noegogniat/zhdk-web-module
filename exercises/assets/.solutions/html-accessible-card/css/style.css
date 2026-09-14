@@ -1,0 +1,33 @@
+.card {
+  color: #000;
+}
+
+.card:focus {
+  outline: none;
+}
+
+.card:focus,
+.card:focus-visible {
+  border-color: blue;
+}
+
+.card h1,
+.card p {
+  color: #000;
+}
+
+.card p {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card p {
+    transition: none;
+  }
+}
+
+@media print {
+  .card img {
+    display: none;
+  }
+}

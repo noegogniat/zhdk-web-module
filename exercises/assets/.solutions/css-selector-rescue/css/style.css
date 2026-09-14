@@ -1,0 +1,27 @@
+/* Featured item wins over the generic list colour.
+   Several selector combinations can produce the same look. */
+
+h1 {
+  color: #000;
+  text-transform: uppercase;
+}
+
+li {
+  color: #000;
+  list-style: "– " outside;
+}
+
+li.featured {
+  color: blue;
+  list-style: "• " outside;
+}
+
+/* Alternative: attribute or combinator selectors, if the HTML had them.
+
+li:nth-child(2),
+.featured {
+  color: blue;
+  list-style: "• " outside;
+}
+
+*/

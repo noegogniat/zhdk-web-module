@@ -1,0 +1,7 @@
+Fix the stylesheet so the page matches the reference image.
+Do not change the HTML.
+Do not use !important.
+
++ Hints:
+- Look at which selectors win, not only which rules you wrote.
+- The featured item should look like an active sidebar link.

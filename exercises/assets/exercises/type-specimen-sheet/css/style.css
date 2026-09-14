@@ -1,0 +1,29 @@
+/* Imagine a design based on the HTML structure and CSS variables below.
+
+- Link the bold and italic cuts
+- Make the H1 scale as the viewport changes
+- Feel free to modify the HTML structure
+- Use the CSS variables to change the design
+- Find out how to break the text into columns
+
+! Info
+#character-detail reflects the last hovered character of the list
+*/
+
+@font-face {
+  font-family: "Pelikan Semi Mono";
+  src:
+    url("../fonts/ABCPelikanSemi-Mono-Book-Trial.woff2") format("woff2"),
+    url("../fonts/ABCPelikanSemi-Mono-Book-Trial.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color-background: oklch(95.75% 0.005 95);
+  --color-foreground: oklch(26% 0.003 197.5);
+  --color-accent: oklch(0.8823 0.2034 192.07);
+  --border-width: 1.5px;
+  --default-border: dashed var(--border-width) var(--color-foreground);
+  --gap: 0.75rem;
+}

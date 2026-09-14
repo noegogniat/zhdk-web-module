@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -294,39 +294,79 @@
           <h2>Some useful units</h2>
           <h3>Default unit of length</h3>
           <p>
-            The <code class="language-css">px</code> unit is the most common
-            unit of length on the web. The pixel unit should be used for
-            defining fixed length and sizes, such as border thicknesses,
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#px"
+              target="_blank"
+              ><code class="language-css">px</code></a
+            >
+            unit is the most common unit of length on the web. The pixel unit
+            should be used for defining fixed length and sizes, such as border
+            thicknesses,
             <a href="/responsive-design/breakpoints/">media queries</a>, and
             other smaller adjustments. Note that usually, if a unit is not
             specified, the browser will assume the unit is
-            <code class="language-css">px</code>.
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#px"
+              target="_blank"
+              ><code class="language-css">px</code></a
+            >.
           </p>
           <h3>Typographic units</h3>
           <p>
-            The <code class="language-css">em</code> unit is used to define font
-            sizes relative to the font-size of the element. The default font
-            size of a website is <code class="language-css">16px</code>, but
-            this default can be overwritten by custom user settings
-            (accessiblity, contrast, etc.). An
-            <code class="language-css">em</code> is more or less equal to the
-            width of the capital letter M in the current font.
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#em"
+              target="_blank"
+              ><code class="language-css">em</code></a
+            >
+            unit is used to define font sizes relative to the font-size of the
+            element. The default font size of a website is
+            <code class="language-css">16px</code>, but this default can be
+            overwritten by custom user settings (accessiblity, contrast, etc.).
+            An
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#em"
+              target="_blank"
+              ><code class="language-css">em</code></a
+            >
+            is more or less equal to the width of the capital letter M in the
+            current font.
           </p>
           <p>
-            The <code class="language-css">ch</code> is most commonly used for
-            horizontal typographical measurements, such as maximum line length
-            and indentation. A <code class="language-css">ch</code> is equal to
-            the width of the "0" character in the element's font and often
-            changes depending on the cut of the font.
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#ch"
+              target="_blank"
+              ><code class="language-css">ch</code></a
+            >
+            is most commonly used for horizontal typographical measurements,
+            such as maximum line length and indentation. A
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#ch"
+              target="_blank"
+              ><code class="language-css">ch</code></a
+            >
+            is equal to the width of the "0" character in the element's font and
+            often changes depending on the cut of the font.
           </p>
           <details class="tip-block">
             <summary>Advanced: rem unit</summary>
             <p>
-              The <code class="language-css">rem</code> unit is used to define
-              font sizes relative to the root element. Since the root element's
-              font-size doesn't change, the
-              <code class="language-css">rem</code> unit is a good choice for
-              more consistent sizing.
+              The
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#rem"
+                target="_blank"
+                ><code class="language-css">rem</code></a
+              >
+              unit is used to define font sizes relative to the root element.
+              Since the root element's font-size doesn't change, the
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#rem"
+                target="_blank"
+                ><code class="language-css">rem</code></a
+              >
+              unit is a good choice for more consistent sizing.
             </p>
           </details>
           <h3>Viewport and percentages</h3>
@@ -335,17 +375,63 @@
             their parent element or the viewport.
           </p>
           <p>
-            The <code class="language-css">%</code> unit is relative to the
-            parent element. It doesn't only apply to the width and height of the
-            element, but also to its padding, border, margin, font-size and
-            other properties.
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length-percentage"
+              target="_blank"
+              ><code class="language-css">%</code></a
+            >
+            unit is relative to the parent element. It doesn't only apply to the
+            width and height of the element, but also to its padding, border,
+            margin, font-size and other properties.
           </p>
           <p>
-            The <code class="language-css">vw</code> and
-            <code class="language-css">vh</code>
+            The
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#vw"
+              target="_blank"
+              ><code class="language-css">vw</code></a
+            >
+            and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#vh"
+              target="_blank"
+              ><code class="language-css">vh</code></a
+            >
             units are relative to the viewport width and height. They are useful
             for responsive design, where you want to define a layout that adapts
             to different screen sizes.
+          </p>
+          <h3>Absolute units</h3>
+          <p>
+            Despit its digital nature, the browser also support absolute units.
+            Lengths can be specified in centimeters (<a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#cm"
+              target="_blank"
+            >
+              <code class="language-css">cm</code></a
+            >), millimeters (<a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#mm"
+              target="_blank"
+              ><code class="language-css">mm</code></a
+            >), quarter-millimeters (<a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#q"
+              target="_blank"
+              ><code class="language-css">Q</code></a
+            >), inches (<a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#in"
+              target="_blank"
+              ><code class="language-css">in</code></a
+            >), picas (<a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#pc"
+              target="_blank"
+            >
+              <code class="language-css">pc</code></a
+            >), and Amercian points (<a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#pt"
+              target="_blank"
+              ><code class="language-css">pt</code></a
+            >).
           </p>
           <div class="further-reading">
             <a

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -327,7 +327,7 @@
                     direction: "horizontal",
                     loop: true,
                     grabCursor: true,
-                  }
+                  },
                 );
               </script>
             </div>
@@ -455,7 +455,7 @@ const swiper = new Swiper(".swiper", {
                       prevEl: ".swiper-button-prev",
                       nextEl: ".swiper-button-next",
                     },
-                  }
+                  },
                 );
               </script>
             </div>
@@ -559,7 +559,7 @@ scrollama
                       element.getBoundingClientRect().bottom <
                       Math.max(
                         document.documentElement.clientHeight || 0,
-                        window.innerHeight || 0
+                        window.innerHeight || 0,
                       )
                     )
                       element.querySelector("img").style.scale = 1;
@@ -672,7 +672,8 @@ scrollama
                   font-size: 1rem;
                   flex-grow: 0;
                   line-height: 1;
-                  transition: font-size 150ms cubic-bezier(0.23, 1, 0.32, 1),
+                  transition:
+                    font-size 150ms cubic-bezier(0.23, 1, 0.32, 1),
                     flex-grow 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
                 }
 
@@ -715,7 +716,7 @@ scrollama
                       .forEach((item) => item.classList.remove("active"));
 
                     const navItem = document.querySelector(
-                      `#scrollama-example-2 nav li[data-id="${element.id}"]`
+                      `#scrollama-example-2 nav li[data-id="${element.id}"]`,
                     );
                     navItem.classList.add("active");
                   });
@@ -909,7 +910,7 @@ const drag = new NeoDrag.Draggable(
                           document.querySelector("#neodrag-example .draggable")
                             .clientHeight),
                     },
-                  }
+                  },
                 );
               </script>
             </div>
